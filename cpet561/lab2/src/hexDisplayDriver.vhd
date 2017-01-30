@@ -1,11 +1,11 @@
 library ieee;
 use ieee.std_logic_1164.all;
---needs editting
+
 entity hexDisplayDriver is
   port (
-    i_hex : in std_logic_vector(3 downto 0);
-    o_sevenSeg : out std_logic_vector(6 downto 0)
-  );
+      i_hex : in std_logic_vector(3 downto 0);
+      o_sevenSeg : out std_logic_vector(6 downto 0)
+    );
 end entity hexDisplayDriver;
 
 architecture hexDisplayDriver_arch of hexDisplayDriver is
@@ -45,10 +45,8 @@ process(i_hex)
         o_sevenSeg<="0000110";
     when "1111"=>--15 f
         o_sevenSeg<="0001110";
-
     when others =>
         o_sevenSeg<="1111111";
     end case;
 end process;
 end architecture hexDisplayDriver_arch;
-
