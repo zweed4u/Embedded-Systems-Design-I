@@ -1,5 +1,5 @@
 Fitter report for accumulator
-Mon Jan 30 16:16:49 2017
+Mon Jan 30 16:33:44 2017
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Standard Edition
 
 
@@ -64,7 +64,7 @@ agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                    ;
 +---------------------------------+-------------------------------------------------+
-; Fitter Status                   ; Successful - Mon Jan 30 16:16:49 2017           ;
+; Fitter Status                   ; Successful - Mon Jan 30 16:33:44 2017           ;
 ; Quartus Prime Version           ; 15.1.0 Build 185 10/21/2015 SJ Standard Edition ;
 ; Revision Name                   ; accumulator                                     ;
 ; Top-level Entity Name           ; accumulator                                     ;
@@ -154,12 +154,12 @@ agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.00        ;
+; Average used               ; 1.09        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ; < 0.1%      ;
+;     Processors 2-4         ;   2.9%      ;
 +----------------------------+-------------+
 
 
@@ -2564,7 +2564,7 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.66 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.67 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -2665,9 +2665,9 @@ Warning (169064): Following 92 pins have no output enable or a GND or VCC output
     Info (169065): Pin GPIO_1[35] has a permanently disabled output enable File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
 Info (144001): Generated suppressed messages file C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/output_files/accumulator.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 2554 megabytes
-    Info: Processing ended: Mon Jan 30 16:16:49 2017
-    Info: Elapsed time: 00:00:35
+    Info: Peak virtual memory: 2556 megabytes
+    Info: Processing ended: Mon Jan 30 16:33:45 2017
+    Info: Elapsed time: 00:00:36
     Info: Total CPU time (on all processors): 00:00:58
 
 

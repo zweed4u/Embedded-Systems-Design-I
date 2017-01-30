@@ -24,10 +24,12 @@ begin
     elsif (i_clk'event and i_clk ='1') then     --not reset and clk
         if (i_trigger='1') then                 --switch pressed
             result_temp<=result_temp+i_switch;  --padding for the 16 bit number
+        else
+            result_temp<=result_temp;
         end if;
     end if;
   end process;
- o_accumulator<=result_temp;         --adding the other switch
+  o_accumulator<=result_temp;         --adding the other switch
 
 end architecture accum_mod_arch;
 

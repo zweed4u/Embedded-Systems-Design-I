@@ -1,5 +1,5 @@
 Analysis & Synthesis report for accumulator
-Mon Jan 30 16:16:11 2017
+Mon Jan 30 16:33:05 2017
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Standard Edition
 
 
@@ -46,7 +46,7 @@ agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Jan 30 16:16:10 2017           ;
+; Analysis & Synthesis Status     ; Successful - Mon Jan 30 16:33:05 2017           ;
 ; Quartus Prime Version           ; 15.1.0 Build 185 10/21/2015 SJ Standard Edition ;
 ; Revision Name                   ; accumulator                                     ;
 ; Top-level Entity Name           ; accumulator                                     ;
@@ -322,7 +322,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 15.1.0 Build 185 10/21/2015 SJ Standard Edition
-    Info: Processing started: Mon Jan 30 16:16:01 2017
+    Info: Processing started: Mon Jan 30 16:32:56 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off accumulator -c accumulator
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file src/synchronizer.vhd
@@ -572,8 +572,8 @@ Info (21057): Implemented 336 device resources after synthesis - the final resou
     Info (21061): Implemented 147 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 217 warnings
     Info: Peak virtual memory: 876 megabytes
-    Info: Processing ended: Mon Jan 30 16:16:11 2017
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:19
+    Info: Processing ended: Mon Jan 30 16:33:05 2017
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:21
 
 

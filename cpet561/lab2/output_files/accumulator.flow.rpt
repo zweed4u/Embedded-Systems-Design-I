@@ -1,5 +1,5 @@
 Flow report for accumulator
-Mon Jan 30 16:17:12 2017
+Mon Jan 30 16:34:08 2017
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Standard Edition
 
 
@@ -41,7 +41,7 @@ agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Flow Summary                                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Flow Status                     ; Successful - Mon Jan 30 16:17:01 2017           ;
+; Flow Status                     ; Successful - Mon Jan 30 16:33:57 2017           ;
 ; Quartus Prime Version           ; 15.1.0 Build 185 10/21/2015 SJ Standard Edition ;
 ; Revision Name                   ; accumulator                                     ;
 ; Top-level Entity Name           ; accumulator                                     ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/30/2017 16:16:01 ;
+; Start date & time ; 01/30/2017 16:32:56 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; accumulator         ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 26830024677015.148581096162956        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 26830024677015.148581197663808        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; 16764057                              ; --            ; --          ; Top        ;
@@ -102,11 +102,11 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:09     ; 1.0                     ; 876 MB              ; 00:00:19                           ;
-; Fitter                    ; 00:00:35     ; 1.0                     ; 2554 MB             ; 00:00:57                           ;
-; Assembler                 ; 00:00:08     ; 1.0                     ; 863 MB              ; 00:00:08                           ;
-; TimeQuest Timing Analyzer ; 00:00:07     ; 1.0                     ; 1182 MB             ; 00:00:07                           ;
-; Total                     ; 00:00:59     ; --                      ; --                  ; 00:01:31                           ;
+; Analysis & Synthesis      ; 00:00:09     ; 1.0                     ; 876 MB              ; 00:00:21                           ;
+; Fitter                    ; 00:00:35     ; 1.1                     ; 2556 MB             ; 00:00:58                           ;
+; Assembler                 ; 00:00:09     ; 1.0                     ; 863 MB              ; 00:00:09                           ;
+; TimeQuest Timing Analyzer ; 00:00:07     ; 1.5                     ; 1178 MB             ; 00:00:07                           ;
+; Total                     ; 00:01:00     ; --                      ; --                  ; 00:01:35                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
