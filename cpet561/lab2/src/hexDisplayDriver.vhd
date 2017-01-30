@@ -1,5 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity hexDisplayDriver is
   port (
@@ -32,7 +34,7 @@ process(i_hex)
     when "1000"=>--8
         o_sevenSeg<="0000000";
     when "1001"=>--9
-        o_sevenSeg<="011000";
+        o_sevenSeg<="0011000";
     when "1010"=>--10 a
         o_sevenSeg<="0001000";
     when "1011"=>--11 b

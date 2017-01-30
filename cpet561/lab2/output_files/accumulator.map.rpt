@@ -1,0 +1,579 @@
+Analysis & Synthesis report for accumulator
+Mon Jan 30 16:16:11 2017
+Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |accumulator|debounce:debounce_inst1|state
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Port Connectivity Checks: "synchronizer:synchronizer_inst"
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                      ;
++---------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon Jan 30 16:16:10 2017           ;
+; Quartus Prime Version           ; 15.1.0 Build 185 10/21/2015 SJ Standard Edition ;
+; Revision Name                   ; accumulator                                     ;
+; Top-level Entity Name           ; accumulator                                     ;
+; Family                          ; Cyclone V                                       ;
+; Logic utilization (in ALMs)     ; N/A                                             ;
+; Total registers                 ; 89                                              ;
+; Total pins                      ; 189                                             ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 0                                               ;
+; Total DSP Blocks                ; 0                                               ;
+; Total HSSI RX PCSs              ; 0                                               ;
+; Total HSSI PMA RX Deserializers ; 0                                               ;
+; Total HSSI TX PCSs              ; 0                                               ;
+; Total HSSI PMA TX Serializers   ; 0                                               ;
+; Total PLLs                      ; 0                                               ;
+; Total DLLs                      ; 0                                               ;
++---------------------------------+-------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; accumulator        ; accumulator        ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                       ; Off                ; Off                ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; PowerPlay Power Optimization During Synthesis                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Synthesis Seed                                                                  ; 1                  ; 1                  ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ; < 0.1%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                      ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                               ; Library ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------+---------+
+; src/synchronizer.vhd             ; yes             ; User VHDL File  ; C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/synchronizer.vhd     ;         ;
+; src/hexDisplayDriver.vhd         ; yes             ; User VHDL File  ; C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/hexDisplayDriver.vhd ;         ;
+; src/debounce.vhd                 ; yes             ; User VHDL File  ; C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/debounce.vhd         ;         ;
+; src/accumulator.vhd              ; yes             ; User VHDL File  ; C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd      ;         ;
+; src/accum_mod.vhd                ; yes             ; User VHDL File  ; C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accum_mod.vhd        ;         ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                   ;
++---------------------------------------------+-----------------+
+; Resource                                    ; Usage           ;
++---------------------------------------------+-----------------+
+; Estimate of Logic utilization (ALMs needed) ; 69              ;
+;                                             ;                 ;
+; Combinational ALUT usage for logic          ; 127             ;
+;     -- 7 input functions                    ; 0               ;
+;     -- 6 input functions                    ; 5               ;
+;     -- 5 input functions                    ; 4               ;
+;     -- 4 input functions                    ; 30              ;
+;     -- <=3 input functions                  ; 88              ;
+;                                             ;                 ;
+; Dedicated logic registers                   ; 89              ;
+;                                             ;                 ;
+; I/O pins                                    ; 189             ;
+;                                             ;                 ;
+; Total DSP Blocks                            ; 0               ;
+;                                             ;                 ;
+; Maximum fan-out node                        ; CLOCK2_50~input ;
+; Maximum fan-out                             ; 89              ;
+; Total fan-out                               ; 966             ;
+; Average fan-out                             ; 1.41            ;
++---------------------------------------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                          ;
++----------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                  ; Library Name ;
++----------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+------------------------------------------------------+--------------+
+; |accumulator                                 ; 127 (26)          ; 89 (26)      ; 0                 ; 0          ; 189  ; 0            ; |accumulator                                         ; work         ;
+;    |accum_mod:accum_mod_inst|                ; 16 (16)           ; 16 (16)      ; 0                 ; 0          ; 0    ; 0            ; |accumulator|accum_mod:accum_mod_inst                ; work         ;
+;    |debounce:debounce_inst1|                 ; 57 (57)           ; 27 (27)      ; 0                 ; 0          ; 0    ; 0            ; |accumulator|debounce:debounce_inst1                 ; work         ;
+;    |hexDisplayDriver:hexDisplayDriver_inst0| ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |accumulator|hexDisplayDriver:hexDisplayDriver_inst0 ; work         ;
+;    |hexDisplayDriver:hexDisplayDriver_inst1| ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |accumulator|hexDisplayDriver:hexDisplayDriver_inst1 ; work         ;
+;    |hexDisplayDriver:hexDisplayDriver_inst2| ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |accumulator|hexDisplayDriver:hexDisplayDriver_inst2 ; work         ;
+;    |hexDisplayDriver:hexDisplayDriver_inst3| ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |accumulator|hexDisplayDriver:hexDisplayDriver_inst3 ; work         ;
+;    |synchronizer:synchronizer_inst|          ; 0 (0)             ; 20 (20)      ; 0                 ; 0          ; 0    ; 0            ; |accumulator|synchronizer:synchronizer_inst          ; work         ;
++----------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------+
+; State Machine - |accumulator|debounce:debounce_inst1|state                                            ;
++---------------------+---------------------+-------------------+------------------+--------------------+
+; Name                ; state.s_waitForHigh ; state.s_delayHigh ; state.s_delayLow ; state.s_waitForLow ;
++---------------------+---------------------+-------------------+------------------+--------------------+
+; state.s_waitForLow  ; 0                   ; 0                 ; 0                ; 0                  ;
+; state.s_delayLow    ; 0                   ; 0                 ; 1                ; 1                  ;
+; state.s_delayHigh   ; 0                   ; 1                 ; 0                ; 1                  ;
+; state.s_waitForHigh ; 1                   ; 0                 ; 0                ; 1                  ;
++---------------------+---------------------+-------------------+------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 89    ;
+; Number of registers using Synchronous Clear  ; 50    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 16    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 38    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
+; 7:1                ; 22 bits   ; 88 LEs        ; 22 LEs               ; 66 LEs                 ; Yes        ; |accumulator|debounce:debounce_inst1|delayCntr[7] ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |accumulator|debounce:debounce_inst1|state        ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |accumulator|debounce:debounce_inst1|state        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "synchronizer:synchronizer_inst"                                                                ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                             ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; o_swsync[9..8]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; o_keysync[3..2] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 89                          ;
+;     ENA CLR           ; 16                          ;
+;     ENA SCLR          ; 22                          ;
+;     SCLR              ; 28                          ;
+;     plain             ; 23                          ;
+; arriav_io_obuf        ; 92                          ;
+; arriav_lcell_comb     ; 133                         ;
+;     arith             ; 64                          ;
+;         1 data inputs ; 56                          ;
+;         2 data inputs ; 8                           ;
+;     normal            ; 69                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 1                           ;
+;         3 data inputs ; 23                          ;
+;         4 data inputs ; 30                          ;
+;         5 data inputs ; 4                           ;
+;         6 data inputs ; 5                           ;
+; boundary_port         ; 189                         ;
+;                       ;                             ;
+; Max LUT depth         ; 4.10                        ;
+; Average LUT depth     ; 1.81                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 15.1.0 Build 185 10/21/2015 SJ Standard Edition
+    Info: Processing started: Mon Jan 30 16:16:01 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off accumulator -c accumulator
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file src/synchronizer.vhd
+    Info (12022): Found design unit 1: synchronizer-synchronizer_arch File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/synchronizer.vhd Line: 14
+    Info (12023): Found entity 1: synchronizer File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/synchronizer.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file src/hexdisplaydriver.vhd
+    Info (12022): Found design unit 1: hexDisplayDriver-hexDisplayDriver_arch File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/hexDisplayDriver.vhd Line: 13
+    Info (12023): Found entity 1: hexDisplayDriver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/hexDisplayDriver.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file src/debounce.vhd
+    Info (12022): Found design unit 1: debounce-debounce_arch File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/debounce.vhd Line: 20
+    Info (12023): Found entity 1: debounce File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/debounce.vhd Line: 11
+Info (12021): Found 2 design units, including 1 entities, in source file src/accumulator.vhd
+    Info (12022): Found design unit 1: accumulator-accumulator_arch File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 69
+    Info (12023): Found entity 1: accumulator File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 11
+Info (12021): Found 2 design units, including 1 entities, in source file src/accum_mod.vhd
+    Info (12022): Found design unit 1: accum_mod-accum_mod_arch File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accum_mod.vhd Line: 16
+    Info (12023): Found entity 1: accum_mod File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accum_mod.vhd Line: 6
+Info (12127): Elaborating entity "accumulator" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at accumulator.vhd(17): used implicit default value for signal "AUD_DACDAT" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 17
+Warning (10541): VHDL Signal Declaration warning at accumulator.vhd(19): used implicit default value for signal "AUD_XCK" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 19
+Warning (10541): VHDL Signal Declaration warning at accumulator.vhd(28): used implicit default value for signal "DRAM_ADDR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 28
+Warning (10541): VHDL Signal Declaration warning at accumulator.vhd(29): used implicit default value for signal "DRAM_BA" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 29
+Warning (10541): VHDL Signal Declaration warning at accumulator.vhd(30): used implicit default value for signal "DRAM_CAS_N" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 30
+Warning (10541): VHDL Signal Declaration warning at accumulator.vhd(31): used implicit default value for signal "DRAM_CKE" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 31
+Warning (10541): VHDL Signal Declaration warning at accumulator.vhd(32): used implicit default value for signal "DRAM_CLK" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 32
+Warning (10541): VHDL Signal Declaration warning at accumulator.vhd(33): used implicit default value for signal "DRAM_CS_N" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 33
+Warning (10541): VHDL Signal Declaration warning at accumulator.vhd(35): used implicit default value for signal "DRAM_LDQM" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 35
+Warning (10541): VHDL Signal Declaration warning at accumulator.vhd(36): used implicit default value for signal "DRAM_RAS_N" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 36
+Warning (10541): VHDL Signal Declaration warning at accumulator.vhd(37): used implicit default value for signal "DRAM_UDQM" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 37
+Warning (10541): VHDL Signal Declaration warning at accumulator.vhd(38): used implicit default value for signal "DRAM_WE_N" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 38
+Warning (10541): VHDL Signal Declaration warning at accumulator.vhd(41): used implicit default value for signal "FPGA_I2C_SCLK" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 41
+Warning (10541): VHDL Signal Declaration warning at accumulator.vhd(49): used implicit default value for signal "HEX4" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 49
+Warning (10541): VHDL Signal Declaration warning at accumulator.vhd(50): used implicit default value for signal "HEX5" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 50
+Info (12128): Elaborating entity "synchronizer" for hierarchy "synchronizer:synchronizer_inst" File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 126
+Info (12128): Elaborating entity "debounce" for hierarchy "debounce:debounce_inst1" File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 139
+Info (12128): Elaborating entity "accum_mod" for hierarchy "accum_mod:accum_mod_inst" File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 148
+Info (12128): Elaborating entity "hexDisplayDriver" for hierarchy "hexDisplayDriver:hexDisplayDriver_inst0" File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 158
+Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "AUD_ADCLRCK" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 15
+    Warning (13040): bidirectional pin "AUD_BCLK" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 16
+    Warning (13040): bidirectional pin "AUD_DACLRCK" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 18
+    Warning (13040): bidirectional pin "DRAM_DQ[0]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 34
+    Warning (13040): bidirectional pin "DRAM_DQ[1]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 34
+    Warning (13040): bidirectional pin "DRAM_DQ[2]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 34
+    Warning (13040): bidirectional pin "DRAM_DQ[3]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 34
+    Warning (13040): bidirectional pin "DRAM_DQ[4]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 34
+    Warning (13040): bidirectional pin "DRAM_DQ[5]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 34
+    Warning (13040): bidirectional pin "DRAM_DQ[6]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 34
+    Warning (13040): bidirectional pin "DRAM_DQ[7]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 34
+    Warning (13040): bidirectional pin "DRAM_DQ[8]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 34
+    Warning (13040): bidirectional pin "DRAM_DQ[9]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 34
+    Warning (13040): bidirectional pin "DRAM_DQ[10]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 34
+    Warning (13040): bidirectional pin "DRAM_DQ[11]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 34
+    Warning (13040): bidirectional pin "DRAM_DQ[12]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 34
+    Warning (13040): bidirectional pin "DRAM_DQ[13]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 34
+    Warning (13040): bidirectional pin "DRAM_DQ[14]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 34
+    Warning (13040): bidirectional pin "DRAM_DQ[15]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 34
+    Warning (13040): bidirectional pin "FPGA_I2C_SDAT" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 42
+    Warning (13040): bidirectional pin "GPIO_0[0]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[1]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[2]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[3]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[4]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[5]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[6]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[7]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[8]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[9]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[10]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[11]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[12]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[13]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[14]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[15]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[16]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[17]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[18]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[19]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[20]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[21]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[22]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[23]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[24]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[25]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[26]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[27]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[28]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[29]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[30]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[31]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[32]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[33]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[34]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_0[35]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 62
+    Warning (13040): bidirectional pin "GPIO_1[0]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[1]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[2]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[3]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[4]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[5]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[6]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[7]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[8]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[9]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[10]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[11]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[12]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[13]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[14]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[15]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[16]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[17]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[18]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[19]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[20]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[21]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[22]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[23]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[24]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[25]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[26]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[27]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[28]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[29]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[30]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[31]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[32]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[33]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[34]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+    Warning (13040): bidirectional pin "GPIO_1[35]" has no driver File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 65
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "AUD_DACDAT" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 17
+    Warning (13410): Pin "AUD_XCK" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 19
+    Warning (13410): Pin "DRAM_ADDR[0]" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 28
+    Warning (13410): Pin "DRAM_ADDR[1]" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 28
+    Warning (13410): Pin "DRAM_ADDR[2]" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 28
+    Warning (13410): Pin "DRAM_ADDR[3]" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 28
+    Warning (13410): Pin "DRAM_ADDR[4]" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 28
+    Warning (13410): Pin "DRAM_ADDR[5]" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 28
+    Warning (13410): Pin "DRAM_ADDR[6]" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 28
+    Warning (13410): Pin "DRAM_ADDR[7]" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 28
+    Warning (13410): Pin "DRAM_ADDR[8]" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 28
+    Warning (13410): Pin "DRAM_ADDR[9]" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 28
+    Warning (13410): Pin "DRAM_ADDR[10]" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 28
+    Warning (13410): Pin "DRAM_ADDR[11]" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 28
+    Warning (13410): Pin "DRAM_ADDR[12]" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 28
+    Warning (13410): Pin "DRAM_BA[0]" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 29
+    Warning (13410): Pin "DRAM_BA[1]" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 29
+    Warning (13410): Pin "DRAM_CAS_N" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 30
+    Warning (13410): Pin "DRAM_CKE" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 31
+    Warning (13410): Pin "DRAM_CLK" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 32
+    Warning (13410): Pin "DRAM_CS_N" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 33
+    Warning (13410): Pin "DRAM_LDQM" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 35
+    Warning (13410): Pin "DRAM_RAS_N" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 36
+    Warning (13410): Pin "DRAM_UDQM" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 37
+    Warning (13410): Pin "DRAM_WE_N" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 38
+    Warning (13410): Pin "FPGA_I2C_SCLK" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 41
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 49
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 49
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 49
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 49
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 49
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 49
+    Warning (13410): Pin "HEX4[6]" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 49
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 50
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 50
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 50
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 50
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 50
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 50
+    Warning (13410): Pin "HEX5[6]" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 50
+    Warning (13410): Pin "LEDR[1]" is stuck at VCC File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 56
+    Warning (13410): Pin "LEDR[2]" is stuck at VCC File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 56
+    Warning (13410): Pin "LEDR[3]" is stuck at VCC File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 56
+    Warning (13410): Pin "LEDR[4]" is stuck at VCC File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 56
+    Warning (13410): Pin "LEDR[5]" is stuck at VCC File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 56
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 56
+    Warning (13410): Pin "LEDR[7]" is stuck at VCC File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 56
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 56
+    Warning (13410): Pin "LEDR[9]" is stuck at VCC File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 56
+Info (286030): Timing-Driven Synthesis is running
+Warning (20013): Ignored 24 assignments for entity "equalizer" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity equalizer -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity equalizer -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity equalizer -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_PRESERVE_HIGH_SPEED_TILES ON -entity equalizer -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IGNORE_SOURCE_FILE_CHANGES OFF -entity equalizer -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ALWAYS_USE_QXP_NETLIST OFF -entity equalizer -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_COLOR 16764057 -entity equalizer -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_ASSIGNMENTS ON -entity equalizer -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_ASSIGNMENTS REPLACE_CONFLICTING -entity equalizer -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS UPDATE_CONFLICTING -entity equalizer -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PIN_ASSIGNMENTS ON -entity equalizer -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PROMOTE_ASSIGNMENTS ON -entity equalizer -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_TYPE STANDARD_PARTITION -entity equalizer -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ALLOW_MULTIPLE_PERSONAS OFF -entity equalizer -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ASD_REGION_ID 1 -entity equalizer -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name CROSS_BOUNDARY_OPTIMIZATIONS OFF -entity equalizer -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_CONSTANTS_ON_INPUTS ON -entity equalizer -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_INVERSIONS_ON_INPUTS ON -entity equalizer -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS ON -entity equalizer -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_INPUTS ON -entity equalizer -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_BIDIRS ON -entity equalizer -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS ON -entity equalizer -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity equalizer -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity equalizer -section_id Top was ignored
+Warning (20013): Ignored 24 assignments for entity "lights" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity lights -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity lights -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity lights -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_PRESERVE_HIGH_SPEED_TILES ON -entity lights -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IGNORE_SOURCE_FILE_CHANGES OFF -entity lights -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ALWAYS_USE_QXP_NETLIST OFF -entity lights -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_COLOR 16764057 -entity lights -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_ASSIGNMENTS ON -entity lights -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_ASSIGNMENTS REPLACE_CONFLICTING -entity lights -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS UPDATE_CONFLICTING -entity lights -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PIN_ASSIGNMENTS ON -entity lights -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PROMOTE_ASSIGNMENTS ON -entity lights -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_TYPE STANDARD_PARTITION -entity lights -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ALLOW_MULTIPLE_PERSONAS OFF -entity lights -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ASD_REGION_ID 1 -entity lights -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name CROSS_BOUNDARY_OPTIMIZATIONS OFF -entity lights -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_CONSTANTS_ON_INPUTS ON -entity lights -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_INVERSIONS_ON_INPUTS ON -entity lights -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS ON -entity lights -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_INPUTS ON -entity lights -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_BIDIRS ON -entity lights -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS ON -entity lights -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity lights -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity lights -section_id Top was ignored
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 8 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "AUD_ADCDAT" File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 14
+    Warning (15610): No output dependent on input pin "CLOCK_50" File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 22
+    Warning (15610): No output dependent on input pin "CLOCK3_50" File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 24
+    Warning (15610): No output dependent on input pin "CLOCK4_50" File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 25
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 53
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 53
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 59
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/src/accumulator.vhd Line: 59
+Info (21057): Implemented 336 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 19 input pins
+    Info (21059): Implemented 78 output pins
+    Info (21060): Implemented 92 bidirectional pins
+    Info (21061): Implemented 147 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 217 warnings
+    Info: Peak virtual memory: 876 megabytes
+    Info: Processing ended: Mon Jan 30 16:16:11 2017
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:19
+
+

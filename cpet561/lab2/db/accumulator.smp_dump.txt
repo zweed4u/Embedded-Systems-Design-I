@@ -1,0 +1,7 @@
+
+State Machine - |accumulator|debounce:debounce_inst1|state
+Name state.s_waitForHigh state.s_delayHigh state.s_delayLow state.s_waitForLow 
+state.s_waitForLow 0 0 0 0 
+state.s_delayLow 0 0 1 1 
+state.s_delayHigh 0 1 0 1 
+state.s_waitForHigh 1 0 0 1 
