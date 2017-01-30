@@ -3,11 +3,8 @@ use ieee.std_logic_1164.all;
 --needs editting
 entity hexDisplayDriver is
   port (
-    i_SW : in std_logic_vector(9 downto 0);
-    i_KEY : in std_logic_vector(3 downto 0);
-    i_CLOCK2_50 : in std_logic;
-    o_SWsync : out std_logic_vector(9 downto 0);
-    o_KEYsync : out std_logic_vector(3 downto 0)
+    i_hex : in std_logic_vector(3 downto 0);
+    o_sevenSeg : out std_logic_vector(6 downto 0)
   );
 end entity hexDisplayDriver;
 
