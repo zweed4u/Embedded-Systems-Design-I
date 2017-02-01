@@ -1,0 +1,30 @@
+/*
+ * accumulator_main.c
+ *
+ *  Created on: Jan 19, 2017
+ *      Author: zdw7287
+ */
+
+#include "system.h"
+#include "alt_types.h"
+int main(void)
+{
+	unsigned char *switchesBase_ptr = (unsigned char *) I_SWITCH_BASE;
+	unsigned char *triggerBase_ptr = (unsigned char *) I_TRIGGER_BASE;
+	unsigned char *accumulatorBase_ptr = (unsigned char *) O_ACCUMULATOR_BASE;
+	unsigned char switches_val;
+	unsigned char trigger_val;
+	unsigned char accumulator_val;
+
+	switches_val=*switchesBase_ptr;//get the switch addresses contents
+	accumulator_val=*accumulatorBase_ptr;//get the accumulator addresses contents
+	trigger_val=*triggerBase_ptr;
+
+	while (1) {
+		if(*triggerBase_ptr & 1){ //contents of the trigger address are 1 (HIGH)
+			accumulator_val=accumulator_val+switches_val;//contents of accumulator set to what is in the accumulator + what is on the switches
+			*accumulatorBase_ptr=accumulator_val;
+		}
+	}
+
+}
