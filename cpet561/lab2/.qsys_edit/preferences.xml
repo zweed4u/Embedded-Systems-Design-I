@@ -3,10 +3,12 @@
  <debug showDebugMenu="0" />
  <systemtable filter="All Interfaces">
   <columns>
-   <connections preferredWidth="47" />
+   <connections preferredWidth="143" />
    <irq preferredWidth="34" />
   </columns>
  </systemtable>
- <library expandedCategories="Library,Project" />
- <window width="1100" height="800" x="671" y="172" />
+ <library
+   expandedCategories="Library/Processors and Peripherals,Library/Basic Functions/Simulation; Debug and Verification,Library/Basic Functions/Simulation; Debug and Verification/Debug and Performance,Library/Basic Functions,Library/Interface Protocols/Serial,Library,Library/Interface Protocols,Project" />
+ <window width="1920" height="1040" x="0" y="0" />
+ <generation synthesis="VHDL" />
 </preferences>
