@@ -44,8 +44,8 @@ begin
         case state is
           when s_waitForLow =>
             if (i_pushButton = '0') then
-              state <= s_delayLow;
-              delayCntr <= "11" & x"93870";
+              state <= s_delayLow;          --   & (3750000/50000000) = .075
+              delayCntr <= "11" & x"93870"; -- 11 1001 0011 1000 0111 0000
               o_keypulse <= '1';
             end if;
           when s_delayLow =>
