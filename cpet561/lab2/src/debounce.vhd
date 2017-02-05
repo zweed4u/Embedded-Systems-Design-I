@@ -49,8 +49,8 @@ begin
               o_keypulse <= '1';
             end if;
           when s_delayLow =>
-            o_keypulse <= '0';
             if (delayCntr = ("00" & x"00000")) then
+              o_keypulse <= '0';
               state <= s_waitForHigh;
             else
               delayCntr <= delayCntr - ("00" & x"00001");
