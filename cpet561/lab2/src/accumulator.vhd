@@ -190,7 +190,7 @@ begin
     );
     
     ----- Instantiate the nios processor
-    u0 : component nios_system
+    accum_mod_inst : component nios_system
     port map (
         clk_clk              => CLOCK2_50,              --           clk.clk
         reset_reset_n        => reset_n,        --         reset.reset_n

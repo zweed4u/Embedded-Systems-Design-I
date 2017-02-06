@@ -10,20 +10,18 @@ int main(void)
 {
 	unsigned char *switchesBase_ptr = (unsigned char *) I_SWITCH_BASE;
 	unsigned char *triggerBase_ptr = (unsigned char *) I_TRIGGER_BASE;
-	unsigned char *accumulatorBase_ptr = (unsigned char *) O_ACCUMULATOR_BASE;
-	unsigned char accumulator_val;
+	unsigned long *accumulatorBase_ptr = (unsigned char *) O_ACCUMULATOR_BASE;
+	unsigned long accumulator_val;
 
 	accumulator_val=0; //initialize to 0
 
 	while (1) {
-		while(*triggerBase_ptr == 0) { //trigger key low
-			while(*triggerBase_ptr == 1){ //trigger key pressed
-				accumulator_val=(accumulator_val+*switchesBase_ptr); //contents of accumulator set to what is in the accumulator + what is on the switches
-				if(*triggerBase_ptr == 0){ //trigger let go of
-					*accumulatorBase_ptr=accumulator_val; //write content to accumulator
-				}
-			}
-		}
+		while(*triggerBase_ptr == 1) //wait for high
+			;
+		while(*triggerBase_ptr == 0) //wait for low
+			;
+		accumulator_val=(accumulator_val+*switchesBase_ptr); //contents of accumulator set to what is in the accumulator + what is on the switches
+		*accumulatorBase_ptr=accumulator_val; //write content to accumulator
 	}
 	return(0);
 }
