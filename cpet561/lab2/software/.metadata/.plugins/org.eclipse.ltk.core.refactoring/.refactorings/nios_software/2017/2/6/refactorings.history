@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;nios_software/C_accumulator_main.c&apos; to &apos;accumulator_main.c&apos;" description="Rename resource &apos;C_accumulator_main.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="C_accumulator_main.c" name="accumulator_main.c" stamp="1486419655184" updateReferences="true"/>
+</session>

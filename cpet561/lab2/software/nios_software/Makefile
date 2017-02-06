@@ -142,7 +142,7 @@ ACDS_VERSION := 15.1
 ELF := nios_software.elf
 
 # Paths to C, C++, and assembly source files.
-C_SRCS := accumulator_main.c
+C_SRCS :=
 CXX_SRCS :=
 ASM_SRCS := accumulator_main.s
 
