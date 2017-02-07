@@ -25,50 +25,35 @@ main:
   movia r2, I_SWITCH_BASE
   movia r3, I_TRIGGER_BASE
   movia r4, O_ACCUMULATOR_BASE
-  movia r5, 0
+  movia r5, 1
   movia r6, 0
   movia r7, 0
-  #hold contents of trigger
   movia r8, 0
-  #high var reg
-  movia r9, 1
-  #low var reg
+  movia r9, 0
   movia r10, 0
-  #jump to first section
-  jmp start
+  movia r11, 0
+  movia r12, 0
 
-#beq - two forever loops - JMP to sections
-start
   loop:
-    #load the contents of the trigger switch into reg
-    ldbio r8, 0(r3)
-    beq r8, r9, trigHi
-    br    loop
+    ldb r11, 0(r2)
+    ldb r12, 0(r4)
+    #store contents of trigger into reg
+    ldb r7, 0(r3)
+    #Trigger high hit
+    beq r5, r7, L0
+    br loop
 
-trigHi
-  loop: 
-    #load the contents of the trigger switch into reg
-    ldbio r8, 0(r3)
-    beq r8, r10, trigLow
-    br    loop
+  L0:
+    #store contents of trigger into reg
+    ldb r7, 0(r3)
+    #Trigger low hit
+    beq r6, r7, L1
+    bne r6, r7, L0
 
-trigLow
-  #load r5 with whats in the switches
-  ldbio r5, 0(r2)
-  #load r5 with its contents
-  stbio r5, 0(r5)
-
-  #load r6 with whats currently in accum
-  ldbio r6, 0(r4)
-  #load r6 with its contents
-  stbio r6, 0(r6)
-
-  #add values of r6 and r5 put in r7
-  add r7, r6, r5
-  #stbio r7, 0(r7)
-
-  #store sum in accum base - contents of r7 - 52?
-  ldbio r8, 0(r7)
-  #contents of r4 is r8
-  stbio r8, 0(r4)
-  jmp start
+  L1:
+    add r9, r11, r12
+    stb r9, 0(r10)
+    ldb r10, 0(r10)
+    stb r10, 0(r4)
+    #dummy jump to main
+    beq r10, r10, main
