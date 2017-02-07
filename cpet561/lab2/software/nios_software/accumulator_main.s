@@ -34,18 +34,18 @@ main:
   movia r9, 1
   #low var reg
   movia r10, 0
-
-jmp start
+  #jump to first section
+  jmp start
 
 #beq - two forever loops - JMP to sections
-start:
+start
   loop:
     #load the contents of the trigger switch into reg
     ldbio r8, 0(r3)
     beq r8, r9, trigHi
     br    loop
 
-trigHi:
+trigHi
   loop: 
     #load the contents of the trigger switch into reg
     ldbio r8, 0(r3)
