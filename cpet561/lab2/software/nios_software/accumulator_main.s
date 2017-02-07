@@ -28,9 +28,31 @@ main:
   movia r5, 0
   movia r6, 0
   movia r7, 0
+  #hold contents of trigger
+  movia r8, 0
+  #high var reg
+  movia r9, 1
+  #low var reg
+  movia r10, 0
+
+jmp start
 
 #beq - two forever loops - JMP to sections
-loop:
+start:
+  loop:
+    #load the contents of the trigger switch into reg
+    ldbio r8, 0(r3)
+    beq r8, r9, trigHi
+    br    loop
+
+trigHi:
+  loop: 
+    #load the contents of the trigger switch into reg
+    ldbio r8, 0(r3)
+    beq r8, r10, trigLow
+    br    loop
+
+trigLow
   #load r5 with whats in the switches
   ldbio r5, 0(r2)
   #load r6 with whats currently in accum
@@ -40,4 +62,7 @@ loop:
   #store sum in accum base - contents of r7 - 52?
   ldbio r8, 0(r7)
   stbio r8, 0(r4)
-  br    loop
+  jmp start
+
+
+
