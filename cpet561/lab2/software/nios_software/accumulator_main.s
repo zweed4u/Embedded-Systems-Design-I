@@ -55,14 +55,20 @@ trigHi
 trigLow
   #load r5 with whats in the switches
   ldbio r5, 0(r2)
+  #load r5 with its contents
+  stbio r5, 0(r5)
+
   #load r6 with whats currently in accum
   ldbio r6, 0(r4)
+  #load r6 with its contents
+  stbio r6, 0(r6)
+
   #add values of r6 and r5 put in r7
   add r7, r6, r5
+  #stbio r7, 0(r7)
+
   #store sum in accum base - contents of r7 - 52?
   ldbio r8, 0(r7)
+  #contents of r4 is r8
   stbio r8, 0(r4)
   jmp start
-
-
-
