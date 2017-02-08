@@ -35,17 +35,17 @@ main:
   movia r12, 0
 
   loop:
-    ldb r11, 0(r2)
-    ldb r12, 0(r4)
+    ldw r11, 0(r2)
+    ldw r12, 0(r4)
     #store contents of trigger into reg
-    ldb r7, 0(r3)
+    ldw r7, 0(r3)
     #Trigger high hit
     beq r5, r7, L0
     br loop
 
   L0:
     #store contents of trigger into reg
-    ldb r7, 0(r3)
+    ldw r7, 0(r3)
     #Trigger low hit
     beq r6, r7, L1
     bne r6, r7, L0
@@ -53,7 +53,7 @@ main:
   L1:
     add r9, r11, r12
     stb r9, 0(r10)
-    ldb r10, 0(r10)
-    stb r10, 0(r4)
+    ldw r10, 0(r10)
+    stw r10, 0(r4)
     #dummy jump to main
     beq r10, r10, main

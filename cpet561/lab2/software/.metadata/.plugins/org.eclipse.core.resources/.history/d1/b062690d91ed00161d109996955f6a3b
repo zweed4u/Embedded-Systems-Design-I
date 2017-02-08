@@ -25,22 +25,35 @@ main:
   movia r2, I_SWITCH_BASE
   movia r3, I_TRIGGER_BASE
   movia r4, O_ACCUMULATOR_BASE
+  movia r5, 1
+  movia r6, 0
+  movia r7, 0
+  movia r8, 0
+  movia r9, 0
+  movia r10, 0
+  movia r11, 0
+  movia r12, 0
+
   loop:
-    ldbio r5, 0(r3)
-    stbio r6, 1&0(r5)
-    beq r6, 1, trigHi
+    ldw r11, 0(r2)
+    ldw r12, 0(r4)
+    #store contents of trigger into reg
+    ldw r7, 0(r3)
+    #Trigger high hit
+    beq r5, r7, L0
     br loop
 
-  trigHi:
-    loop:
-      ldbio r5, 0(r3)
-      stbio r6, 0&0(r5)
-      beq r6, 0, trigLow
-      br loop
+  L0:
+    #store contents of trigger into reg
+    ldw r7, 0(r3)
+    #Trigger low hit
+    beq r6, r7, L1
+    bne r6, r7, L0
 
-  trigLow:
-      ldbio r7, 0(r4)
-      ldbio r8, 0(r2)
-      add r9, r8, r7
-      ldbio r10, 0(r9)
-      stbio r10, 0(r4)
+  L1:
+    add r9, r11, r12
+    stb r9, 0(r10)
+    ldw r10, 0(r10)
+    stb r10, 0(r4)
+    #dummy jump to main
+    beq r10, r10, main

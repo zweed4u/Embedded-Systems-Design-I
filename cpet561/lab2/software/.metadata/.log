@@ -2799,3 +2799,78 @@ org.eclipse.cdt.debug.mi.core.cdi.MI2CDIException: Inferior terminated[]
 
 !ENTRY com.altera.sbtgui.launch 1 0 2017-02-07 18:43:22.662
 !MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --sidp=0x11030 --id=0x2 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/software/nios_software/nios_software.elf]
+!SESSION 2017-02-07 18:49:18.771 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-02-07 18:49:31.472
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-07 18:49:39.311
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --sidp=0x11030 --id=0x2]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-07 18:49:43.818
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --sidp=0x11030 --id=0x2 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-07 18:50:13.264
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-07 18:50:14.540
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --sidp=0x11030 --id=0x2 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-07 18:50:20.119
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --sidp=0x11030 --id=0x2]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-07 18:52:47.571
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --sidp=0x11030 --id=0x2 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-07 18:52:53.084
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --sidp=0x11030 --id=0x2]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-07 18:54:49.194
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --sidp=0x11030 --id=0x2]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-07 18:54:53.670
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --sidp=0x11030 --id=0x2 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-07 18:55:22.098
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-07 18:55:23.419
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --sidp=0x11030 --id=0x2]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-07 18:55:27.770
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --sidp=0x11030 --id=0x2 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-07 18:56:46.236
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --sidp=0x11030 --id=0x2]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-07 18:56:50.553
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --sidp=0x11030 --id=0x2 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-07 18:57:16.338
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-07 18:57:17.602
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --sidp=0x11030 --id=0x2]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-07 18:57:21.894
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --sidp=0x11030 --id=0x2 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-07 18:58:52.777
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-07 18:58:54.062
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --sidp=0x11030 --id=0x2]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-07 18:58:58.339
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --sidp=0x11030 --id=0x2 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/software/nios_software/nios_software.elf]

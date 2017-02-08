@@ -754,13 +754,13 @@ main:
 000082c0 <loop>:
 
   loop:
-    ldb r11, 0(r2)
-    82c0:	12c00007 	ldb	r11,0(r2)
-    ldb r12, 0(r4)
-    82c4:	23000007 	ldb	r12,0(r4)
+    ldw r11, 0(r2)
+    82c0:	12c00017 	ldw	r11,0(r2)
+    ldw r12, 0(r4)
+    82c4:	23000017 	ldw	r12,0(r4)
     #store contents of trigger into reg
-    ldb r7, 0(r3)
-    82c8:	19c00007 	ldb	r7,0(r3)
+    ldw r7, 0(r3)
+    82c8:	19c00017 	ldw	r7,0(r3)
     #Trigger high hit
     beq r5, r7, L0
     82cc:	29c00126 	beq	r5,r7,82d4 <L0>
@@ -771,8 +771,8 @@ main:
 
   L0:
     #store contents of trigger into reg
-    ldb r7, 0(r3)
-    82d4:	19c00007 	ldb	r7,0(r3)
+    ldw r7, 0(r3)
+    82d4:	19c00017 	ldw	r7,0(r3)
     #Trigger low hit
     beq r6, r7, L1
     82d8:	31c00126 	beq	r6,r7,82e0 <L1>
@@ -786,10 +786,10 @@ main:
     82e0:	5b13883a 	add	r9,r11,r12
     stb r9, 0(r10)
     82e4:	52400005 	stb	r9,0(r10)
-    ldb r10, 0(r10)
-    82e8:	52800007 	ldb	r10,0(r10)
-    stb r10, 0(r4)
-    82ec:	22800005 	stb	r10,0(r4)
+    ldw r10, 0(r10)
+    82e8:	52800017 	ldw	r10,0(r10)
+    stw r10, 0(r4)
+    82ec:	22800015 	stw	r10,0(r4)
     #dummy jump to main
     beq r10, r10, main
     82f0:	52bfdd26 	beq	r10,r10,8268 <_gp+0xffff4684>
