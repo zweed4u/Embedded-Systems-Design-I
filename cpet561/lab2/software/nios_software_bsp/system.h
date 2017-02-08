@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'nios_system'
  * SOPC Builder design path: ../../nios_system.sopcinfo
  *
- * Generated: Mon Feb 06 15:46:21 EST 2017
+ * Generated: Wed Feb 08 15:46:23 EST 2017
  */
 
 /*
@@ -223,18 +223,18 @@
 #define I_TRIGGER_BASE 0x11010
 #define I_TRIGGER_BIT_CLEARING_EDGE_REGISTER 0
 #define I_TRIGGER_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define I_TRIGGER_CAPTURE 0
+#define I_TRIGGER_CAPTURE 1
 #define I_TRIGGER_DATA_WIDTH 1
 #define I_TRIGGER_DO_TEST_BENCH_WIRING 0
 #define I_TRIGGER_DRIVEN_SIM_VALUE 0
-#define I_TRIGGER_EDGE_TYPE "NONE"
+#define I_TRIGGER_EDGE_TYPE "RISING"
 #define I_TRIGGER_FREQ 50000000
 #define I_TRIGGER_HAS_IN 1
 #define I_TRIGGER_HAS_OUT 0
 #define I_TRIGGER_HAS_TRI 0
-#define I_TRIGGER_IRQ -1
-#define I_TRIGGER_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define I_TRIGGER_IRQ_TYPE "NONE"
+#define I_TRIGGER_IRQ 1
+#define I_TRIGGER_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define I_TRIGGER_IRQ_TYPE "EDGE"
 #define I_TRIGGER_NAME "/dev/i_trigger"
 #define I_TRIGGER_RESET_VALUE 0
 #define I_TRIGGER_SPAN 16
@@ -327,7 +327,7 @@
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1486411203
+#define SYSID_QSYS_0_TIMESTAMP 1486586523
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 #endif /* __SYSTEM_H_ */

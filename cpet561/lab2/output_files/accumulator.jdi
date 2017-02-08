@@ -1,6 +1,6 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="0a07948764e724be37ce"/>
+    <hash md5_digest_80b="9581dc17768ea1f7aade"/>
   </project>
   <file_info>
     <file device="5CSEMA5F31C6" path="accumulator.sof" usercode="0xFFFFFFFF"/>
@@ -99,7 +99,7 @@
     </sld_info>
     <sld_info hpath="nios_system:accum_mod_inst" name="accum_mod_inst">
       <assignment_values>
-        <assignment_value text="QSYS_NAME nios_system HAS_SOPCINFO 1 GENERATION_ID 1486411203"/>
+        <assignment_value text="QSYS_NAME nios_system HAS_SOPCINFO 1 GENERATION_ID 1486586523"/>
       </assignment_values>
       <parameters/>
     </sld_info>

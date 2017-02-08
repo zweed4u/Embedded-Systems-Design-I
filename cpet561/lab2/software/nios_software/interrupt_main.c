@@ -1,5 +1,6 @@
 #include <sys/alt_irq.h>                // for IRQ support function
 #include "alt_types.h"                  // for standard embedded types
+#include "altera_nios2_gen2_irq.h"      // for standard embedded types
 #include "system.h"                     // for Qsys #defines
 
 #define PIO_DATA_REG_OFFSET         0
@@ -11,57 +12,48 @@
 #define KEY2_BIT_MASK               0x2         // bit 1
 #define KEY3_BIT_MASK               0x4         // bit 2
 
-uint32* switchesPtr = (uint32*)I_SWITCH_BASE; // may want or need volatile
-uint32* triggerPtr  = (uint32*)I_TRIGGER_BASE
-uint32* accumulatorPtr  = (uint32*)O_ACCUMULATOR_BASE
-//unsigned long accumulator_val;
-/*
-uint32* grnLedsPtr  = (uint32*)GRN_LEDS_BASE;
-uint32* redLedsPtr  = (uint32*)RED_LEDS_BASE;
-uint32* bcdPortPtr  = (uint32*)BCD_NUMBER_BASE;
-*/
-static uint32 sRunningSum  = 0;
-static uint8  sSwitchValue = 0;
+alt_u32* switchesPtr = (alt_u32*)I_SWITCH_BASE; // may want or need volatile
+alt_u32* accumulatorPtr  = (alt_u32*)O_ACCUMULATOR_BASE;
+unsigned long accumulator_val=0;
+static alt_u8  sSwitchValue = 0;
+static alt_u32 sRunningSum  = 0;
+static alt_u32 sKey1Pressed = 0;
 
-static uint32 sKey1Pressed = FALSE;
-
-volatile uint32* pushButtonPtr = (uint32*)(PUSHBUTTON_BASE);
+volatile alt_u32* pushButtonPtr = (alt_u32*)(I_TRIGGER_BASE);
 
 void pushButtonIsr(void *context)
 {
-  uint32 reg_value   = 0;
-  uint32 reg_value   = 0;
-
+  alt_u32 reg_value   = 0;
   // reset key pressed flags
-  sKey1Pressed = FALSE;
+  sKey1Pressed = 0;
 
 
   // read the Edge Capture register
-  reg_value = *(pushbuttonsPtr + PIO_EDGE_CAP_REG_OFFSET);
+  reg_value = *(pushButtonPtr + PIO_EDGE_CAP_REG_OFFSET);
 
   // determine which push button was pressed
   // assume more than one could be pressed at the same time
   if (KEY1_BIT_MASK == (reg_value & KEY1_BIT_MASK))
   {
     // read the switches
-    sSwitchValue = (uint8)*switchesPtr;
-
-    sKey1Pressed = TRUE;
+	sSwitchValue = (alt_u8)*switchesPtr;
+    sKey1Pressed = 1;
   } /* if */
 
+
   // clear the interrupt bits set by writing back value read
-  *(pushbuttonsPtr + PIO_EDGE_CAP_REG_OFFSET) = reg_value;
+  *(pushButtonPtr + PIO_EDGE_CAP_REG_OFFSET) = reg_value;
 
 } /* pushButtonIsr */
 
 int main(void)
 {
 
-  // Turn all LEDS off
+  // accumulator starts with 0
   *accumulatorPtr = 0;
 
   // register the Interrupt Service Handler
-  alt_ic_isr_register(PUSHBUTTON_IRQ_INTERRUPT_CONTROLLER_ID, PUSHBUTTON_IRQ,
+  alt_ic_isr_register(I_TRIGGER_IRQ_INTERRUPT_CONTROLLER_ID, I_TRIGGER_IRQ,
                       pushButtonIsr, 0, 0);
 
   // ------------------------------------------------------------------
@@ -76,26 +68,14 @@ int main(void)
   {
     if (sKey1Pressed)
     {
-      // update running sum & grn LEDs
       sRunningSum += sSwitchValue;
-      *(grnLedsPtr + PIO_DATA_REG_OFFSET) = sSwitchValue;
-
-      sKey1Pressed = FALSE;
+      *(accumulatorPtr) = sRunningSum;
+      sKey1Pressed = 0;
     } /* if KEY1_BIT_MASK pressed */
     else
     {
-      // update the green leds with switch value
-      *(grnLedsPtr + PIO_DATA_REG_OFFSET) = *(switchesPtr + PIO_DATA_REG_OFFSET);
+    	accumulator_val = *(switchesPtr + PIO_DATA_REG_OFFSET);
     } /* else */
-
-    // output sum to red LEDs
-    *(redLedsPtr + PIO_DATA_REG_OFFSET)  = sRunningSum;
-
-    // convert sum to bcd number
-    bcd_value = HexToBcd(sRunningSum);
-
-    // send bcd value to 7-seg port
-    *(bcdPortPtr  + PIO_DATA_REG_OFFSET) = bcd_value;
   } /* while */
 
   return (0);

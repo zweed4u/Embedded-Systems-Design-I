@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Mon Feb 06 15:00:43 2017
+Analysis & Synthesis Status : Successful - Wed Feb 08 15:42:46 2017
 Quartus Prime Version : 15.1.0 Build 185 10/21/2015 SJ Standard Edition
 Revision Name : accumulator
 Top-level Entity Name : accumulator
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 1016
+Total registers : 1024
 Total pins : 189
 Total virtual pins : 0
 Total block memory bits : 273,408

@@ -1,0 +1,139 @@
+Archive Project report for accumulator
+Wed Feb 08 17:28:36 2017
+Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Archive Project Summary
+  3. Archive Project Messages
+  4. Files Archived
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------+
+; Archive Project Summary                                        ;
++------------------------+---------------------------------------+
+; Archive Project Status ; Successful - Wed Feb 08 17:28:36 2017 ;
+; Revision Name          ; accumulator                           ;
+; Top-level Entity Name  ; accumulator                           ;
+; Family                 ; Cyclone V                             ;
++------------------------+---------------------------------------+
+
+
++--------------------------+
+; Archive Project Messages ;
++--------------------------+
+Info: File Set 'Source control' contains:
+    Info: Project source and settings files
+    Info: Automatically detected source files
+Info: Archive will store files relative to the closest common parent directory
+Info (13213): Using common directory C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated archive 'C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/accumulator.qar'
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated report 'accumulator.archive.rpt'
+Info (23030): Evaluation of Tcl script c:/altera/15.1/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 651 megabytes
+    Info: Processing ended: Wed Feb 08 17:28:36 2017
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:02
+
+
++-----------------------------------------------------------------------------------------------------+
+; Files Archived                                                                                      ;
++-----------------------------------------------------------------------------------------------------+
+; File Name                                                                                           ;
++-----------------------------------------------------------------------------------------------------+
+; accumulator.qpf                                                                                     ;
+; accumulator.qsf                                                                                     ;
+; c:/altera/15.1/quartus/bin64/assignment_defaults.qdf                                                ;
+; nios_system.qsys                                                                                    ;
+; nios_system/nios_system.bsf                                                                         ;
+; nios_system/nios_system.cmp                                                                         ;
+; nios_system/nios_system.html                                                                        ;
+; nios_system/nios_system.xml                                                                         ;
+; nios_system/nios_system_bb.v                                                                        ;
+; nios_system/nios_system_generation.rpt                                                              ;
+; nios_system/nios_system_generation_previous.rpt                                                     ;
+; nios_system/nios_system_inst.v                                                                      ;
+; nios_system/nios_system_inst.vhd                                                                    ;
+; nios_system/synthesis/nios_system.debuginfo                                                         ;
+; nios_system/synthesis/nios_system.qip                                                               ;
+; nios_system/synthesis/nios_system.regmap                                                            ;
+; nios_system/synthesis/nios_system.vhd                                                               ;
+; nios_system/synthesis/submodules/altera_avalon_sc_fifo.v                                            ;
+; nios_system/synthesis/submodules/altera_merlin_arbitrator.sv                                        ;
+; nios_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv                                ;
+; nios_system/synthesis/submodules/altera_merlin_master_agent.sv                                      ;
+; nios_system/synthesis/submodules/altera_merlin_master_translator.sv                                 ;
+; nios_system/synthesis/submodules/altera_merlin_slave_agent.sv                                       ;
+; nios_system/synthesis/submodules/altera_merlin_slave_translator.sv                                  ;
+; nios_system/synthesis/submodules/altera_reset_controller.sdc                                        ;
+; nios_system/synthesis/submodules/altera_reset_controller.v                                          ;
+; nios_system/synthesis/submodules/altera_reset_synchronizer.v                                        ;
+; nios_system/synthesis/submodules/nios_system_i_switch.v                                             ;
+; nios_system/synthesis/submodules/nios_system_i_trigger.v                                            ;
+; nios_system/synthesis/submodules/nios_system_irq_mapper.sv                                          ;
+; nios_system/synthesis/submodules/nios_system_jtag_uart_0.v                                          ;
+; nios_system/synthesis/submodules/nios_system_mm_interconnect_0.v                                    ;
+; nios_system/synthesis/submodules/nios_system_mm_interconnect_0_avalon_st_adapter.v                  ;
+; nios_system/synthesis/submodules/nios_system_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv ;
+; nios_system/synthesis/submodules/nios_system_mm_interconnect_0_cmd_demux.sv                         ;
+; nios_system/synthesis/submodules/nios_system_mm_interconnect_0_cmd_demux_001.sv                     ;
+; nios_system/synthesis/submodules/nios_system_mm_interconnect_0_cmd_mux.sv                           ;
+; nios_system/synthesis/submodules/nios_system_mm_interconnect_0_cmd_mux_002.sv                       ;
+; nios_system/synthesis/submodules/nios_system_mm_interconnect_0_router.sv                            ;
+; nios_system/synthesis/submodules/nios_system_mm_interconnect_0_router_001.sv                        ;
+; nios_system/synthesis/submodules/nios_system_mm_interconnect_0_router_002.sv                        ;
+; nios_system/synthesis/submodules/nios_system_mm_interconnect_0_router_004.sv                        ;
+; nios_system/synthesis/submodules/nios_system_mm_interconnect_0_rsp_demux.sv                         ;
+; nios_system/synthesis/submodules/nios_system_mm_interconnect_0_rsp_mux.sv                           ;
+; nios_system/synthesis/submodules/nios_system_mm_interconnect_0_rsp_mux_001.sv                       ;
+; nios_system/synthesis/submodules/nios_system_nios2_gen2_0.v                                         ;
+; nios_system/synthesis/submodules/nios_system_nios2_gen2_0_cpu.sdc                                   ;
+; nios_system/synthesis/submodules/nios_system_nios2_gen2_0_cpu.v                                     ;
+; nios_system/synthesis/submodules/nios_system_nios2_gen2_0_cpu_debug_slave_sysclk.v                  ;
+; nios_system/synthesis/submodules/nios_system_nios2_gen2_0_cpu_debug_slave_tck.v                     ;
+; nios_system/synthesis/submodules/nios_system_nios2_gen2_0_cpu_debug_slave_wrapper.v                 ;
+; nios_system/synthesis/submodules/nios_system_nios2_gen2_0_cpu_ociram_default_contents.mif           ;
+; nios_system/synthesis/submodules/nios_system_nios2_gen2_0_cpu_rf_ram_a.mif                          ;
+; nios_system/synthesis/submodules/nios_system_nios2_gen2_0_cpu_rf_ram_b.mif                          ;
+; nios_system/synthesis/submodules/nios_system_nios2_gen2_0_cpu_test_bench.v                          ;
+; nios_system/synthesis/submodules/nios_system_o_accumulator.v                                        ;
+; nios_system/synthesis/submodules/nios_system_onchip_memory2_0.hex                                   ;
+; nios_system/synthesis/submodules/nios_system_onchip_memory2_0.v                                     ;
+; nios_system/synthesis/submodules/nios_system_sysid_qsys_0.v                                         ;
+; output_files/Chain1.cdf                                                                             ;
+; src/accumulator.vhd                                                                                 ;
+; src/debounce.vhd                                                                                    ;
+; src/hexDisplayDriver.vhd                                                                            ;
+; src/synchronizer.vhd                                                                                ;
++-----------------------------------------------------------------------------------------------------+
+
+

@@ -1,96 +1,18 @@
-15:29:29 **** Incremental Build of configuration Nios II for project nios_software ****
+17:26:18 **** Incremental Build of configuration Nios II for project nios_software ****
 make all 
 Info: Building ../nios_software_bsp/
 C:/altera/15.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_software_bsp/
 [BSP build complete]
 Info: Compiling interrupt_main.c to obj/default/interrupt_main.o
 nios2-elf-gcc -xc -MP -MMD -c -I../nios_software_bsp//HAL/inc -I../nios_software_bsp/ -I../nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/interrupt_main.o interrupt_main.c
-interrupt_main.c:14:1: error: unknown type name 'uint32'
- uint32* switchesPtr = (uint32*)I_SWITCH_BASE; // may want or need volatile
- ^
-interrupt_main.c:14:24: error: 'uint32' undeclared here (not in a function)
- uint32* switchesPtr = (uint32*)I_SWITCH_BASE; // may want or need volatile
-                        ^
-interrupt_main.c:14:31: error: expected expression before ')' token
- uint32* switchesPtr = (uint32*)I_SWITCH_BASE; // may want or need volatile
-                               ^
-interrupt_main.c:15:1: error: unknown type name 'uint32'
- uint32* triggerPtr  = (uint32*)I_TRIGGER_BASE
- ^
-interrupt_main.c:15:31: error: expected expression before ')' token
- uint32* triggerPtr  = (uint32*)I_TRIGGER_BASE
-                               ^
-interrupt_main.c:24:8: error: unknown type name 'uint8'
- static uint8  sSwitchValue = 0;
-        ^
-interrupt_main.c:26:15: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'sKey1Pressed'
- static uint32 sKey1Pressed = FALSE;
-               ^
-interrupt_main.c:28:16: error: expected '=', ',', ';', 'asm' or '__attribute__' before '*' token
- volatile uint32* pushButtonPtr = (uint32*)(PUSHBUTTON_BASE);
-                ^
-interrupt_main.c: In function 'pushButtonIsr':
-interrupt_main.c:32:10: error: expected ';' before 'reg_value'
-   uint32 reg_value   = 0;
-          ^
-interrupt_main.c:33:10: error: expected ';' before 'reg_value'
-   uint32 reg_value   = 0;
-          ^
-interrupt_main.c:36:3: error: 'sKey1Pressed' undeclared (first use in this function)
-   sKey1Pressed = FALSE;
-   ^
-interrupt_main.c:36:3: note: each undeclared identifier is reported only once for each function it appears in
-interrupt_main.c:36:18: error: 'FALSE' undeclared (first use in this function)
-   sKey1Pressed = FALSE;
-                  ^
-interrupt_main.c:40:3: error: 'reg_value' undeclared (first use in this function)
-   reg_value = *(pushbuttonsPtr + PIO_EDGE_CAP_REG_OFFSET);
-   ^
-interrupt_main.c:40:17: error: 'pushbuttonsPtr' undeclared (first use in this function)
-   reg_value = *(pushbuttonsPtr + PIO_EDGE_CAP_REG_OFFSET);
-                 ^
-interrupt_main.c:47:21: error: 'uint8' undeclared (first use in this function)
-     sSwitchValue = (uint8)*switchesPtr;
-                     ^
-interrupt_main.c:49:20: error: 'TRUE' undeclared (first use in this function)
-     sKey1Pressed = TRUE;
-                    ^
-interrupt_main.c: In function 'main':
-interrupt_main.c:61:4: error: 'accumulatorPtr' undeclared (first use in this function)
-   *accumulatorPtr = 0;
-    ^
-interrupt_main.c:64:23: error: 'PUSHBUTTON_IRQ_INTERRUPT_CONTROLLER_ID' undeclared (first use in this function)
-   alt_ic_isr_register(PUSHBUTTON_IRQ_INTERRUPT_CONTROLLER_ID, PUSHBUTTON_IRQ,
-                       ^
-interrupt_main.c:64:63: error: 'PUSHBUTTON_IRQ' undeclared (first use in this function)
-   alt_ic_isr_register(PUSHBUTTON_IRQ_INTERRUPT_CONTROLLER_ID, PUSHBUTTON_IRQ,
-                                                               ^
-interrupt_main.c:71:5: error: 'pushButtonPtr' undeclared (first use in this function)
-   *(pushButtonPtr + PIO_EDGE_CAP_REG_OFFSET) = (KEY1_BIT_MASK);
-     ^
-interrupt_main.c:77:9: error: 'sKey1Pressed' undeclared (first use in this function)
-     if (sKey1Pressed)
-         ^
-interrupt_main.c:80:7: error: 'sRunningSum' undeclared (first use in this function)
-       sRunningSum += sSwitchValue;
-       ^
-interrupt_main.c:81:9: error: 'grnLedsPtr' undeclared (first use in this function)
-       *(grnLedsPtr + PIO_DATA_REG_OFFSET) = sSwitchValue;
-         ^
-interrupt_main.c:83:22: error: 'FALSE' undeclared (first use in this function)
-       sKey1Pressed = FALSE;
-                      ^
-interrupt_main.c:92:7: error: 'redLedsPtr' undeclared (first use in this function)
-     *(redLedsPtr + PIO_DATA_REG_OFFSET)  = sRunningSum;
-       ^
-interrupt_main.c:95:5: error: 'bcd_value' undeclared (first use in this function)
-     bcd_value = HexToBcd(sRunningSum);
-     ^
-interrupt_main.c:95:5: warning: implicit declaration of function 'HexToBcd' [-Wimplicit-function-declaration]
-interrupt_main.c:98:7: error: 'bcdPortPtr' undeclared (first use in this function)
-     *(bcdPortPtr  + PIO_DATA_REG_OFFSET) = bcd_value;
-       ^
-make: *** [obj/default/interrupt_main.o] Error 1
+Info: Linking nios_software.elf
+nios2-elf-g++  -T'../nios_software_bsp//linker.x' -msys-crt0='../nios_software_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../nios_software_bsp/   -Wl,-Map=nios_software.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o nios_software.elf obj/default/interrupt_main.o -lm -msys-lib=m
+nios2-elf-insert nios_software.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 2 --sidp 0x11030 --timestamp 1486586523 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2" --jdi ../..//output_files/accumulator.jdi --sopcinfo C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab2/software/nios_software_bsp/../../nios_system.sopcinfo
+Info: (nios_software.elf) 15 KBytes program size (code + initialized data).
+Info:                     10 KBytes free for stack + heap.
+Info: Creating nios_software.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source nios_software.elf >nios_software.objdump
+[nios_software build complete]
 
-15:29:31 Build Finished (took 2s.124ms)
+17:26:22 Build Finished (took 4s.9ms)
 
