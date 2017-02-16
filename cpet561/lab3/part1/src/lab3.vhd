@@ -68,7 +68,6 @@ end entity lab3;
 
 architecture lab3_arch of lab3 is
   -- signal declarations
-  signal cntr : std_logic_vector(25 downto 0);
   signal reset_n : std_logic;
   signal accumPulse : std_logic;
   signal SWsync : std_logic_vector(9 downto 0);
@@ -103,10 +102,6 @@ architecture lab3_arch of lab3 is
 		key1_export   : in  std_logic                    := 'X'  -- export
 	 );
   end component nios_system;
-
-	
-
-
   
 begin
   
@@ -140,16 +135,5 @@ begin
 		leds_export   => LEDR(7 downto 0),	--  leds.export
 		key1_export    => accumPulse			--   key.export
 	 );
-
-  ----- Increment counter
-  counter_proc : process (CLOCK2_50) begin
-    if (rising_edge(CLOCK2_50)) then
-      if (reset_n = '0') then
-        cntr <= "00" & x"000000";
-      else
-        cntr <= cntr + ("00" & x"000001");
-      end if;
-    end if;
-  end process counter_proc;
-    
+	 
 end architecture lab3_arch;
