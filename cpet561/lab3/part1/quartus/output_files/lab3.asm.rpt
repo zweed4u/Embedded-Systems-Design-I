@@ -1,5 +1,5 @@
 Assembler report for lab3
-Wed Feb 15 16:20:56 2017
+Mon Feb 20 14:11:26 2017
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Standard Edition
 
 
@@ -39,7 +39,7 @@ agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Feb 15 16:20:56 2017 ;
+; Assembler Status      ; Successful - Mon Feb 20 14:11:26 2017 ;
 ; Revision Name         ; lab3                                  ;
 ; Top-level Entity Name ; lab3                                  ;
 ; Family                ; Cyclone V                             ;
@@ -79,8 +79,8 @@ agreement for further details.
 ; Option         ; Setting                                                                                                        ;
 +----------------+----------------------------------------------------------------------------------------------------------------+
 ; Device         ; 5CSEMA5F31C6                                                                                                   ;
-; JTAG usercode  ; 0x01D7A3BE                                                                                                     ;
-; Checksum       ; 0x01D7A3BE                                                                                                     ;
+; JTAG usercode  ; 0x01D7EFE5                                                                                                     ;
+; Checksum       ; 0x01D7EFE5                                                                                                     ;
 +----------------+----------------------------------------------------------------------------------------------------------------+
 
 
@@ -90,13 +90,13 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 15.1.0 Build 185 10/21/2015 SJ Standard Edition
-    Info: Processing started: Wed Feb 15 16:20:47 2017
+    Info: Processing started: Mon Feb 20 14:11:12 2017
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off lab3 -c lab3
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 897 megabytes
-    Info: Processing ended: Wed Feb 15 16:20:57 2017
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:09
+    Info: Peak virtual memory: 896 megabytes
+    Info: Processing ended: Mon Feb 20 14:11:26 2017
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:10
 
 
