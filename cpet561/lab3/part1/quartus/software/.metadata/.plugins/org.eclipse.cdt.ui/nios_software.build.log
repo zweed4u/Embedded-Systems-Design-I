@@ -1,26 +1,9 @@
-17:04:06 **** Incremental Build of configuration Nios II for project nios_software ****
+15:45:01 **** Incremental Build of configuration Nios II for project nios_software ****
 make all 
 Info: Building ../nios_software_bsp/
 C:/altera/15.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_software_bsp/
 [BSP build complete]
-Info: Compiling C_accumulator_main.c to obj/default/C_accumulator_main.o
-nios2-elf-gcc -xc -MP -MMD -c -I../nios_software_bsp//HAL/inc -I../nios_software_bsp/ -I../nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/C_accumulator_main.o C_accumulator_main.c
-C_accumulator_main.c: In function 'getRandomPattern':
-C_accumulator_main.c:16:2: warning: implicit declaration of function 'time' [-Wimplicit-function-declaration]
-  srand((unsigned)time(NULL)); // Fetch current epoch and use as seed
-  ^
-C_accumulator_main.c: In function 'main':
-C_accumulator_main.c:25:57: error: 'O_ACCUMULATOR_BASE' undeclared (first use in this function)
-  unsigned long *accumulatorBase_ptr = (unsigned char *) O_ACCUMULATOR_BASE;
-                                                         ^
-C_accumulator_main.c:25:57: note: each undeclared identifier is reported only once for each function it appears in
-C_accumulator_main.c:36:37: error: 'switchesBase_ptr' undeclared (first use in this function)
-   accumulator_val=(accumulator_val+*switchesBase_ptr); //contents of accumulator set to what is in the accumulator + what is on the switches
-                                     ^
-C_accumulator_main.c:23:17: warning: unused variable 'ledBase_ptr' [-Wunused-variable]
-  unsigned char *ledBase_ptr = (unsigned char *) LEDS_BASE; // Pointer to LED base memory location
-                 ^
-make: *** [obj/default/C_accumulator_main.o] Error 1
+[nios_software build complete]
 
-17:04:08 Build Finished (took 1s.903ms)
+15:45:03 Build Finished (took 1s.794ms)
 
