@@ -18,7 +18,6 @@ int randomStore[numBytes];											// Array for storing the random pattern
 
 /* Returns a random number using the epoch as seed. */
 int getRandomPattern(void){
-	srand((unsigned)time(NULL)); // Fetch current epoch and use as seed
 	randomNum = rand();
 	randomNum = (randomNum%100);
 	return (randomNum); //Store each in array to check after
@@ -47,6 +46,7 @@ void writeToRAM(unsigned long *ramLocation_ptr, unsigned int numBytesToCheck){
 int main(void)
 {
 	int pass = 0; //initialize passing variable to failure
+	srand((unsigned)time(NULL)); // Fetch current epoch and use as seed
 	writeToRAM(ramBase_ptr, numByte); //Write values to RAM
 	//pass = ramCon...
 	ramConfidenceTest(ramBase_ptr, numBytes); //Verify correct values written
