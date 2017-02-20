@@ -9,13 +9,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-
+#define numBytes 5
 unsigned long *ramBase_ptr = (unsigned long *) INFERRED_RAM_BASE;	// Pointer to the base address of Inferred RAM
 unsigned char *ledBase_ptr = (unsigned char *) LEDS_BASE;			// Pointer to LED base memory location
 unsigned char *triggerBase_ptr = (unsigned char *) KEY1_BASE;		// Pointer to Key1 base memory location
-int randomNum=0; 											// Global pattern variable
-//unsigned long accumulator_val;
-
+int randomNum = 0;													// Global pattern variable
+int randomStore[numBytes];											// Array for storing the random pattern
 
 /* Returns a random number using the epoch as seed. */
 int getRandomPattern(void){
@@ -28,21 +27,28 @@ int getRandomPattern(void){
  * Params: ramLocation_ptr - location of the RAM wanted to check.
  * numBytesToCheck - Size in bytes of RAM wanted to check. */
 int ramConfidenceTest(unsigned long *ramLocation_ptr, unsigned int numBytesToCheck){
+	//verify the write to ram here
+	return 1; //Pass for now
+}
+/* Write random values ram
+ * Params: ramLocation_ptr - location of the RAM wanted to check.
+ * numBytesToCheck - Size in bytes of RAM wanted to check. */
+void writeToRAM(unsigned long *ramLocation_ptr, unsigned int numBytesToCheck){
 	int i = 0;
 	while (numBytesToCheck){ //While we still need to write more bytes
-		*(ramLocation_ptr + i) = getRandomPattern(); // +4 columns
-		i++;
-		numBytesToCheck--; //Decrement bytes
-		//Need to check here - assert data was written to location
+		getRandomPattern();
+		randomStore[i] = randomNum;
+		*(ramLocation_ptr + i) = randomNum; // +4 columns
+		i++; //increment counter for mem address from base and array of pattern
+		numBytesToCheck--; //Decrement bytes for how many more to write to
 	}
-	return 1; // For now, pass
-
 }
 
 int main(void)
 {
 	int pass = 0; //initialize passing variable to failure
+	writeToRAM(ramBase_ptr, numByte); //Write values to RAM
 	//pass = ramCon...
-	ramConfidenceTest(ramBase_ptr, 5);
+	ramConfidenceTest(ramBase_ptr, numBytes); //Verify correct values written
 	return(0);
 }
