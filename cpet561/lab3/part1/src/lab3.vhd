@@ -130,10 +130,10 @@ begin
   ----- Instantiate the nios processor
   nios_unit : component nios_system
    port map (
-      clk_clk       => CLOCK2_50,     --   clk.clk
-    reset_reset_n => reset_n,         -- reset.reset_n
-    leds_export   => LEDR(7 downto 0),  --  leds.export
-    key1_export    => accumPulse      --   key.export
+      clk_clk       => CLOCK2_50,       -- clk.clk
+      reset_reset_n => reset_n,         -- reset.reset_n
+      leds_export   => LEDR(7 downto 0),-- leds.export
+      key1_export   => accumPulse       -- key.export
    );
    
 end architecture lab3_arch;
