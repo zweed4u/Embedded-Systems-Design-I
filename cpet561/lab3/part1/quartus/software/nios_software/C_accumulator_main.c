@@ -26,8 +26,15 @@ int getRandomPattern(void){
  * Params: ramLocation_ptr - location of the RAM wanted to check.
  * numBytesToCheck - Size in bytes of RAM wanted to check. */
 int ramConfidenceTest(unsigned long *ramLocation_ptr, unsigned int numBytesToCheck){
-    //verify the write to ram here
-    return 1; //Pass for now
+    int i = 0
+    while (numBytesToCheck){
+        if (randomStore[i] != *(ramLocation_ptr + i)){ //Test failed! 
+            return 0; 
+        }
+        i++;
+        numBytesToCheck--;
+    }
+    return 1; //Made it through all bytes and all match - test passed
 }
 /* Write random values ram
  * Params: ramLocation_ptr - location of the RAM wanted to check.
@@ -35,9 +42,9 @@ int ramConfidenceTest(unsigned long *ramLocation_ptr, unsigned int numBytesToChe
 void writeToRAM(unsigned long *ramLocation_ptr, unsigned int numBytesToCheck){
     int i = 0;
     while (numBytesToCheck){ //While we still need to write more bytes
-        getRandomPattern();
-        randomStore[i] = randomNum;
-        *(ramLocation_ptr + i) = randomNum; // +4 columns
+        getRandomPattern(); // Generate random number for randomNum variable
+        randomStore[i] = randomNum; // Store variable in array - this is going to be an array of sequentially written values
+        *(ramLocation_ptr + i) = randomNum; // +4 columns - write random number to next location
         i++; //increment counter for mem address from base and array of pattern
         numBytesToCheck--; //Decrement bytes for how many more to write to
     }
@@ -45,10 +52,22 @@ void writeToRAM(unsigned long *ramLocation_ptr, unsigned int numBytesToCheck){
 
 int main(void)
 {
-    int pass = 0; //initialize passing variable to failure
+    int pass;
     srand((unsigned)time(NULL)); // Fetch current epoch and use as seed
-    writeToRAM(ramBase_ptr, numByte); //Write values to RAM
-    //pass = ramCon...
-    ramConfidenceTest(ramBase_ptr, numBytes); //Verify correct values written
-    return(0);
+    while (1) {
+        pass = 0; //initialize passing variable to failure
+        while(*triggerBase_ptr == 1) //wait for high
+            ;
+        *ledBase_ptr = 0x0; //LEDs off        
+        while(*triggerBase_ptr == 0) //wait for low
+            ;
+        writeToRAM(ramBase_ptr, numByte); //Write values to RAM
+        pass = ramConfidenceTest(ramBase_ptr, numBytes); //Verify correct values written
+        if (pass == 1){ //RAM test passed
+            *ledBase_ptr = 0xF; //LEDs on - 1111 - check how long this address is and how state relates to contents of address (size and offsets)     
+        }
+        else{ //RAM test failed
+            *ledBase_ptr = 0x0; //LEDs off                    
+        }
+    }
 }
