@@ -1,0 +1,112 @@
+/*
+ * accumulator_main.c
+ *
+ *  Created on: Feb 15, 2017
+ *      Author: zdw7287
+ */
+
+#include <sys/alt_irq.h>                // for IRQ support function
+#include "alt_types.h"                  // for standard embedded types
+#include "altera_nios2_gen2_irq.h"      // for standard embedded types
+#include "system.h"                     // for Qsys #defines
+#include <math.h>
+
+#define PIO_DATA_REG_OFFSET         0
+#define PIO_DATA_DIR_REG_OFFSET     1
+#define PIO_INT_MASK_REG_OFFSET     2
+#define PIO_EDGE_CAP_REG_OFFSET     3
+
+#define KEY1_BIT_MASK               0x1         // bit 0
+#define KEY2_BIT_MASK               0x2         // bit 1
+#define KEY3_BIT_MASK               0x4         // bit 2
+#define numBytes (5)
+#define ramSpan (7)
+
+int randomNum = 0;                                                  // Global pattern variable
+int randomStore[numBytes];                                          // Array for storing the random pattern
+static alt_u32 sKey1Pressed = 0;
+
+volatile alt_u32* pushButtonPtr = (alt_u32*)(KEY1_BASE);
+unsigned long *ramBase_ptr = (unsigned long *) INFERRED_RAM_BASE;   // Pointer to the base address of Inferred RAM
+unsigned char *ledBase_ptr = (unsigned char *) LEDS_BASE;           // Pointer to LED base memory location
+
+void pushButtonIsr(void *context)
+{
+  alt_u32 reg_value = 0;
+  sKey1Pressed = 0;   // reset key pressed flags
+
+  // read the Edge Capture register
+  reg_value = *(pushButtonPtr + PIO_EDGE_CAP_REG_OFFSET);
+
+  // determine which push button was pressed
+  // assume more than one could be pressed at the same time
+  if (KEY1_BIT_MASK == (reg_value & KEY1_BIT_MASK))
+  {
+	*ledBase_ptr = 0x0;  // Turn LEDs off
+    sKey1Pressed = 1;
+  }
+
+  // clear the interrupt bits set by writing back value read
+  *(pushButtonPtr + PIO_EDGE_CAP_REG_OFFSET) = reg_value;
+}
+
+
+/* Returns a random number using the epoch as seed. */
+int getRandomPattern(void){
+    randomNum = rand();
+    randomNum = (randomNum%100);
+    return (randomNum);             // Store each in array to check after - 32 bit
+}
+
+/* Return 0 or 1, for False or True respectively, if memory passes test.
+ * Params: ramLocation_ptr - location of the RAM wanted to check.
+ * numBytesToCheck - Size in bytes of RAM wanted to check. */
+int ramConfidenceTest(unsigned long *ramLocation_ptr, unsigned int numBytesToCheck){
+    int i = 0;
+    while (numBytesToCheck){
+        if (randomStore[i] != *(ramLocation_ptr + i)){  // Test failed!
+            return 0; 
+        }
+        i++;
+        numBytesToCheck--;
+    }
+    return 1;                                           // Made it through all bytes and all match - test passed
+}
+
+/* Write random values ram
+ * Params: ramLocation_ptr - location of the RAM wanted to check.
+ * numBytesToCheck - Size in bytes of RAM wanted to check. */
+void writeToRAM(unsigned long *ramLocation_ptr, unsigned int ram){
+    int i = 0;
+    while (ram){                					// While we still need to write more bytes
+        getRandomPattern();                 		// Generate random number for randomNum variable
+        if (i<numBytes){  // if the current index is fits in the array - store the data - use for compare
+        	randomStore[i] = randomNum;        		// Store variable in array - this is going to be an array of sequentially written values
+        }
+        *(ramLocation_ptr + i) = randomNum; 		// +4 columns - write random number to next location
+        i++;                                		// Increment counter for mem address from base and array of pattern
+        ram--;                  					// Decrement bytes for how many more to write to
+    }
+}
+
+int main(void)
+{
+    int pass = 0;
+    *ledBase_ptr = 0xFF;                                 // LEDs on - 1111
+    srand((unsigned)time(NULL));                         // Fetch current epoch and use as seed
+
+    alt_ic_isr_register(KEY1_IRQ_INTERRUPT_CONTROLLER_ID, KEY1_IRQ, pushButtonIsr, 0, 0);
+    *(pushButtonPtr + PIO_EDGE_CAP_REG_OFFSET) = (KEY1_BIT_MASK);
+    *(pushButtonPtr + PIO_INT_MASK_REG_OFFSET) = (KEY1_BIT_MASK);
+    while (1) {
+        if (sKey1Pressed)
+		{
+			writeToRAM(ramBase_ptr, ramSpan);                  // Write values to fill RAM
+			pass = ramConfidenceTest(ramBase_ptr, numBytes); // Verify correct values written
+			if (pass == 1){                                  // RAM test passed
+				*ledBase_ptr = 0xFF;                         // LEDs off - 1111 1111
+			}
+			sKey1Pressed = 0;
+		}
+    }
+}

@@ -1,0 +1,74 @@
+Quartus Prime Archive log --	C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/lab3p1.qarlog
+
+Archive:	C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/lab3p1.qar
+Date:		Wed Feb 22 15:59:54 2017
+Quartus Prime		15.1.0 Build 185 10/21/2015 SJ Standard Edition
+
+	=========== Files Selected: ===========
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/lab3.qpf
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/lab3.qsf
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/my_component_hw.tcl
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system.qsys
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/ip/ram/ram_ip.vhd
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/nios_system.bsf
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/nios_system.cmp
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/nios_system.html
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/nios_system.xml
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/nios_system_bb.v
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/nios_system_generation.rpt
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/nios_system_inst.v
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/nios_system_inst.vhd
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/nios_system.debuginfo
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/nios_system.qip
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/nios_system.regmap
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/nios_system.vhd
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/altera_avalon_sc_fifo.v
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/altera_merlin_arbitrator.sv
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/altera_merlin_master_agent.sv
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/altera_merlin_master_translator.sv
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/altera_merlin_slave_agent.sv
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/altera_merlin_slave_translator.sv
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/altera_reset_controller.sdc
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/altera_reset_controller.v
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/altera_reset_synchronizer.v
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/nios_system_KEY1.v
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/nios_system_LEDs.v
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/nios_system_irq_mapper.sv
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/nios_system_jtag_uart_0.v
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/nios_system_mm_interconnect_0.v
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_avalon_st_adapter.v
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_cmd_demux.sv
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_cmd_demux_001.sv
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_cmd_mux.sv
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_cmd_mux_003.sv
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_router.sv
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_router_001.sv
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_router_002.sv
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_router_005.sv
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_rsp_demux.sv
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_rsp_mux.sv
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/nios_system_mm_interconnect_0_rsp_mux_001.sv
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/nios_system_nios2_gen2_0.v
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/nios_system_nios2_gen2_0_cpu.sdc
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/nios_system_nios2_gen2_0_cpu.v
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/nios_system_nios2_gen2_0_cpu_debug_slave_sysclk.v
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/nios_system_nios2_gen2_0_cpu_debug_slave_tck.v
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/nios_system_nios2_gen2_0_cpu_debug_slave_wrapper.v
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/nios_system_nios2_gen2_0_cpu_ociram_default_contents.mif
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/nios_system_nios2_gen2_0_cpu_rf_ram_a.mif
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/nios_system_nios2_gen2_0_cpu_rf_ram_b.mif
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/nios_system_nios2_gen2_0_cpu_test_bench.v
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/nios_system_onchip_memory2_0.hex
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/nios_system_onchip_memory2_0.v
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/nios_system_sysid_qsys_0.v
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/quartus/nios_system/synthesis/submodules/ram_ip.vhd
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/src/debounce.vhd
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/src/lab3.vhd
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part1/src/synchronizer.vhd
+c:/altera/15.1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 63 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
