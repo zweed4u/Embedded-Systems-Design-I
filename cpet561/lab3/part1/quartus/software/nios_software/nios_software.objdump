@@ -13,7 +13,7 @@ Program Header:
     LOAD off    0x0000443c vaddr 0x0001343c paddr 0x00014a9c align 2**12
          filesz 0x00001660 memsz 0x00001660 flags rw-
     LOAD off    0x000060fc vaddr 0x000160fc paddr 0x000160fc align 2**12
-         filesz 0x00000000 memsz 0x0000090c flags rw-
+         filesz 0x00000000 memsz 0x00000154 flags rw-
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
@@ -27,57 +27,57 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   4 .rwdata       00001660  0001343c  00014a9c  0000443c  2**2
                   CONTENTS, ALLOC, LOAD, DATA, SMALL_DATA
-  5 .bss          0000090c  000160fc  000160fc  000060fc  2**2
+  5 .bss          00000154  000160fc  000160fc  000060fc  2**2
                   ALLOC, SMALL_DATA
-  6 .onchip_memory2_0 00000000  00016a08  00016a08  00005a9c  2**0
+  6 .onchip_memory2_0 00000000  00016250  00016250  00005a9c  2**0
                   CONTENTS
   7 .comment      00000023  00000000  00000000  00005a9c  2**0
                   CONTENTS, READONLY
   8 .debug_aranges 000006b8  00000000  00000000  00005ac0  2**3
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_info   00009f91  00000000  00000000  00006178  2**0
+  9 .debug_info   00009f90  00000000  00000000  00006178  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_abbrev 00003458  00000000  00000000  00010109  2**0
+ 10 .debug_abbrev 00003458  00000000  00000000  00010108  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_line   000033cb  00000000  00000000  00013561  2**0
+ 11 .debug_line   000033cd  00000000  00000000  00013560  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_frame  00000d68  00000000  00000000  0001692c  2**2
+ 12 .debug_frame  00000d68  00000000  00000000  00016930  2**2
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_str    0000205e  00000000  00000000  00017694  2**0
+ 13 .debug_str    0000205e  00000000  00000000  00017698  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_loc    00001e56  00000000  00000000  000196f2  2**0
+ 14 .debug_loc    00001e56  00000000  00000000  000196f6  2**0
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_alt_sim_info 00000010  00000000  00000000  0001b548  2**2
+ 15 .debug_alt_sim_info 00000010  00000000  00000000  0001b54c  2**2
                   CONTENTS, READONLY, DEBUGGING
- 16 .debug_ranges 000002e8  00000000  00000000  0001b558  2**3
+ 16 .debug_ranges 000002e8  00000000  00000000  0001b560  2**3
                   CONTENTS, READONLY, DEBUGGING
- 17 .thread_model 00000003  00000000  00000000  0001d6d5  2**0
+ 17 .thread_model 00000003  00000000  00000000  0001d6dd  2**0
                   CONTENTS, READONLY
- 18 .cpu          0000000c  00000000  00000000  0001d6d8  2**0
+ 18 .cpu          0000000c  00000000  00000000  0001d6e0  2**0
                   CONTENTS, READONLY
- 19 .qsys         00000001  00000000  00000000  0001d6e4  2**0
+ 19 .qsys         00000001  00000000  00000000  0001d6ec  2**0
                   CONTENTS, READONLY
- 20 .simulation_enabled 00000001  00000000  00000000  0001d6e5  2**0
+ 20 .simulation_enabled 00000001  00000000  00000000  0001d6ed  2**0
                   CONTENTS, READONLY
- 21 .sysid_hash   00000004  00000000  00000000  0001d6e6  2**0
+ 21 .sysid_hash   00000004  00000000  00000000  0001d6ee  2**0
                   CONTENTS, READONLY
- 22 .sysid_base   00000004  00000000  00000000  0001d6ea  2**0
+ 22 .sysid_base   00000004  00000000  00000000  0001d6f2  2**0
                   CONTENTS, READONLY
- 23 .sysid_time   00000004  00000000  00000000  0001d6ee  2**0
+ 23 .sysid_time   00000004  00000000  00000000  0001d6f6  2**0
                   CONTENTS, READONLY
- 24 .stderr_dev   0000000b  00000000  00000000  0001d6f2  2**0
+ 24 .stderr_dev   0000000b  00000000  00000000  0001d6fa  2**0
                   CONTENTS, READONLY
- 25 .stdin_dev    0000000b  00000000  00000000  0001d6fd  2**0
+ 25 .stdin_dev    0000000b  00000000  00000000  0001d705  2**0
                   CONTENTS, READONLY
- 26 .stdout_dev   0000000b  00000000  00000000  0001d708  2**0
+ 26 .stdout_dev   0000000b  00000000  00000000  0001d710  2**0
                   CONTENTS, READONLY
- 27 .sopc_system_name 0000000b  00000000  00000000  0001d713  2**0
+ 27 .sopc_system_name 0000000b  00000000  00000000  0001d71b  2**0
                   CONTENTS, READONLY
- 28 .quartus_project_dir 0000004f  00000000  00000000  0001d71e  2**0
+ 28 .quartus_project_dir 0000004f  00000000  00000000  0001d726  2**0
                   CONTENTS, READONLY
- 29 .jdi          000043cd  00000000  00000000  0001d76d  2**0
+ 29 .jdi          000043cd  00000000  00000000  0001d775  2**0
                   CONTENTS, READONLY
- 30 .sopcinfo     00042665  00000000  00000000  00021b3a  2**0
+ 30 .sopcinfo     00042665  00000000  00000000  00021b42  2**0
                   CONTENTS, READONLY
 SYMBOL TABLE:
 00010000 l    d  .entry	00000000 .entry
@@ -86,7 +86,7 @@ SYMBOL TABLE:
 00013304 l    d  .rodata	00000000 .rodata
 0001343c l    d  .rwdata	00000000 .rwdata
 000160fc l    d  .bss	00000000 .bss
-00016a08 l    d  .onchip_memory2_0	00000000 .onchip_memory2_0
+00016250 l    d  .onchip_memory2_0	00000000 .onchip_memory2_0
 00000000 l    d  .comment	00000000 .comment
 00000000 l    d  .debug_aranges	00000000 .debug_aranges
 00000000 l    d  .debug_info	00000000 .debug_info
@@ -166,7 +166,7 @@ SYMBOL TABLE:
 00016134 g     O .bss	00000004 alt_instruction_exception_handler
 00010d0c g     F .text	00000078 alt_main
 00010390 g     F .text	000000a4 writeToRAM
-00016908 g     O .bss	00000100 alt_irq
+00016150 g     O .bss	00000100 alt_irq
 00014a9c g       *ABS*	00000000 __flash_rwdata_start
 000105b8 g     F .text	00000058 _gettimeofday_r
 00014a6c g     O .rwdata	00000004 ledBase_ptr
@@ -175,7 +175,7 @@ SYMBOL TABLE:
 00010000 g     F .entry	0000000c __reset
 00010020 g       *ABS*	00000000 __flash_exceptions_start
 00016108 g     O .bss	00000004 errno
-00016138 g     O .bss	000007d0 randomStore
+00016138 g     O .bss	00000018 randomStore
 00016124 g     O .bss	00000004 alt_argv
 0001ca68 g       *ABS*	00000000 _gp
 000148e8 g     O .rwdata	00000180 alt_fd_list
@@ -192,7 +192,7 @@ SYMBOL TABLE:
 00014a94 g     O .rwdata	00000004 alt_max_fd
 00012b88 g     F .text	0000061c .hidden __umoddi3
 00014a70 g     O .rwdata	00000004 _global_impure_ptr
-00016a08 g       *ABS*	00000000 __bss_end
+00016250 g       *ABS*	00000000 __bss_end
 00010b38 g     F .text	000000f0 alt_iic_isr_register
 00010e1c g     F .text	00000104 alt_tick
 00010aec g     F .text	0000004c alt_ic_irq_enabled
@@ -206,7 +206,7 @@ SYMBOL TABLE:
 00014a8c g     O .rwdata	00000008 alt_dev_list
 0001343c g       *ABS*	00000000 __ram_rodata_end
 000132c8 g     F .text	00000008 .hidden __umodsi3
-00016a08 g       *ABS*	00000000 end
+00016250 g       *ABS*	00000000 end
 00011138 g     F .text	000000c4 altera_avalon_jtag_uart_init
 000101cc g     F .exceptions	00000060 alt_instruction_exception_entry
 00013304 g       *ABS*	00000000 __CTOR_LIST__
@@ -228,7 +228,7 @@ SYMBOL TABLE:
 00012574 g     F .text	000000d4 alt_get_fd
 00012694 g     F .text	0000007c memcmp
 00011094 g     F .text	00000050 altera_avalon_jtag_uart_close_fd
-00016a08 g       *ABS*	00000000 __alt_stack_base
+00016250 g       *ABS*	00000000 __alt_stack_base
 000110e4 g     F .text	00000054 altera_avalon_jtag_uart_ioctl_fd
 00016104 g     O .bss	00000004 ramBase_ptr
 00012460 g     F .text	00000114 alt_find_file
@@ -259,7 +259,7 @@ SYMBOL TABLE:
 00010020 g       *ABS*	00000000 __ram_exceptions_start
 00010958 g     F .text	00000050 alt_ic_isr_register
 00014a9c g       *ABS*	00000000 _edata
-00016a08 g       *ABS*	00000000 _end
+00016250 g       *ABS*	00000000 _end
 0001022c g       *ABS*	00000000 __ram_exceptions_end
 00011510 g     F .text	000000ec altera_avalon_jtag_uart_ioctl
 00010a48 g     F .text	000000a4 alt_ic_irq_disable
@@ -550,13 +550,13 @@ static ALT_INLINE alt_u32 ALT_ALWAYS_INLINE alt_irq_pending (void)
 #ifdef ALT_ENHANCED_INTERRUPT_API_PRESENT
         alt_irq[i].handler(alt_irq[i].context); 
    1013c:	00800074 	movhi	r2,1
-   10140:	109a4204 	addi	r2,r2,26888
+   10140:	10985404 	addi	r2,r2,24912
    10144:	e0fffd17 	ldw	r3,-12(fp)
    10148:	180690fa 	slli	r3,r3,3
    1014c:	10c5883a 	add	r2,r2,r3
    10150:	10c00017 	ldw	r3,0(r2)
    10154:	00800074 	movhi	r2,1
-   10158:	109a4204 	addi	r2,r2,26888
+   10158:	10985404 	addi	r2,r2,24912
    1015c:	e13ffd17 	ldw	r4,-12(fp)
    10160:	200890fa 	slli	r4,r4,3
    10164:	21000104 	addi	r4,r4,4
@@ -704,7 +704,7 @@ Disassembly of section .text:
     movhi r3, %hi(__bss_end)
    10244:	00c00074 	movhi	r3,1
     ori r3, r3, %lo(__bss_end)
-   10248:	18da8214 	ori	r3,r3,27144
+   10248:	18d89414 	ori	r3,r3,25168
 
     beq r2, r3, 1f
    1024c:	10c00326 	beq	r2,r3,1025c <_start+0x30>
@@ -892,7 +892,7 @@ void writeToRAM(unsigned long *ramLocation_ptr, unsigned int ramSpan){
    103b0:	00102c80 	call	102c8 <getRandomPattern>
         if (i<numBytes){  					// if the current index is fits in the array - store the data - use for compare
    103b4:	e0bffd17 	ldw	r2,-12(fp)
-   103b8:	10807d08 	cmpgei	r2,r2,500
+   103b8:	10800188 	cmpgei	r2,r2,6
    103bc:	1000081e 	bne	r2,zero,103e0 <writeToRAM+0x50>
         	randomStore[i] = randomNum;     // Store variable in array - this is going to be an array of sequentially written values
    103c0:	d125a517 	ldw	r4,-26988(gp)
@@ -942,6 +942,9 @@ void writeToRAM(unsigned long *ramLocation_ptr, unsigned int ramSpan){
    10430:	f800283a 	ret
 
 00010434 <main>:
+*/
+
+
 
 int main(void)
 {
@@ -992,7 +995,7 @@ int main(void)
 			pass = ramConfidenceTest(ramBase_ptr, numBytes); // Verify correct values written
    104b8:	d0a5a717 	ldw	r2,-26980(gp)
    104bc:	1009883a 	mov	r4,r2
-   104c0:	01407d04 	movi	r5,500
+   104c0:	01400184 	movi	r5,6
    104c4:	00102f80 	call	102f8 <ramConfidenceTest>
    104c8:	e0bfff15 	stw	r2,-4(fp)
 			if (pass == 1){                                  // RAM test passed
@@ -1673,7 +1676,7 @@ static ALT_INLINE alt_irq_context ALT_ALWAYS_INLINE
 
     alt_irq[id].handler = isr;
    10b94:	00800074 	movhi	r2,1
-   10b98:	109a4204 	addi	r2,r2,26888
+   10b98:	10985404 	addi	r2,r2,24912
    10b9c:	e0fff817 	ldw	r3,-32(fp)
    10ba0:	180690fa 	slli	r3,r3,3
    10ba4:	10c5883a 	add	r2,r2,r3
@@ -1681,7 +1684,7 @@ static ALT_INLINE alt_irq_context ALT_ALWAYS_INLINE
    10bac:	10c00015 	stw	r3,0(r2)
     alt_irq[id].context = isr_context;
    10bb0:	00800074 	movhi	r2,1
-   10bb4:	109a4204 	addi	r2,r2,26888
+   10bb4:	10985404 	addi	r2,r2,24912
    10bb8:	e0fff817 	ldw	r3,-32(fp)
    10bbc:	180690fa 	slli	r3,r3,3
    10bc0:	18c00104 	addi	r3,r3,4
@@ -4973,7 +4976,7 @@ int alt_get_fd (alt_dev* dev)
    1295c:	d9400015 	stw	r5,0(sp)
    12960:	d9800115 	stw	r6,4(sp)
    12964:	d9c00215 	stw	r7,8(sp)
-   12968:	00000000 	call	0 <__reset-0x10000>
+   12968:	00000000 	call	0 <__alt_mem_onchip_memory2_0-0x10000>
    1296c:	d9400017 	ldw	r5,0(sp)
    12970:	d9800117 	ldw	r6,4(sp)
    12974:	d9c00217 	ldw	r7,8(sp)
@@ -5059,7 +5062,7 @@ int alt_get_fd (alt_dev* dev)
    12aac:	10003426 	beq	r2,zero,12b80 <__call_exitprocs+0x18c>
    12ab0:	9809883a 	mov	r4,r19
    12ab4:	a8800015 	stw	r2,0(r21)
-   12ab8:	00000000 	call	0 <__reset-0x10000>
+   12ab8:	00000000 	call	0 <__alt_mem_onchip_memory2_0-0x10000>
    12abc:	acc00017 	ldw	r19,0(r21)
    12ac0:	983fe41e 	bne	r19,zero,12a54 <_gp+0xffff5fec>
    12ac4:	dfc00b17 	ldw	ra,44(sp)
