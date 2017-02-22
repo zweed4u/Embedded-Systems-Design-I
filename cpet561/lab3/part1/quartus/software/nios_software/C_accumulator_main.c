@@ -28,9 +28,9 @@ int getRandomPattern(void){
  * Params: ramLocation_ptr - location of the RAM wanted to check.
  * numBytesToCheck - Size in bytes of RAM wanted to check. */
 int ramConfidenceTest(unsigned long *ramLocation_ptr, unsigned int numBytesToCheck){
-    int i = 0
+    int i = 0;
     while (numBytesToCheck){
-        if (randomStore[i] != *(ramLocation_ptr + i)){  // Test failed! 
+        if (randomStore[i] != *(ramLocation_ptr + i)){  // Test failed!
             return 0; 
         }
         i++;
@@ -58,35 +58,22 @@ int main(void)
     int pass;
     srand((unsigned)time(NULL));                         // Fetch current epoch and use as seed
     // Test assigning contents of led address here
-    *ledBase_ptr = 0x0;  // Turn off - THIS IS TESTING THE LED mem addr
-    *ledBase_ptr = 0x1;  // 0001
-    *ledBase_ptr = 0x2;  // 0010
-    *ledBase_ptr = 0x3;  // 0101 
-    *ledBase_ptr = 0x4;  // 0100
-    *ledBase_ptr = 0x5;  // 0101
-    *ledBase_ptr = 0x6;  // 0110 
-    *ledBase_ptr = 0x7;  // 0111
-    *ledBase_ptr = 0x8;  // 1000
-    *ledBase_ptr = 0x9;  // 1001 
-    *ledBase_ptr = 0xA;  // 1010
-    *ledBase_ptr = 0xAA; // 1010 1010
-    *ledBase_ptr = 0xFF; // 1111 1111
-    *ledBase_ptr = 0x0;  // Turn off - THIS IS TESTING THE LED mem addr
-
+    pass = 0;                                            // Initialize passing variable to failure
+    *ledBase_ptr = 0xFF;                                 // LEDs on - 1111 - check how long this address is and how state relates to contents of address (size and offsets)
     while (1) {
-        pass = 0;                                        // Initialize passing variable to failure
         while(*triggerBase_ptr == 1)                     // Wait for high
             ;
-        *ledBase_ptr = 0x0;                              // LEDs off        
         while(*triggerBase_ptr == 0)                     // Wait for low
             ;
-        writeToRAM(ramBase_ptr, numByte);                // Write values to RAM
+        *ledBase_ptr = 0x0;                              // LEDs off - 0000 0000
+        writeToRAM(ramBase_ptr, numBytes);               // Write values to RAM
         pass = ramConfidenceTest(ramBase_ptr, numBytes); // Verify correct values written
+        while(*triggerBase_ptr == 0)                     // Wait for high
+            ;
+		while(*triggerBase_ptr == 1)                     // Wait for low
+			;
         if (pass == 1){                                  // RAM test passed
-            *ledBase_ptr = 0xF;                          // LEDs on - 1111 - check how long this address is and how state relates to contents of address (size and offsets)     
-        }
-        else{                                            // RAM test failed
-            *ledBase_ptr = 0x0;                          // LEDs off                    
+            *ledBase_ptr = 0xFF;                         // LEDs off - 1111 1111
         }
     }
 }
