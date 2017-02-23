@@ -49,8 +49,11 @@ void pushButtonIsr(void *context)
 }
 
 /* Returns a random number using the epoch as seed. */
-int getRandomPattern(void){
+int getRandomPattern(int bound){
     randomNum = rand();
+    if (bound != 0){
+        randomNum = (randomNum % bound)
+    }
     return randomNum;
 }
 
@@ -109,7 +112,7 @@ int ramTestHalfWord(unsigned short *ramLocation_ptr, unsigned int numBytesToChec
 void writeToRAMOriginal(unsigned long *ramLocation_ptr, unsigned int ramSpan){
     int i = 0;
     while (ramSpan){                		// While we still need to write more bytes
-        getRandomPattern();                 // Generate random number for randomNum variable
+        getRandomPattern(0);                // Generate random number for randomNum variable
         if (i<numBytes){  					// if the current index is fits in the array - store the data - use for compare
         	randomStore[i] = randomNum;     // Store variable in array - this is going to be an array of sequentially written values
         }
@@ -119,10 +122,10 @@ void writeToRAMOriginal(unsigned long *ramLocation_ptr, unsigned int ramSpan){
     }
 }
 
-void writeByteToRAM(unsigned char *ramLocation_ptr, unsigned int ramSpan){
+void writeByteToRAM(unsigned char *ramLocation_ptr, unsigned int ramSpan){ // 8bits, 1byte, 0x00 -> 0xFF
     int i = 0;
     while (ramSpan){                		// While we still need to write more bytes
-        getRandomPattern();                 // Generate random number for randomNum variable
+        getRandomPattern(255);              // Generate random number for randomNum variable
         if (i<numBytes){  					// if the current index is fits in the array - store the data - use for compare
         	randomStore[i] = randomNum;     // Store variable in array - this is going to be an array of sequentially written values
         }
@@ -132,10 +135,10 @@ void writeByteToRAM(unsigned char *ramLocation_ptr, unsigned int ramSpan){
     }
 }
 
-void writeHalfWordToRAM(unsigned short *ramLocation_ptr, unsigned int ramSpan){
+void writeHalfWordToRAM(unsigned short *ramLocation_ptr, unsigned int ramSpan){ // 16bits, 2bytes, 0x0000 -> 0xFFFF
     int i = 0;
     while (ramSpan){                		// While we still need to write more bytes
-        getRandomPattern();                 // Generate random number for randomNum variable
+        getRandomPattern(65535);            // Generate random number for randomNum variable
         if (i<numBytes){  					// if the current index is fits in the array - store the data - use for compare
         	randomStore[i] = randomNum;     // Store variable in array - this is going to be an array of sequentially written values
         }
