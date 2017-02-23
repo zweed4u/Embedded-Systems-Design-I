@@ -28,14 +28,14 @@ BEGIN
   RamBlock : PROCESS(clk) BEGIN
     IF (clk'event AND clk = '1') THEN
       IF (reset_n = '0') THEN
-        read_addr <= (OTHERS => '0');
-      ELSIF (we_n = '0') THEN -- lowest byte line written to
+        read_addr <= (OTHERS => '0'); -- els block may be needed here to have reset be in it's 'block'
+      ELSIF (we_n = '0' AND be_n(0) = '0') THEN -- lowest byte line written to
         ram1 <= din(7 DOWNTO 0);
-      ELSIF (we_n = '0') THEN -- 2nd lowest byte line written to
+      ELSIF (we_n = '0' AND be_n(1) = '0') THEN -- 2nd lowest byte line written to
         ram2 <= din(15 DOWNTO 8);
-      ELSIF (we_n = '0') THEN -- 2nd highest byte line written to
+      ELSIF (we_n = '0' AND be_n(2) = '0') THEN -- 2nd highest byte line written to
         ram3 <= din(23 DOWNTO 16);
-      ELSIF (we_n = '0') THEN -- highest byte line written to
+      ELSIF (we_n = '0' AND be_n(3) = '0') THEN -- highest byte line written to
         ram4 <= din(31 DOWNTO 24);
       END IF;
       RAM(conv_integer(addr)) <= ram4 & ram3 & ram2 & ram1;
