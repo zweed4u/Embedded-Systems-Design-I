@@ -74,7 +74,7 @@ int ramConfidenceTest(unsigned long *ramLocation_ptr, unsigned int numBytesToChe
 /* Return 0 or 1, for False or True respectively, if memory passes test.
  * Params: ramLocation_ptr - location of the RAM wanted to check.
  * numBytesToCheck - Size in bytes of RAM wanted to check. */
-int ramTestByte(unsigned char *ramLocation_ptr, unsigned int numBytesToCheck){
+int ramTestByte(char *ramLocation_ptr, unsigned int numBytesToCheck){
     int i = 0;
     while (numBytesToCheck){
         if (randomStore[i] != *(ramLocation_ptr + i)){  // Test failed!
