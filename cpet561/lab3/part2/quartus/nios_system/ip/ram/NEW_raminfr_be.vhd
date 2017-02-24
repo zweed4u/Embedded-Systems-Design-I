@@ -29,21 +29,20 @@ BEGIN
     IF (clk'event AND clk = '1') THEN
       IF (reset_n = '0') THEN
         read_addr <= (OTHERS => '0');
-      ELSIF (we_n = '0') THEN      -- Might need to have rams be => 0 after subsequent passes
-        IF (be_n(0) = '0') THEN    -- lowest byte line written to
-          ram1 <= din(7 DOWNTO 0);
-        END IF;
-        IF (be_n(1) = '0') THEN -- 2nd lowest byte line written to
-          ram2 <= din(15 DOWNTO 8);
-        END IF;
-        IF (be_n(2) = '0') THEN -- 2nd highest byte line written to
-          ram3 <= din(23 DOWNTO 16);
-        END IF;
-        IF (be_n(3) = '0') THEN -- highest byte line written to
-          ram4 <= din(31 DOWNTO 24);
-        END IF;
-        RAM(conv_integer(addr)) <= ram4 & ram3 & ram2 & ram1;
-      END IF;
+	  END IF;
+      IF (we_n = '0' AND be_n(0) = '0') THEN      -- Might need to have rams be => 0 after subsequent passes
+		ram1 <= din(7 DOWNTO 0);
+	  END IF; 
+      IF (we_n = '0' AND be_n(1) = '0') THEN -- 2nd lowest byte line written to
+		ram2 <= din(15 DOWNTO 8);
+	  END IF;  
+      IF (we_n = '0' AND be_n(2) = '0') THEN -- 2nd highest byte line written to
+		ram3 <= din(23 DOWNTO 16);
+	  END IF;  
+      IF (we_n = '0' AND be_n(3) = '0') THEN -- highest byte line written to
+		ram4 <= din(31 DOWNTO 24);
+	  END IF;
+      RAM(conv_integer(addr)) <= ram4 & ram3 & ram2 & ram1;
       read_addr <= addr;
     END IF;
   END PROCESS RamBlock;

@@ -26,6 +26,9 @@ static alt_u32 sKey1Pressed = 0;
 
 volatile alt_u32* pushButtonPtr = (alt_u32*)(KEY1_BASE);
 unsigned long *ramBase_ptr = (unsigned long *) INFERRED_RAM_BASE;   // Pointer to the base address of Inferred RAM
+char *ramBaseByte_ptr = (char *) INFERRED_RAM_BASE;   // Pointer to the base address of Inferred RAM
+unsigned short *ramBaseHalfWord_ptr = (unsigned short *) INFERRED_RAM_BASE;   // Pointer to the base address of Inferred RAM
+
 unsigned char *ledBase_ptr = (unsigned char *) LEDS_BASE;           // Pointer to LED base memory location
 
 void pushButtonIsr(void *context)
@@ -49,8 +52,11 @@ void pushButtonIsr(void *context)
 }
 
 /* Returns a random number using the epoch as seed. */
-int getRandomPattern(void){
+int getRandomPattern(int bound){
     randomNum = rand();
+    if (bound != 0){
+        randomNum = (randomNum % bound);
+    }
     return randomNum;
 }
 
@@ -109,7 +115,7 @@ int ramTestHalfWord(unsigned short *ramLocation_ptr, unsigned int numBytesToChec
 void writeToRAMOriginal(unsigned long *ramLocation_ptr, unsigned int ramSpan){
     int i = 0;
     while (ramSpan){                		// While we still need to write more bytes
-        getRandomPattern();                // Generate random number for randomNum variable
+        getRandomPattern(0);                // Generate random number for randomNum variable
         if (i<numBytes){  					// if the current index is fits in the array - store the data - use for compare
         	randomStore[i] = randomNum;     // Store variable in array - this is going to be an array of sequentially written values
         }
@@ -119,10 +125,10 @@ void writeToRAMOriginal(unsigned long *ramLocation_ptr, unsigned int ramSpan){
     }
 }
 
-void writeByteToRAM(unsigned char *ramLocation_ptr, unsigned int ramSpan){ // 8bits, 1byte, 0x00 -> 0xFF
+void writeByteToRAM(char *ramLocation_ptr, unsigned int ramSpan){ // 8bits, 1byte, 0x00 -> 0xFF
     int i = 0;
     while (ramSpan){                		// While we still need to write more bytes
-        getRandomPattern();              // Generate random number for randomNum variable
+        getRandomPattern(255);              // Generate random number for randomNum variable
         if (i<numBytes){  					// if the current index is fits in the array - store the data - use for compare
         	randomStore[i] = randomNum;     // Store variable in array - this is going to be an array of sequentially written values
         }
@@ -135,7 +141,7 @@ void writeByteToRAM(unsigned char *ramLocation_ptr, unsigned int ramSpan){ // 8b
 void writeHalfWordToRAM(unsigned short *ramLocation_ptr, unsigned int ramSpan){ // 16bits, 2bytes, 0x0000 -> 0xFFFF
     int i = 0;
     while (ramSpan){                		// While we still need to write more bytes
-        getRandomPattern();            // Generate random number for randomNum variable
+        getRandomPattern(65535);            // Generate random number for randomNum variable
         if (i<numBytes){  					// if the current index is fits in the array - store the data - use for compare
         	randomStore[i] = randomNum;     // Store variable in array - this is going to be an array of sequentially written values
         }
@@ -161,10 +167,10 @@ int main(void)
 			//pass = ramConfidenceTest(ramBase_ptr, numBytes); 		   // Verify correct values written
 
 
-        	writeByteToRAM(ramBase_ptr, toWriteTo);              // Write values to fill RAM
-        	pass = ramTestByte(ramBase_ptr, numBytes);
-        	//writeHalfWordToRAM(ramBase_ptr, toWriteTo);
-        	//pass = ramTestHalfWord(ramBase_ptr, numBytes);
+        	//writeByteToRAM(ramBaseByte_ptr, toWriteTo);              // Write values to fill RAM
+        	//pass = ramTestByte(ramBaseByte_ptr, numBytes);
+        	writeHalfWordToRAM(ramBaseHalfWord_ptr, toWriteTo);
+        	pass = ramTestHalfWord(ramBaseHalfWord_ptr, numBytes);
 			if (pass == 1){                                  // RAM test passed
 				*ledBase_ptr = 0xFF;                         // LEDs off - 1111 1111
 			}

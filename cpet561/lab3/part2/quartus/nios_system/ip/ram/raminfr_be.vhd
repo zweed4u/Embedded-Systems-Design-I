@@ -30,11 +30,11 @@ BEGIN
           when "0000" => 
             RAM(conv_integer(addr)) <= din;
           when "0001" => 
-            RAM(conv_integer(addr)) <= din(31 DOWNTO 8) & (others => '0');
+            RAM(conv_integer(addr)) <= din(31 DOWNTO 8) & "00000000";
           when "0010" =>
             RAM(conv_integer(addr)) <= din(31 DOWNTO 16) & "00000000" & din(7 DOWNTO 0);
           when "0011" =>
-            RAM(conv_integer(addr)) <= din(31 DOWNTO 16) & (others => '0');
+            RAM(conv_integer(addr)) <= din(31 DOWNTO 16) & "0000000000000000";
           when "0100" =>
             RAM(conv_integer(addr)) <= din(31 DOWNTO 24) & "00000000" & din(15 DOWNTO 0);      
           when "0101" =>
@@ -42,7 +42,7 @@ BEGIN
           when "0110" =>
             RAM(conv_integer(addr)) <= din(31 DOWNTO 24) & "0000000000000000" & din(7 DOWNTO 0);
           when "0111" =>
-            RAM(conv_integer(addr)) <= din(31 DOWNTO 24) & (others => '0');      
+            RAM(conv_integer(addr)) <= din(31 DOWNTO 24) & "000000000000000000000000";      
           when "1000" =>
             RAM(conv_integer(addr)) <= "00000000" & din(23 DOWNTO 0);     
           when "1001" =>
@@ -58,9 +58,9 @@ BEGIN
           when "1110" =>
             RAM(conv_integer(addr)) <= "000000000000000000000000" & din(7 DOWNTO 0);
           when "1111" =>
-            RAM(conv_integer(addr)) <= (others => '0');
+            RAM(conv_integer(addr)) <= "00000000000000000000000000000000";
           when others =>
-            RAM(conv_integer(addr)) <= (others => '0');        
+            RAM(conv_integer(addr)) <= "00000000000000000000000000000000";        
         END CASE;
       END IF;
       read_addr <= addr;

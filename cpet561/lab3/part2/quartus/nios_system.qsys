@@ -139,14 +139,6 @@
          type = "int";
       }
    }
-   element onchip_memory2_0.s1
-   {
-      datum baseAddress
-      {
-         value = "65536";
-         type = "String";
-      }
-   }
    element sysid_qsys_0
    {
       datum _sortIndex
