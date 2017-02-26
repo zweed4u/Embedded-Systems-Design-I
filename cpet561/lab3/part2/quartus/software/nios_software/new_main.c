@@ -43,7 +43,7 @@ void pushButtonIsr(void *context)
   // assume more than one could be pressed at the same time
   if (KEY1_BIT_MASK == (reg_value & KEY1_BIT_MASK))
   {
-	*ledBase_ptr = 0x0;  // Turn LEDs off
+    *ledBase_ptr = 0x0;  // Turn LEDs off
     sKey1Pressed = 1;
   }
 
@@ -114,40 +114,40 @@ int ramTestHalfWord(unsigned short *ramLocation_ptr, unsigned int numBytesToChec
  * ramSpan - Size of RAM wanted to write to. */
 void writeToRAMOriginal(unsigned long *ramLocation_ptr, unsigned int ramSpan){
     int i = 0;
-    while (ramSpan){                		// While we still need to write more bytes
+    while (ramSpan){                        // While we still need to write more bytes
         getRandomPattern(0);                // Generate random number for randomNum variable
-        if (i<numBytes){  					// if the current index is fits in the array - store the data - use for compare
-        	randomStore[i] = randomNum;     // Store variable in array - this is going to be an array of sequentially written values
+        if (i<numBytes){                    // if the current index is fits in the array - store the data - use for compare
+            randomStore[i] = randomNum;     // Store variable in array - this is going to be an array of sequentially written values
         }
         *(ramLocation_ptr + i) = randomNum; // +4 columns - write random number to next location
         i++;                                // Increment counter for mem address from base and array of pattern
-        ramSpan--;                  		// Decrement bytes for how many more to write to
+        ramSpan--;                          // Decrement bytes for how many more to write to
     }
 }
 
 void writeByteToRAM(char *ramLocation_ptr, unsigned int ramSpan){ // 8bits, 1byte, 0x00 -> 0xFF
     int i = 0;
-    while (ramSpan){                		// While we still need to write more bytes
+    while (ramSpan){                        // While we still need to write more bytes
         getRandomPattern(255);              // Generate random number for randomNum variable
-        if (i<numBytes){  					// if the current index is fits in the array - store the data - use for compare
-        	randomStore[i] = (char)randomNum;     // Store variable in array - this is going to be an array of sequentially written values
+        if (i<numBytes){                    // if the current index is fits in the array - store the data - use for compare
+            randomStore[i] = (char)randomNum;     // Store variable in array - this is going to be an array of sequentially written values
         }
         *(ramLocation_ptr + i) = (char)randomNum; // +4 columns - write random number to next location
         i++;                                // Increment counter for mem address from base and array of pattern
-        ramSpan--;                  		// Decrement bytes for how many more to write to
+        ramSpan--;                          // Decrement bytes for how many more to write to
     }
 }
 
 void writeHalfWordToRAM(unsigned short *ramLocation_ptr, unsigned int ramSpan){ // 16bits, 2bytes, 0x0000 -> 0xFFFF
     int i = 0;
-    while (ramSpan){                		// While we still need to write more bytes
+    while (ramSpan){                        // While we still need to write more bytes
         getRandomPattern(65535);            // Generate random number for randomNum variable
-        if (i<numBytes){  					// if the current index is fits in the array - store the data - use for compare
-        	randomStore[i] = (unsigned short)randomNum;     // Store variable in array - this is going to be an array of sequentially written values
+        if (i<numBytes){                    // if the current index is fits in the array - store the data - use for compare
+            randomStore[i] = (unsigned short)randomNum;     // Store variable in array - this is going to be an array of sequentially written values
         }
         *(ramLocation_ptr + i) = (unsigned short)randomNum; // +4 columns - write random number to next location
         i++;                                // Increment counter for mem address from base and array of pattern
-        ramSpan--;                  		// Decrement bytes for how many more to write to
+        ramSpan--;                          // Decrement bytes for how many more to write to
     }
 }
 
@@ -162,19 +162,19 @@ int main(void)
     *(pushButtonPtr + PIO_INT_MASK_REG_OFFSET) = (KEY1_BIT_MASK);
     while (1) {
         if (sKey1Pressed)
-		{
-			//writeToRAMOriginal(ramBase_ptr, toWriteTo);              // Write values to fill RAM
-			//pass = ramConfidenceTest(ramBase_ptr, numBytes); 		   // Verify correct values written
+        {
+            //writeToRAMOriginal(ramBase_ptr, toWriteTo);              // Write values to fill RAM
+            //pass = ramConfidenceTest(ramBase_ptr, numBytes);         // Verify correct values written
 
 
-        	writeByteToRAM(ramBaseByte_ptr, toWriteTo);              // Write values to fill RAM
-        	pass = ramTestByte(ramBaseByte_ptr, numBytes);
-        	//writeHalfWordToRAM(ramBaseHalfWord_ptr, toWriteTo);
-        	//pass = ramTestHalfWord(ramBaseHalfWord_ptr, numBytes);
-			if (pass == 1){                                  // RAM test passed
-				*ledBase_ptr = 0xFF;                         // LEDs off - 1111 1111
-			}
-			sKey1Pressed = 0;
-		}
+            writeByteToRAM(ramBaseByte_ptr, toWriteTo);              // Write values to fill RAM
+            pass = ramTestByte(ramBaseByte_ptr, numBytes);
+            //writeHalfWordToRAM(ramBaseHalfWord_ptr, toWriteTo);
+            //pass = ramTestHalfWord(ramBaseHalfWord_ptr, numBytes);
+            if (pass == 1){                                  // RAM test passed
+                *ledBase_ptr = 0xFF;                         // LEDs off - 1111 1111
+            }
+            sKey1Pressed = 0;
+        }
     }
 }
