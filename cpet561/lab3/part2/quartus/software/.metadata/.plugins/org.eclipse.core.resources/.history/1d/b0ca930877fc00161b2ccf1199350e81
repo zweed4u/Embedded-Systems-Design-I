@@ -160,8 +160,8 @@ int main(void)
         if (sKey1Pressed)
         {
             //pass = ramConfidenceTest(ramBase_ptr, numBytes);         // Verify correct values written
-            pass = ramTestByte(ramBaseByte_ptr, numBytes);
-            //pass = ramTestHalfWord(ramBaseHalfWord_ptr, numBytes);
+            //pass = ramTestByte(ramBaseByte_ptr, numBytes);
+            pass = ramTestHalfWord(ramBaseHalfWord_ptr, numBytes);
             if (pass == 1){                                  // RAM test passed
                 *ledBase_ptr = 0xFF;                         // LEDs off - 1111 1111
             }
