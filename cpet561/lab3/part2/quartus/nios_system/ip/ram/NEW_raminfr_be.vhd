@@ -42,10 +42,11 @@ BEGIN
           IF (be_n(3) = '0') THEN -- highest byte line written to
             ram_byte_lane3 <= din(31 DOWNTO 24);
           END IF;
-          RAM(conv_integer(addr)) <= ram_byte_lane3 & ram_byte_lane2 & ram_byte_lane1 & ram_byte_lane0;
+          --RAM(conv_integer(addr)) <= ram_byte_lane3 & ram_byte_lane2 & ram_byte_lane1 & ram_byte_lane0;
       END IF;
       read_addr <= addr;
     END IF;
   END PROCESS RamBlock;
-  dout <= RAM(conv_integer(read_addr));
+  --dout <= RAM(conv_integer(read_addr));
+  dout <= ram_byte_lane3(conv_integer(read_addr)) & ram_byte_lane2(conv_integer(read_addr)); & ram_byte_lane1(conv_integer(read_addr)); & ram_byte_lane0(conv_integer(read_addr));;
 END ARCHITECTURE rtl;
