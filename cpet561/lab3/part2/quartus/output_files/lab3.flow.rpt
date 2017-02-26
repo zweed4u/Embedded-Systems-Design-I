@@ -1,5 +1,5 @@
 Flow report for lab3
-Sat Feb 25 21:02:26 2017
+Sun Feb 26 17:21:32 2017
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Standard Edition
 
 
@@ -41,15 +41,15 @@ agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Flow Summary                                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Flow Status                     ; Successful - Sat Feb 25 21:02:11 2017           ;
+; Flow Status                     ; Successful - Sun Feb 26 17:21:14 2017           ;
 ; Quartus Prime Version           ; 15.1.0 Build 185 10/21/2015 SJ Standard Edition ;
 ; Revision Name                   ; lab3                                            ;
 ; Top-level Entity Name           ; lab3                                            ;
 ; Family                          ; Cyclone V                                       ;
 ; Device                          ; 5CSEMA5F31C6                                    ;
 ; Timing Models                   ; Final                                           ;
-; Logic utilization (in ALMs)     ; 779 / 32,070 ( 2 % )                            ;
-; Total registers                 ; 1036                                            ;
+; Logic utilization (in ALMs)     ; 787 / 32,070 ( 2 % )                            ;
+; Total registers                 ; 997                                             ;
 ; Total pins                      ; 189 / 457 ( 41 % )                              ;
 ; Total virtual pins              ; 0                                               ;
 ; Total block memory bits         ; 404,480 / 4,065,280 ( 10 % )                    ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 02/25/2017 21:00:26 ;
+; Start date & time ; 02/26/2017 17:14:28 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; lab3                ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +-------------------------------------+---------------------------------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                                         ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+---------------------------------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 26830024664770.148807442600284                                ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 203178705780201.148814726805648                               ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                            ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                                             ; --            ; --          ; --         ;
 ; MISC_FILE                           ; nios_system/synthesis/../nios_system.cmp                      ; --            ; --          ; --         ;
@@ -98,7 +98,7 @@ agreement for further details.
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                  ; --            ; --          ; --         ;
 ; SLD_FILE                            ; nios_system/synthesis/nios_system.regmap                      ; --            ; --          ; --         ;
 ; SLD_FILE                            ; nios_system/synthesis/nios_system.debuginfo                   ; --            ; --          ; --         ;
-; SLD_INFO                            ; QSYS_NAME nios_system HAS_SOPCINFO 1 GENERATION_ID 1488073550 ; --            ; nios_system ; --         ;
+; SLD_INFO                            ; QSYS_NAME nios_system HAS_SOPCINFO 1 GENERATION_ID 1488147199 ; --            ; nios_system ; --         ;
 ; SOPCINFO_FILE                       ; nios_system/synthesis/../../nios_system.sopcinfo              ; --            ; --          ; --         ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                            ; --            ; --          ; --         ;
 +-------------------------------------+---------------------------------------------------------------+---------------+-------------+------------+
@@ -109,11 +109,11 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:27     ; 1.0                     ; 989 MB              ; 00:00:50                           ;
-; Fitter                    ; 00:00:57     ; 1.1                     ; 2729 MB             ; 00:01:52                           ;
-; Assembler                 ; 00:00:10     ; 1.0                     ; 892 MB              ; 00:00:10                           ;
-; TimeQuest Timing Analyzer ; 00:00:11     ; 1.3                     ; 1243 MB             ; 00:00:14                           ;
-; Total                     ; 00:01:45     ; --                      ; --                  ; 00:03:06                           ;
+; Analysis & Synthesis      ; 00:00:43     ; 1.0                     ; 1008 MB             ; 00:01:01                           ;
+; Fitter                    ; 00:05:18     ; 1.0                     ; 2738 MB             ; 00:06:03                           ;
+; Assembler                 ; 00:00:17     ; 1.0                     ; 894 MB              ; 00:00:11                           ;
+; TimeQuest Timing Analyzer ; 00:00:14     ; 1.5                     ; 1247 MB             ; 00:00:17                           ;
+; Total                     ; 00:06:32     ; --                      ; --                  ; 00:07:32                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -122,10 +122,10 @@ agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; ECTET-1360-01    ; Windows 7 ; 6.1        ; x86_64         ;
-; Fitter                    ; ECTET-1360-01    ; Windows 7 ; 6.1        ; x86_64         ;
-; Assembler                 ; ECTET-1360-01    ; Windows 7 ; 6.1        ; x86_64         ;
-; TimeQuest Timing Analyzer ; ECTET-1360-01    ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; ECTET-1350-01    ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; ECTET-1350-01    ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; ECTET-1350-01    ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; ECTET-1350-01    ; Windows 7 ; 6.1        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 

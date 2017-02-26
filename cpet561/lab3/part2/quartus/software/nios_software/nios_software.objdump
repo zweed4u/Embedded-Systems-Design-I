@@ -1266,24 +1266,22 @@ int main(void)
         if (sKey1Pressed)
    1073c:	d0a5a617 	ldw	r2,-26984(gp)
    10740:	10001026 	beq	r2,zero,10784 <main+0xb4>
-        {
-            //writeToRAMOriginal(ramBase_ptr, toWriteTo);              // Write values to fill RAM
             //pass = ramConfidenceTest(ramBase_ptr, numBytes);         // Verify correct values written
 
 
-            writeByteToRAM(ramBaseByte_ptr, toWriteTo);              // Write values to fill RAM
-   10744:	d0a5a817 	ldw	r2,-26976(gp)
+            //writeByteToRAM(ramBaseByte_ptr, toWriteTo);              // Write values to fill RAM
+            //pass = ramTestByte(ramBaseByte_ptr, numBytes);
+            writeHalfWordToRAM(ramBaseHalfWord_ptr, toWriteTo);
+   10744:	d0a5a917 	ldw	r2,-26972(gp)
    10748:	1009883a 	mov	r4,r2
    1074c:	01440004 	movi	r5,4096
-   10750:	00105800 	call	10580 <writeByteToRAM>
-            pass = ramTestByte(ramBaseByte_ptr, numBytes);
-   10754:	d0a5a817 	ldw	r2,-26976(gp)
+   10750:	00106280 	call	10628 <writeHalfWordToRAM>
+            pass = ramTestHalfWord(ramBaseHalfWord_ptr, numBytes);
+   10754:	d0a5a917 	ldw	r2,-26972(gp)
    10758:	1009883a 	mov	r4,r2
    1075c:	01400244 	movi	r5,9
-   10760:	00103b00 	call	103b0 <ramTestByte>
+   10760:	00104440 	call	10444 <ramTestHalfWord>
    10764:	e0bfff15 	stw	r2,-4(fp)
-            //writeHalfWordToRAM(ramBaseHalfWord_ptr, toWriteTo);
-            //pass = ramTestHalfWord(ramBaseHalfWord_ptr, numBytes);
             if (pass == 1){                                  // RAM test passed
    10768:	e0bfff17 	ldw	r2,-4(fp)
    1076c:	10800058 	cmpnei	r2,r2,1
@@ -5347,7 +5345,7 @@ int alt_get_fd (alt_dev* dev)
    12d24:	d9400015 	stw	r5,0(sp)
    12d28:	d9800115 	stw	r6,4(sp)
    12d2c:	d9c00215 	stw	r7,8(sp)
-   12d30:	00000000 	call	0 <__reset-0x10000>
+   12d30:	00000000 	call	0 <__alt_mem_onchip_memory2_0-0x10000>
    12d34:	d9400017 	ldw	r5,0(sp)
    12d38:	d9800117 	ldw	r6,4(sp)
    12d3c:	d9c00217 	ldw	r7,8(sp)
@@ -5433,7 +5431,7 @@ int alt_get_fd (alt_dev* dev)
    12e74:	10003426 	beq	r2,zero,12f48 <__call_exitprocs+0x18c>
    12e78:	9809883a 	mov	r4,r19
    12e7c:	a8800015 	stw	r2,0(r21)
-   12e80:	00000000 	call	0 <__reset-0x10000>
+   12e80:	00000000 	call	0 <__alt_mem_onchip_memory2_0-0x10000>
    12e84:	acc00017 	ldw	r19,0(r21)
    12e88:	983fe41e 	bne	r19,zero,12e1c <_gp+0xffff6118>
    12e8c:	dfc00b17 	ldw	ra,44(sp)

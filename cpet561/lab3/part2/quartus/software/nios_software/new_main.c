@@ -167,10 +167,10 @@ int main(void)
             //pass = ramConfidenceTest(ramBase_ptr, numBytes);         // Verify correct values written
 
 
-            writeByteToRAM(ramBaseByte_ptr, toWriteTo);              // Write values to fill RAM
-            pass = ramTestByte(ramBaseByte_ptr, numBytes);
-            //writeHalfWordToRAM(ramBaseHalfWord_ptr, toWriteTo);
-            //pass = ramTestHalfWord(ramBaseHalfWord_ptr, numBytes);
+            //writeByteToRAM(ramBaseByte_ptr, toWriteTo);              // Write values to fill RAM
+            //pass = ramTestByte(ramBaseByte_ptr, numBytes);
+            writeHalfWordToRAM(ramBaseHalfWord_ptr, toWriteTo);
+            pass = ramTestHalfWord(ramBaseHalfWord_ptr, numBytes);
             if (pass == 1){                                  // RAM test passed
                 *ledBase_ptr = 0xFF;                         // LEDs off - 1111 1111
             }
