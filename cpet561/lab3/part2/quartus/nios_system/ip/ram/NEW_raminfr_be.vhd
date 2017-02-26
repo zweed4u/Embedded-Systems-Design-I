@@ -22,6 +22,10 @@ ARCHITECTURE rtl OF raminfr IS
   SIGNAL ram_byte_lane1 : ram_type := (OTHERS=> (OTHERS=>'0'));
   SIGNAL ram_byte_lane2 : ram_type := (OTHERS=> (OTHERS=>'0'));
   SIGNAL ram_byte_lane3 : ram_type := (OTHERS=> (OTHERS=>'0'));
+  SIGNAL ram0 : std_logic_vector(7 DOWNTO 0) := "00000000";
+  SIGNAL ram1 : std_logic_vector(7 DOWNTO 0) := "00000000";
+  SIGNAL ram2 : std_logic_vector(7 DOWNTO 0) := "00000000";
+  SIGNAL ram3 : std_logic_vector(7 DOWNTO 0) := "00000000";
   SIGNAL read_addr : std_logic_vector(11 DOWNTO 0);
 BEGIN
   RamBlock : PROCESS(clk) BEGIN
@@ -45,5 +49,9 @@ BEGIN
       read_addr <= addr;
     END IF;
   END PROCESS RamBlock;
-  dout <= ram_byte_lane3(conv_integer(read_addr)) & ram_byte_lane2(conv_integer(read_addr)); & ram_byte_lane1(conv_integer(read_addr)); & ram_byte_lane0(conv_integer(read_addr));;
+  ram0 <= ram_byte_lane0(conv_integer(read_addr)); 
+  ram1 <= ram_byte_lane1(conv_integer(read_addr));
+  ram2 <= ram_byte_lane2(conv_integer(read_addr));
+  ram3 <= ram_byte_lane3(conv_integer(read_addr));
+  dout <= ram3 & ram2 & ram1 & ram0;
 END ARCHITECTURE rtl;
