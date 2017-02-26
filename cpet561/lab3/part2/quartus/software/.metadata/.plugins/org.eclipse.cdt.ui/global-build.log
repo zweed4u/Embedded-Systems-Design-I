@@ -1,72 +1,222 @@
-18:09:05 **** Incremental Build of configuration Nios II for project nios_software ****
+17:28:12 **** Incremental Build of configuration Nios II for project nios_software ****
 make all 
 Info: Building ../nios_software_bsp/
 C:/altera/15.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_software_bsp/
 [BSP build complete]
-Info: Compiling C_accumulator_main.c to obj/default/C_accumulator_main.o
-nios2-elf-gcc -xc -MP -MMD -c -I../nios_software_bsp//HAL/inc -I../nios_software_bsp/ -I../nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/C_accumulator_main.o C_accumulator_main.c
-C_accumulator_main.c: In function 'getRandomPattern':
-C_accumulator_main.c:53:5: warning: implicit declaration of function 'rand' [-Wimplicit-function-declaration]
+Info: Compiling new_main.c to obj/default/new_main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../nios_software_bsp//HAL/inc -I../nios_software_bsp/ -I../nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/new_main.o new_main.c
+new_main.c: In function 'getRandomPattern':
+new_main.c:56:5: warning: implicit declaration of function 'rand' [-Wimplicit-function-declaration]
      randomNum = rand();
      ^
-C_accumulator_main.c: In function 'main':
-C_accumulator_main.c:152:5: warning: implicit declaration of function 'srand' [-Wimplicit-function-declaration]
+new_main.c: In function 'main':
+new_main.c:158:5: warning: implicit declaration of function 'srand' [-Wimplicit-function-declaration]
      srand((unsigned)time(NULL));                         // Fetch current epoch and use as seed
      ^
-C_accumulator_main.c:152:5: warning: implicit declaration of function 'time' [-Wimplicit-function-declaration]
-C_accumulator_main.c:165:29: warning: passing argument 1 of 'ramTestByte' from incompatible pointer type
-          pass = ramTestByte(ramBase_ptr, numBytes);
-                             ^
-C_accumulator_main.c:77:5: note: expected 'unsigned char *' but argument is of type 'long unsigned int *'
- int ramTestByte(unsigned char *ramLocation_ptr, unsigned int numBytesToCheck){
-     ^
+new_main.c:158:5: warning: implicit declaration of function 'time' [-Wimplicit-function-declaration]
 Info: Linking nios_software.elf
-nios2-elf-g++  -T'../nios_software_bsp//linker.x' -msys-crt0='../nios_software_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../nios_software_bsp/   -Wl,-Map=nios_software.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o nios_software.elf obj/default/C_accumulator_main.o -lm -msys-lib=m
-nios2-elf-insert nios_software.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 49 --sidp 0x5020 --timestamp 1487804299 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus" --jdi ../..//output_files/lab3.jdi --sopcinfo C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software_bsp/../../nios_system.sopcinfo
+nios2-elf-g++  -T'../nios_software_bsp//linker.x' -msys-crt0='../nios_software_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../nios_software_bsp/   -Wl,-Map=nios_software.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o nios_software.elf obj/default/new_main.o -lm -msys-lib=m
+nios2-elf-insert nios_software.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 49 --sidp 0x5020 --timestamp 1488147199 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus" --jdi ../..//output_files/lab3.jdi --sopcinfo C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software_bsp/../../nios_system.sopcinfo
 Info: (nios_software.elf) 19 KBytes program size (code + initialized data).
-Info:                     6984 Bytes free for stack + heap.
+Info:                     6912 Bytes free for stack + heap.
 Info: Creating nios_software.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source nios_software.elf >nios_software.objdump
 [nios_software build complete]
-18:09:47 **** Incremental Build of configuration Nios II for project nios_software ****
+17:28:21 **** Incremental Build of configuration Nios II for project nios_software ****
 make all 
 Info: Building ../nios_software_bsp/
 C:/altera/15.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_software_bsp/
 [BSP build complete]
 [nios_software build complete]
-18:12:46 **** Incremental Build of configuration Nios II for project nios_software ****
+17:30:55 **** Incremental Build of configuration Nios II for project nios_software ****
 make all 
 Info: Building ../nios_software_bsp/
 C:/altera/15.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_software_bsp/
 [BSP build complete]
-Info: Compiling C_accumulator_main.c to obj/default/C_accumulator_main.o
-nios2-elf-gcc -xc -MP -MMD -c -I../nios_software_bsp//HAL/inc -I../nios_software_bsp/ -I../nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/C_accumulator_main.o C_accumulator_main.c
-C_accumulator_main.c: In function 'getRandomPattern':
-C_accumulator_main.c:53:5: warning: implicit declaration of function 'rand' [-Wimplicit-function-declaration]
+Info: Compiling new_main.c to obj/default/new_main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../nios_software_bsp//HAL/inc -I../nios_software_bsp/ -I../nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/new_main.o new_main.c
+new_main.c: In function 'getRandomPattern':
+new_main.c:56:5: warning: implicit declaration of function 'rand' [-Wimplicit-function-declaration]
      randomNum = rand();
      ^
-C_accumulator_main.c: In function 'main':
-C_accumulator_main.c:152:5: warning: implicit declaration of function 'srand' [-Wimplicit-function-declaration]
+new_main.c: In function 'main':
+new_main.c:158:5: warning: implicit declaration of function 'srand' [-Wimplicit-function-declaration]
      srand((unsigned)time(NULL));                         // Fetch current epoch and use as seed
      ^
-C_accumulator_main.c:152:5: warning: implicit declaration of function 'time' [-Wimplicit-function-declaration]
-C_accumulator_main.c:164:25: warning: passing argument 1 of 'writeByteToRAM' from incompatible pointer type
-          writeByteToRAM(ramBase_ptr, toWriteTo);              // Write values to fill RAM
-                         ^
-C_accumulator_main.c:122:6: note: expected 'unsigned char *' but argument is of type 'long unsigned int *'
- void writeByteToRAM(unsigned char *ramLocation_ptr, unsigned int ramSpan){
-      ^
-C_accumulator_main.c:165:29: warning: passing argument 1 of 'ramTestByte' from incompatible pointer type
-          pass = ramTestByte(ramBase_ptr, numBytes);
-                             ^
-C_accumulator_main.c:77:5: note: expected 'unsigned char *' but argument is of type 'long unsigned int *'
- int ramTestByte(unsigned char *ramLocation_ptr, unsigned int numBytesToCheck){
-     ^
+new_main.c:158:5: warning: implicit declaration of function 'time' [-Wimplicit-function-declaration]
 Info: Linking nios_software.elf
-nios2-elf-g++  -T'../nios_software_bsp//linker.x' -msys-crt0='../nios_software_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../nios_software_bsp/   -Wl,-Map=nios_software.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o nios_software.elf obj/default/C_accumulator_main.o -lm -msys-lib=m
-nios2-elf-insert nios_software.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 49 --sidp 0x5020 --timestamp 1487804299 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus" --jdi ../..//output_files/lab3.jdi --sopcinfo C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software_bsp/../../nios_system.sopcinfo
+nios2-elf-g++  -T'../nios_software_bsp//linker.x' -msys-crt0='../nios_software_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../nios_software_bsp/   -Wl,-Map=nios_software.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o nios_software.elf obj/default/new_main.o -lm -msys-lib=m
+nios2-elf-insert nios_software.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 49 --sidp 0x5020 --timestamp 1488147199 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus" --jdi ../..//output_files/lab3.jdi --sopcinfo C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software_bsp/../../nios_system.sopcinfo
 Info: (nios_software.elf) 19 KBytes program size (code + initialized data).
-Info:                     7000 Bytes free for stack + heap.
+Info:                     6912 Bytes free for stack + heap.
+Info: Creating nios_software.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source nios_software.elf >nios_software.objdump
+[nios_software build complete]
+17:42:46 **** Build of configuration Nios II for project nios_software ****
+make all 
+Info: Building ../nios_software_bsp/
+C:/altera/15.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_software_bsp/
+[BSP build complete]
+Info: Compiling new_main.c to obj/default/new_main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../nios_software_bsp//HAL/inc -I../nios_software_bsp/ -I../nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/new_main.o new_main.c
+new_main.c: In function 'getRandomPattern':
+new_main.c:56:5: warning: implicit declaration of function 'rand' [-Wimplicit-function-declaration]
+     randomNum = rand();
+     ^
+new_main.c: In function 'main':
+new_main.c:158:5: warning: implicit declaration of function 'srand' [-Wimplicit-function-declaration]
+     srand((unsigned)time(NULL));                         // Fetch current epoch and use as seed
+     ^
+new_main.c:158:5: warning: implicit declaration of function 'time' [-Wimplicit-function-declaration]
+Info: Linking nios_software.elf
+nios2-elf-g++  -T'../nios_software_bsp//linker.x' -msys-crt0='../nios_software_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../nios_software_bsp/   -Wl,-Map=nios_software.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o nios_software.elf obj/default/new_main.o -lm -msys-lib=m
+nios2-elf-insert nios_software.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 49 --sidp 0x5020 --timestamp 1488147199 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus" --jdi ../..//output_files/lab3.jdi --sopcinfo C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software_bsp/../../nios_system.sopcinfo
+Info: (nios_software.elf) 19 KBytes program size (code + initialized data).
+Info:                     6912 Bytes free for stack + heap.
+Info: Creating nios_software.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source nios_software.elf >nios_software.objdump
+[nios_software build complete]
+17:43:17 **** Incremental Build of configuration Nios II for project nios_software ****
+make all 
+Info: Building ../nios_software_bsp/
+C:/altera/15.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_software_bsp/
+[BSP build complete]
+Info: Compiling new_main.c to obj/default/new_main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../nios_software_bsp//HAL/inc -I../nios_software_bsp/ -I../nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/new_main.o new_main.c
+new_main.c: In function 'getRandomPattern':
+new_main.c:56:5: warning: implicit declaration of function 'rand' [-Wimplicit-function-declaration]
+     randomNum = rand();
+     ^
+new_main.c: In function 'main':
+new_main.c:158:5: warning: implicit declaration of function 'srand' [-Wimplicit-function-declaration]
+     srand((unsigned)time(NULL));                         // Fetch current epoch and use as seed
+     ^
+new_main.c:158:5: warning: implicit declaration of function 'time' [-Wimplicit-function-declaration]
+Info: Linking nios_software.elf
+nios2-elf-g++  -T'../nios_software_bsp//linker.x' -msys-crt0='../nios_software_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../nios_software_bsp/   -Wl,-Map=nios_software.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o nios_software.elf obj/default/new_main.o -lm -msys-lib=m
+nios2-elf-insert nios_software.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 49 --sidp 0x5020 --timestamp 1488147199 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus" --jdi ../..//output_files/lab3.jdi --sopcinfo C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software_bsp/../../nios_system.sopcinfo
+Info: (nios_software.elf) 19 KBytes program size (code + initialized data).
+Info:                     6912 Bytes free for stack + heap.
+Info: Creating nios_software.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source nios_software.elf >nios_software.objdump
+[nios_software build complete]
+17:46:40 **** Incremental Build of configuration Nios II for project nios_software ****
+make all 
+Info: Building ../nios_software_bsp/
+C:/altera/15.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_software_bsp/
+[BSP build complete]
+Info: Compiling new_main.c to obj/default/new_main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../nios_software_bsp//HAL/inc -I../nios_software_bsp/ -I../nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/new_main.o new_main.c
+new_main.c: In function 'getRandomPattern':
+new_main.c:56:5: warning: implicit declaration of function 'rand' [-Wimplicit-function-declaration]
+     randomNum = rand();
+     ^
+new_main.c: In function 'main':
+new_main.c:163:5: warning: implicit declaration of function 'srand' [-Wimplicit-function-declaration]
+     srand((unsigned)time(NULL));                         // Fetch current epoch and use as seed
+     ^
+new_main.c:163:5: warning: implicit declaration of function 'time' [-Wimplicit-function-declaration]
+Info: Linking nios_software.elf
+nios2-elf-g++  -T'../nios_software_bsp//linker.x' -msys-crt0='../nios_software_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../nios_software_bsp/   -Wl,-Map=nios_software.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o nios_software.elf obj/default/new_main.o -lm -msys-lib=m
+nios2-elf-insert nios_software.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 49 --sidp 0x5020 --timestamp 1488147199 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus" --jdi ../..//output_files/lab3.jdi --sopcinfo C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software_bsp/../../nios_system.sopcinfo
+Info: (nios_software.elf) 19 KBytes program size (code + initialized data).
+Info:                     6856 Bytes free for stack + heap.
+Info: Creating nios_software.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source nios_software.elf >nios_software.objdump
+[nios_software build complete]
+17:49:03 **** Incremental Build of configuration Nios II for project nios_software ****
+make all 
+Info: Building ../nios_software_bsp/
+C:/altera/15.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_software_bsp/
+[BSP build complete]
+Info: Compiling new_main.c to obj/default/new_main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../nios_software_bsp//HAL/inc -I../nios_software_bsp/ -I../nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/new_main.o new_main.c
+new_main.c: In function 'getRandomPattern':
+new_main.c:56:5: warning: implicit declaration of function 'rand' [-Wimplicit-function-declaration]
+     randomNum = rand();
+     ^
+new_main.c: In function 'ramTestByte':
+new_main.c:132:5: warning: implicit declaration of function 'srand' [-Wimplicit-function-declaration]
+     srand((unsigned)time(NULL)); //Reseed to produce same vals
+     ^
+new_main.c:132:5: warning: implicit declaration of function 'time' [-Wimplicit-function-declaration]
+Info: Linking nios_software.elf
+nios2-elf-g++  -T'../nios_software_bsp//linker.x' -msys-crt0='../nios_software_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../nios_software_bsp/   -Wl,-Map=nios_software.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o nios_software.elf obj/default/new_main.o -lm -msys-lib=m
+nios2-elf-insert nios_software.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 49 --sidp 0x5020 --timestamp 1488147199 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus" --jdi ../..//output_files/lab3.jdi --sopcinfo C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software_bsp/../../nios_system.sopcinfo
+Info: (nios_software.elf) 19 KBytes program size (code + initialized data).
+Info:                     6840 Bytes free for stack + heap.
+Info: Creating nios_software.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source nios_software.elf >nios_software.objdump
+[nios_software build complete]
+17:56:09 **** Incremental Build of configuration Nios II for project nios_software ****
+make all 
+Info: Building ../nios_software_bsp/
+C:/altera/15.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_software_bsp/
+[BSP build complete]
+Info: Compiling new_main.c to obj/default/new_main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../nios_software_bsp//HAL/inc -I../nios_software_bsp/ -I../nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/new_main.o new_main.c
+new_main.c: In function 'getRandomPattern':
+new_main.c:55:5: warning: implicit declaration of function 'rand' [-Wimplicit-function-declaration]
+     randomNum = rand();
+     ^
+new_main.c: In function 'ramConfidenceTest':
+new_main.c:102:5: warning: implicit declaration of function 'srand' [-Wimplicit-function-declaration]
+     srand((unsigned)time(NULL)); //Reseed to produce same vals
+     ^
+new_main.c:102:5: warning: implicit declaration of function 'time' [-Wimplicit-function-declaration]
+Info: Linking nios_software.elf
+nios2-elf-g++  -T'../nios_software_bsp//linker.x' -msys-crt0='../nios_software_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../nios_software_bsp/   -Wl,-Map=nios_software.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o nios_software.elf obj/default/new_main.o -lm -msys-lib=m
+nios2-elf-insert nios_software.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 49 --sidp 0x5020 --timestamp 1488147199 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus" --jdi ../..//output_files/lab3.jdi --sopcinfo C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software_bsp/../../nios_system.sopcinfo
+Info: (nios_software.elf) 19 KBytes program size (code + initialized data).
+Info:                     7032 Bytes free for stack + heap.
+Info: Creating nios_software.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source nios_software.elf >nios_software.objdump
+[nios_software build complete]
+17:56:33 **** Incremental Build of configuration Nios II for project nios_software ****
+make all 
+Info: Building ../nios_software_bsp/
+C:/altera/15.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_software_bsp/
+[BSP build complete]
+Info: Compiling new_main.c to obj/default/new_main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../nios_software_bsp//HAL/inc -I../nios_software_bsp/ -I../nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/new_main.o new_main.c
+new_main.c: In function 'getRandomPattern':
+new_main.c:55:5: warning: implicit declaration of function 'rand' [-Wimplicit-function-declaration]
+     randomNum = rand();
+     ^
+new_main.c: In function 'ramConfidenceTest':
+new_main.c:102:5: warning: implicit declaration of function 'srand' [-Wimplicit-function-declaration]
+     srand((unsigned)time(NULL)); //Reseed to produce same vals
+     ^
+new_main.c:102:5: warning: implicit declaration of function 'time' [-Wimplicit-function-declaration]
+Info: Linking nios_software.elf
+nios2-elf-g++  -T'../nios_software_bsp//linker.x' -msys-crt0='../nios_software_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../nios_software_bsp/   -Wl,-Map=nios_software.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o nios_software.elf obj/default/new_main.o -lm -msys-lib=m
+nios2-elf-insert nios_software.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 49 --sidp 0x5020 --timestamp 1488147199 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus" --jdi ../..//output_files/lab3.jdi --sopcinfo C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software_bsp/../../nios_system.sopcinfo
+Info: (nios_software.elf) 19 KBytes program size (code + initialized data).
+Info:                     7032 Bytes free for stack + heap.
+Info: Creating nios_software.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source nios_software.elf >nios_software.objdump
+[nios_software build complete]
+17:57:41 **** Incremental Build of configuration Nios II for project nios_software ****
+make all 
+Info: Building ../nios_software_bsp/
+C:/altera/15.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_software_bsp/
+[BSP build complete]
+Info: Compiling new_main.c to obj/default/new_main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../nios_software_bsp//HAL/inc -I../nios_software_bsp/ -I../nios_software_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/new_main.o new_main.c
+new_main.c: In function 'getRandomPattern':
+new_main.c:55:5: warning: implicit declaration of function 'rand' [-Wimplicit-function-declaration]
+     randomNum = rand();
+     ^
+new_main.c: In function 'ramConfidenceTest':
+new_main.c:102:5: warning: implicit declaration of function 'srand' [-Wimplicit-function-declaration]
+     srand((unsigned)time(NULL)); //Reseed to produce same vals
+     ^
+new_main.c:102:5: warning: implicit declaration of function 'time' [-Wimplicit-function-declaration]
+Info: Linking nios_software.elf
+nios2-elf-g++  -T'../nios_software_bsp//linker.x' -msys-crt0='../nios_software_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../nios_software_bsp/   -Wl,-Map=nios_software.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o nios_software.elf obj/default/new_main.o -lm -msys-lib=m
+nios2-elf-insert nios_software.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 49 --sidp 0x5020 --timestamp 1488147199 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus" --jdi ../..//output_files/lab3.jdi --sopcinfo C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software_bsp/../../nios_system.sopcinfo
+Info: (nios_software.elf) 19 KBytes program size (code + initialized data).
+Info:                     7016 Bytes free for stack + heap.
 Info: Creating nios_software.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source nios_software.elf >nios_software.objdump
 [nios_software build complete]

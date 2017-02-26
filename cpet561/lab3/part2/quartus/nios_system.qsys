@@ -88,6 +88,11 @@
    }
    element jtag_uart_0.avalon_jtag_slave
    {
+      datum _tags
+      {
+         value = "";
+         type = "String";
+      }
       datum baseAddress
       {
          value = "20520";
@@ -126,20 +131,20 @@
          type = "String";
       }
    }
+   element nios_system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
    element onchip_memory2_0
    {
       datum _sortIndex
       {
          value = "2";
          type = "int";
-      }
-   }
-   element onchip_memory2_0.s1
-   {
-      datum baseAddress
-      {
-         value = "65536";
-         type = "String";
       }
    }
    element sysid_qsys_0

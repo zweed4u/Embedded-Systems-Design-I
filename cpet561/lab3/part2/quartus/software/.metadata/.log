@@ -1,4 +1,4 @@
-!SESSION 2017-02-22 18:01:00.816 -----------------------------------------------
+!SESSION 2017-02-23 19:42:06.463 -----------------------------------------------
 eclipse.buildId=4.3.2.M20140221-1700
 java.version=1.8.0_05
 java.vendor=Oracle Corporation
@@ -6,7 +6,7 @@ BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
 Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
 
-!ENTRY org.eclipse.egit.ui 2 0 2017-02-22 18:01:25.518
+!ENTRY org.eclipse.egit.ui 2 0 2017-02-23 19:42:12.910
 !MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
 Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
 The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
@@ -14,147 +14,21 @@ this system level configuration. The Git installation location can be configured
 Team > Git > Configuration preference page's 'System Settings' tab.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
 
-!ENTRY org.eclipse.cdt.core 1 0 2017-02-22 18:02:14.809
-!MESSAGE Indexed 'nios_software_bsp' (80 sources, 62 headers) in 1.22 sec: 1,190 declarations; 2,500 references; 110 unresolved inclusions; 6 syntax errors; 191 unresolved names (4.92%)
+!ENTRY org.eclipse.cdt.core 1 0 2017-02-23 19:43:00.221
+!MESSAGE Indexed 'nios_software_bsp' (80 sources, 62 headers) in 1.11 sec: 1,190 declarations; 2,500 references; 110 unresolved inclusions; 6 syntax errors; 191 unresolved names (4.92%)
 
-!ENTRY org.eclipse.cdt.core 1 0 2017-02-22 18:02:18.232
+!ENTRY org.eclipse.cdt.core 1 0 2017-02-23 19:43:04.008
 !MESSAGE Indexed 'nios_software' (0 sources, 0 headers) in 0.00 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
 
-!ENTRY org.eclipse.jface 2 0 2017-02-22 18:03:07.663
+!ENTRY org.eclipse.jface 2 0 2017-02-23 19:43:44.537
 !MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
-!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-22 18:03:07.663
-!MESSAGE A conflict occurred for CTRL+SHIFT+T:
-Binding(CTRL+SHIFT+T,
-	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.opentype,Open Element,
-		Open an element in an Editor,
-		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@16024b49,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.cdt.ui.cEditorScope,,,system)
-Binding(CTRL+SHIFT+T,
-	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.opentype,Open Element,
-		Open an element in an Editor,
-		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@16024b49,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.cdt.ui.cViewScope,,,system)
-!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-22 18:03:07.663
-!MESSAGE A conflict occurred for ALT+CTRL+I:
-Binding(ALT+CTRL+I,
-	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.include.browser,Open Include Browser,
-		Open an include browser on the selected element,
-		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@53f94afe,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.cdt.ui.cEditorScope,,,system)
-Binding(ALT+CTRL+I,
-	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.include.browser,Open Include Browser,
-		Open an include browser on the selected element,
-		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@53f94afe,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.cdt.ui.cViewScope,,,system)
-!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-22 18:03:07.663
-!MESSAGE A conflict occurred for F4:
-Binding(F4,
-	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.type.hierarchy,Open Type Hierarchy,
-		Open a type hierarchy on the selected element,
-		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@304e1e4e,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.cdt.ui.cEditorScope,,,system)
-Binding(F4,
-	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.type.hierarchy,Open Type Hierarchy,
-		Open a type hierarchy on the selected element,
-		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@304e1e4e,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.cdt.ui.cViewScope,,,system)
-!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-22 18:03:07.663
-!MESSAGE A conflict occurred for CTRL+SHIFT+G:
-Binding(CTRL+SHIFT+G,
-	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.findrefs,References,
-		Search for references to the selected element in the workspace,
-		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7d4e424e,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.cdt.ui.cEditorScope,,,system)
-Binding(CTRL+SHIFT+G,
-	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.findrefs,References,
-		Search for references to the selected element in the workspace,
-		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7d4e424e,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.cdt.ui.cViewScope,,,system)
-!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-22 18:03:07.663
-!MESSAGE A conflict occurred for CTRL+G:
-Binding(CTRL+G,
-	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.finddecl,Declaration,
-		Search for declarations of the selected element in the workspace,
-		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@799206ad,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.cdt.ui.cEditorScope,,,system)
-Binding(CTRL+G,
-	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.finddecl,Declaration,
-		Search for declarations of the selected element in the workspace,
-		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@799206ad,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.cdt.ui.cViewScope,,,system)
-!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-22 18:03:07.663
-!MESSAGE A conflict occurred for ALT+CTRL+H:
-Binding(ALT+CTRL+H,
-	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.call.hierarchy,Open Call Hierarchy,
-		Open the call hierarchy for the selected element,
-		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@60251ddb,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.cdt.ui.cEditorScope,,,system)
-Binding(ALT+CTRL+H,
-	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.call.hierarchy,Open Call Hierarchy,
-		Open the call hierarchy for the selected element,
-		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@60251ddb,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.cdt.ui.cViewScope,,,system)
-!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-22 18:03:07.663
-!MESSAGE A conflict occurred for CTRL+SHIFT+H:
-Binding(CTRL+SHIFT+H,
-	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
-		Open a type in the type hierarchy view,
-		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2059c3ff,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.cdt.ui.cEditorScope,,,system)
-Binding(CTRL+SHIFT+H,
-	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
-		Open a type in the type hierarchy view,
-		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2059c3ff,
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.cdt.ui.cViewScope,,,system)
-!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-22 18:03:07.663
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-23 19:43:44.537
 !MESSAGE A conflict occurred for ALT+SHIFT+R:
 Binding(ALT+SHIFT+R,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.text.rename.element,Rename - Refactoring ,
 		Rename the selected element,
 		Category(org.eclipse.cdt.ui.category.refactoring,Refactor - C++,C/C++ Refactorings,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2f8ab988,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6de4071b,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -162,17 +36,17 @@ Binding(ALT+SHIFT+R,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.text.rename.element,Rename - Refactoring ,
 		Rename the selected element,
 		Category(org.eclipse.cdt.ui.category.refactoring,Refactor - C++,C/C++ Refactorings,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2f8ab988,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6de4071b,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
-!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-22 18:03:07.663
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-23 19:43:44.537
 !MESSAGE A conflict occurred for F3:
 Binding(F3,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.opendecl,Open Declaration,
 		Open an editor on the selected element's declaration(s),
 		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@46c475ba,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7077ae9c,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -180,26 +54,161 @@ Binding(F3,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.opendecl,Open Declaration,
 		Open an editor on the selected element's declaration(s),
 		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@46c475ba,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7077ae9c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-23 19:43:44.537
+!MESSAGE A conflict occurred for F4:
+Binding(F4,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3fe3ebb3,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(F4,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3fe3ebb3,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-23 19:43:44.537
+!MESSAGE A conflict occurred for CTRL+SHIFT+G:
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.findrefs,References,
+		Search for references to the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@22a1d77b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.findrefs,References,
+		Search for references to the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@22a1d77b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-23 19:43:44.537
+!MESSAGE A conflict occurred for CTRL+G:
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.finddecl,Declaration,
+		Search for declarations of the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6f30d0eb,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.finddecl,Declaration,
+		Search for declarations of the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6f30d0eb,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-23 19:43:44.537
+!MESSAGE A conflict occurred for ALT+CTRL+H:
+Binding(ALT+CTRL+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.call.hierarchy,Open Call Hierarchy,
+		Open the call hierarchy for the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@22fe90df,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(ALT+CTRL+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.call.hierarchy,Open Call Hierarchy,
+		Open the call hierarchy for the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@22fe90df,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-23 19:43:44.537
+!MESSAGE A conflict occurred for CTRL+SHIFT+H:
+Binding(CTRL+SHIFT+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
+		Open a type in the type hierarchy view,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2604940,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+SHIFT+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
+		Open a type in the type hierarchy view,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2604940,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-23 19:43:44.537
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.opentype,Open Element,
+		Open an element in an Editor,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2e564c78,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.opentype,Open Element,
+		Open an element in an Editor,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2e564c78,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-23 19:43:44.537
+!MESSAGE A conflict occurred for ALT+CTRL+I:
+Binding(ALT+CTRL+I,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.include.browser,Open Include Browser,
+		Open an include browser on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@470866d1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(ALT+CTRL+I,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.include.browser,Open Include Browser,
+		Open an include browser on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@470866d1,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
 
-!ENTRY com.altera.sbtgui.launch 1 0 2017-02-22 18:09:51.139
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-23 19:44:40.625
 !MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2017-02-22 18:09:56.370
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-23 19:44:44.842
 !MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
 
-!ENTRY org.eclipse.jface 2 0 2017-02-22 18:10:49.042
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-23 19:44:55.329
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-23 19:44:58.639
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-23 19:45:02.806
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY org.eclipse.jface 2 0 2017-02-23 19:46:00.631
 !MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
-!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-22 18:10:49.042
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-23 19:46:00.631
 !MESSAGE A conflict occurred for CTRL+T:
 Binding(CTRL+T,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.quick.type.hierarchy,Quick Type Hierarchy,
 		Shows quick type hierarchy,
 		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@544502d6,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4d5d6297,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -207,13 +216,1089 @@ Binding(CTRL+T,
 	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.toggleMemoryMonitorsPane,Toggle Memory Monitors Pane,
 		Toggle visibility of the Memory Monitors Pane,
 		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
-		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@382e7f70,
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6bd2c51d,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.debug.ui.memoryview,,,system)
 
-!ENTRY com.altera.sbtgui.launch 1 0 2017-02-22 18:12:53.433
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-23 19:46:47.177
 !MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2017-02-22 18:12:58.442
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-23 19:46:51.235
 !MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-23 19:51:55.064
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-23 19:51:58.966
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-23 19:58:18.495
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-23 19:58:21.929
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-23 19:58:45.478
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-23 19:58:46.726
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-23 19:58:50.690
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-23 20:00:33.181
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-23 20:00:37.060
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY org.eclipse.cdt.debug.mi.core 4 42 2017-02-23 20:05:40.144
+!MESSAGE Internal Error
+!STACK 0
+org.eclipse.cdt.debug.mi.core.cdi.MI2CDIException: Inferior terminated[]
+	at org.eclipse.cdt.debug.mi.core.cdi.SharedLibraryManager.getMIShareds(SharedLibraryManager.java:123)
+	at org.eclipse.cdt.debug.mi.core.cdi.SharedLibraryManager.updateState(SharedLibraryManager.java:189)
+	at org.eclipse.cdt.debug.mi.core.cdi.SharedLibraryManager.update(SharedLibraryManager.java:137)
+	at org.eclipse.cdt.debug.mi.core.cdi.EventManager.processSuspendedEvent(EventManager.java:329)
+	at org.eclipse.cdt.debug.mi.core.cdi.EventManager.update(EventManager.java:101)
+	at java.util.Observable.notifyObservers(Unknown Source)
+	at org.eclipse.cdt.debug.mi.core.MISession.notifyObservers(MISession.java:797)
+	at org.eclipse.cdt.debug.mi.core.EventThread.run(EventThread.java:47)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-23 20:05:47.313
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-23 20:05:51.336
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-23 20:09:48.632
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-23 20:09:51.560
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-23 20:09:55.568
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-23 20:25:10.475
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-23 20:25:13.881
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-23 20:25:17.408
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+!SESSION 2017-02-24 16:24:22.632 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-02-24 16:25:00.298
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-24 16:26:56.053
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-24 16:27:00.188
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY org.eclipse.jface 2 0 2017-02-24 16:27:18.046
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-24 16:27:18.046
+!MESSAGE A conflict occurred for CTRL+T:
+Binding(CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.quick.type.hierarchy,Quick Type Hierarchy,
+		Shows quick type hierarchy,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@489989eb,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.toggleMemoryMonitorsPane,Toggle Memory Monitors Pane,
+		Toggle visibility of the Memory Monitors Pane,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6d97a357,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.memoryview,,,system)
+
+!ENTRY org.eclipse.jface 2 0 2017-02-24 16:27:20.927
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-24 16:27:20.927
+!MESSAGE A conflict occurred for CTRL+G:
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.finddecl,Declaration,
+		Search for declarations of the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@76929266,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.command.gotoaddress,Go to Address,
+		Go to Address,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.memory.abstractasynctablerendering,,,system)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-24 16:35:14.279
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-24 16:35:17.517
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+!SESSION 2017-02-24 16:46:37.945 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-02-24 16:46:53.018
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-24 16:47:58.064
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-24 16:48:02.243
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY org.eclipse.jface 2 0 2017-02-24 16:50:54.801
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-24 16:50:54.801
+!MESSAGE A conflict occurred for CTRL+T:
+Binding(CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.quick.type.hierarchy,Quick Type Hierarchy,
+		Shows quick type hierarchy,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3bf8feec,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.toggleMemoryMonitorsPane,Toggle Memory Monitors Pane,
+		Toggle visibility of the Memory Monitors Pane,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@486e3116,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.memoryview,,,system)
+!SESSION 2017-02-24 17:02:59.072 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-02-24 17:03:08.527
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-24 17:04:02.285
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-24 17:04:06.477
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY org.eclipse.jface 2 0 2017-02-24 17:04:46.781
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-24 17:04:46.781
+!MESSAGE A conflict occurred for CTRL+T:
+Binding(CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.quick.type.hierarchy,Quick Type Hierarchy,
+		Shows quick type hierarchy,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@789d45f7,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.toggleMemoryMonitorsPane,Toggle Memory Monitors Pane,
+		Toggle visibility of the Memory Monitors Pane,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@240c626d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.memoryview,,,system)
+
+!ENTRY org.eclipse.jface 2 0 2017-02-24 17:07:11.661
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-24 17:07:11.661
+!MESSAGE A conflict occurred for CTRL+G:
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.finddecl,Declaration,
+		Search for declarations of the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2d7bfb13,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.command.gotoaddress,Go to Address,
+		Go to Address,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.memory.abstractasynctablerendering,,,system)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-24 17:08:31.701
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-24 17:08:35.889
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-24 17:11:33.343
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-24 17:11:37.719
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY org.eclipse.debug.ui 4 120 2017-02-24 17:12:16.767
+!MESSAGE Error logged from Debug UI: 
+!STACK 1
+org.eclipse.debug.core.DebugException: Target request failed: Target is not suspended.
+	at org.eclipse.cdt.debug.internal.core.model.CDebugElement.throwDebugException(CDebugElement.java:295)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugElement.requestFailed(CDebugElement.java:262)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugElement.targetRequestFailed(CDebugElement.java:250)
+	at org.eclipse.cdt.debug.internal.core.model.CMemoryBlockExtension.getAddressableSize(CMemoryBlockExtension.java:185)
+	at org.eclipse.debug.internal.ui.memory.provisional.AbstractAsyncTableRendering.initAddressableSize(AbstractAsyncTableRendering.java:883)
+	at org.eclipse.debug.internal.ui.memory.provisional.AbstractAsyncTableRendering.access$19(AbstractAsyncTableRendering.java:877)
+	at org.eclipse.debug.internal.ui.memory.provisional.AbstractAsyncTableRendering$6.run(AbstractAsyncTableRendering.java:614)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.debug.core 4 5010 2017-02-24 17:12:16.768
+!MESSAGE Target request failed: Target is not suspended.
+!SESSION 2017-02-24 17:44:26.423 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-02-24 17:44:52.554
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-24 17:49:06.782
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-24 17:49:10.797
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY org.eclipse.jface 2 0 2017-02-24 17:54:29.245
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-24 17:54:29.245
+!MESSAGE A conflict occurred for CTRL+T:
+Binding(CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.quick.type.hierarchy,Quick Type Hierarchy,
+		Shows quick type hierarchy,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@a64a147,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.toggleMemoryMonitorsPane,Toggle Memory Monitors Pane,
+		Toggle visibility of the Memory Monitors Pane,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3fa43b05,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.memoryview,,,system)
+!SESSION 2017-02-24 18:03:38.746 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-02-24 18:04:00.677
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-24 18:05:40.891
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-24 18:05:44.886
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY org.eclipse.jface 2 0 2017-02-24 18:05:59.225
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-24 18:05:59.225
+!MESSAGE A conflict occurred for CTRL+T:
+Binding(CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.quick.type.hierarchy,Quick Type Hierarchy,
+		Shows quick type hierarchy,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@ee7a538,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.toggleMemoryMonitorsPane,Toggle Memory Monitors Pane,
+		Toggle visibility of the Memory Monitors Pane,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7c045627,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.memoryview,,,system)
+
+!ENTRY org.eclipse.jface 2 0 2017-02-24 18:06:55.930
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-24 18:06:55.930
+!MESSAGE A conflict occurred for CTRL+G:
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.finddecl,Declaration,
+		Search for declarations of the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@44aaa987,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.command.gotoaddress,Go to Address,
+		Go to Address,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.memory.abstractasynctablerendering,,,system)
+!SESSION 2017-02-24 18:25:23.168 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-02-24 18:25:25.643
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-02-24 18:25:39.184
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-24 18:26:15.550
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-24 18:26:19.487
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY org.eclipse.jface 2 0 2017-02-24 18:26:33.770
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-24 18:26:33.770
+!MESSAGE A conflict occurred for CTRL+T:
+Binding(CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.quick.type.hierarchy,Quick Type Hierarchy,
+		Shows quick type hierarchy,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7d453075,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.toggleMemoryMonitorsPane,Toggle Memory Monitors Pane,
+		Toggle visibility of the Memory Monitors Pane,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@16df0ebd,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.memoryview,,,system)
+
+!ENTRY org.eclipse.jface 2 0 2017-02-24 18:27:06.648
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-24 18:27:06.648
+!MESSAGE A conflict occurred for CTRL+G:
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.finddecl,Declaration,
+		Search for declarations of the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@394e0104,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.command.gotoaddress,Go to Address,
+		Go to Address,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.memory.abstractasynctablerendering,,,system)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-24 18:27:55.204
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-24 18:27:59.191
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-24 18:30:15.798
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-24 18:30:18.667
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-24 18:30:22.636
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+!SESSION 2017-02-24 18:41:18.610 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-02-24 18:41:42.359
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-24 18:42:09.533
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-24 18:42:13.502
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY org.eclipse.jface 2 0 2017-02-24 18:43:26.666
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-24 18:43:26.667
+!MESSAGE A conflict occurred for CTRL+T:
+Binding(CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.quick.type.hierarchy,Quick Type Hierarchy,
+		Shows quick type hierarchy,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@444720b7,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.toggleMemoryMonitorsPane,Toggle Memory Monitors Pane,
+		Toggle visibility of the Memory Monitors Pane,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@529fda9f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.memoryview,,,system)
+
+!ENTRY org.eclipse.jface 2 0 2017-02-24 18:43:41.312
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-24 18:43:41.312
+!MESSAGE A conflict occurred for CTRL+G:
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.finddecl,Declaration,
+		Search for declarations of the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6c04310f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.command.gotoaddress,Go to Address,
+		Go to Address,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.memory.abstractasynctablerendering,,,system)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-24 18:44:31.188
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-24 18:44:35.243
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+!SESSION 2017-02-25 16:59:55.588 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-02-25 17:00:25.903
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 17:02:53.468
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 17:02:57.456
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+!SESSION 2017-02-25 17:14:26.231 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-02-25 17:14:50.129
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 17:15:26.381
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 17:15:30.491
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+!SESSION 2017-02-25 17:23:54.572 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-02-25 17:24:04.489
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 17:24:44.202
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 17:24:48.239
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+!SESSION 2017-02-25 17:34:07.917 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-02-25 17:34:19.697
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 17:34:52.217
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 17:34:56.168
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+!SESSION 2017-02-25 17:57:42.804 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-02-25 17:57:59.738
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 17:58:45.697
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 17:58:49.685
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY org.eclipse.jface 2 0 2017-02-25 17:59:33.208
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-25 17:59:33.208
+!MESSAGE A conflict occurred for CTRL+T:
+Binding(CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.quick.type.hierarchy,Quick Type Hierarchy,
+		Shows quick type hierarchy,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4e58eda2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.toggleMemoryMonitorsPane,Toggle Memory Monitors Pane,
+		Toggle visibility of the Memory Monitors Pane,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@75f9a35a,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.memoryview,,,system)
+
+!ENTRY org.eclipse.cdt.debug.mi.core 4 42 2017-02-25 17:59:45.900
+!MESSAGE Internal Error
+!STACK 0
+org.eclipse.cdt.debug.mi.core.cdi.MI2CDIException: Inferior terminated[]
+	at org.eclipse.cdt.debug.mi.core.cdi.SharedLibraryManager.getMIShareds(SharedLibraryManager.java:123)
+	at org.eclipse.cdt.debug.mi.core.cdi.SharedLibraryManager.updateState(SharedLibraryManager.java:189)
+	at org.eclipse.cdt.debug.mi.core.cdi.SharedLibraryManager.update(SharedLibraryManager.java:137)
+	at org.eclipse.cdt.debug.mi.core.cdi.EventManager.processSuspendedEvent(EventManager.java:329)
+	at org.eclipse.cdt.debug.mi.core.cdi.EventManager.update(EventManager.java:101)
+	at java.util.Observable.notifyObservers(Unknown Source)
+	at org.eclipse.cdt.debug.mi.core.MISession.notifyObservers(MISession.java:797)
+	at org.eclipse.cdt.debug.mi.core.EventThread.run(EventThread.java:47)
+!SESSION 2017-02-25 18:14:03.686 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-02-25 18:14:12.714
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 18:14:55.712
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 18:14:59.811
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 18:17:12.282
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 18:17:14.602
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 18:17:16.339
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 18:17:18.603
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY org.eclipse.cdt.launch 4 0 2017-02-25 18:17:21.220
+!MESSAGE Error starting gdbserver - see console for details
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 18:17:56.536
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 18:18:00.542
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY org.eclipse.jface 2 0 2017-02-25 18:18:54.974
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-25 18:18:54.974
+!MESSAGE A conflict occurred for CTRL+T:
+Binding(CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.quick.type.hierarchy,Quick Type Hierarchy,
+		Shows quick type hierarchy,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1cc9b564,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.toggleMemoryMonitorsPane,Toggle Memory Monitors Pane,
+		Toggle visibility of the Memory Monitors Pane,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2ce80c85,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.memoryview,,,system)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 18:19:26.823
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 18:19:30.844
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 18:24:15.560
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 18:24:19.572
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 18:25:03.290
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 18:25:07.263
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 18:27:12.744
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 18:27:16.750
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 18:27:48.504
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 18:27:52.498
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 18:30:08.873
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 18:30:12.841
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 18:36:30.224
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 18:36:34.199
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 18:37:15.372
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 18:37:19.330
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 18:37:57.127
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 18:38:01.038
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY org.eclipse.jface 2 0 2017-02-25 18:39:15.636
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-25 18:39:15.636
+!MESSAGE A conflict occurred for CTRL+G:
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.finddecl,Declaration,
+		Search for declarations of the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@147fc609,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.command.gotoaddress,Go to Address,
+		Go to Address,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.memory.abstractasynctablerendering,,,system)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 18:39:41.168
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 18:39:45.153
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY org.eclipse.debug.ui 4 120 2017-02-25 18:39:56.987
+!MESSAGE Error logged from Debug UI: 
+!STACK 1
+org.eclipse.debug.core.DebugException: Target request failed: Target is not suspended.
+	at org.eclipse.cdt.debug.internal.core.model.CDebugElement.throwDebugException(CDebugElement.java:295)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugElement.requestFailed(CDebugElement.java:262)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugElement.targetRequestFailed(CDebugElement.java:250)
+	at org.eclipse.cdt.debug.internal.core.model.CMemoryBlockExtension.getAddressableSize(CMemoryBlockExtension.java:185)
+	at org.eclipse.debug.internal.ui.memory.provisional.AbstractAsyncTableRendering.initAddressableSize(AbstractAsyncTableRendering.java:883)
+	at org.eclipse.debug.internal.ui.memory.provisional.AbstractAsyncTableRendering.access$19(AbstractAsyncTableRendering.java:877)
+	at org.eclipse.debug.internal.ui.memory.provisional.AbstractAsyncTableRendering$6.run(AbstractAsyncTableRendering.java:614)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.debug.core 4 5010 2017-02-25 18:39:56.989
+!MESSAGE Target request failed: Target is not suspended.
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 19:02:40.217
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 19:02:44.347
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+!SESSION 2017-02-25 19:38:34.095 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-02-25 19:39:00.947
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 19:39:25.563
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 19:39:29.468
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 20:01:17.713
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 20:01:21.754
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY org.eclipse.jface 2 0 2017-02-25 20:02:00.428
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-25 20:02:00.428
+!MESSAGE A conflict occurred for CTRL+T:
+Binding(CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.quick.type.hierarchy,Quick Type Hierarchy,
+		Shows quick type hierarchy,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5ab30bb4,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.toggleMemoryMonitorsPane,Toggle Memory Monitors Pane,
+		Toggle visibility of the Memory Monitors Pane,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@72b1ee4b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.memoryview,,,system)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 20:02:11.039
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 20:02:15.094
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 20:03:23.234
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 20:03:27.268
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 20:22:44.575
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 20:22:48.572
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 20:23:31.887
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 20:23:34.791
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 20:23:38.742
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+!SESSION 2017-02-25 20:32:59.025 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-02-25 20:33:08.801
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 20:33:34.537
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 20:33:38.515
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+!SESSION 2017-02-25 20:43:08.138 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-02-25 20:43:17.796
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2017-02-25 21:02:34.641 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-02-25 21:02:41.764
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 21:03:45.590
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-25 21:03:49.650
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+!SESSION 2017-02-26 17:22:01.494 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-02-26 17:27:00.032
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-26 17:28:25.929
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-26 17:28:31.023
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-26 17:31:02.003
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-26 17:31:07.133
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY org.eclipse.jface 2 0 2017-02-26 17:31:57.336
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-26 17:31:57.336
+!MESSAGE A conflict occurred for CTRL+T:
+Binding(CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.quick.type.hierarchy,Quick Type Hierarchy,
+		Shows quick type hierarchy,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@71b6886,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.toggleMemoryMonitorsPane,Toggle Memory Monitors Pane,
+		Toggle visibility of the Memory Monitors Pane,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7bdab06c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.memoryview,,,system)
+!SESSION 2017-02-26 17:41:32.666 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/altera/15.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-02-26 17:41:48.005
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-26 17:42:54.942
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-26 17:42:58.197
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-26 17:43:22.129
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-26 17:43:23.326
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-26 17:43:26.770
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-26 17:46:45.386
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-26 17:46:46.663
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-26 17:46:50.220
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-26 17:49:08.335
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-26 17:49:09.546
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-26 17:49:13.917
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-26 17:56:14.960
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-26 17:56:18.416
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-26 17:56:38.495
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-26 17:56:39.766
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-26 17:56:43.157
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-26 17:57:46.235
+!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-26 17:57:47.505
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --accept-bad-sysid --sidp=0x5020]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2017-02-26 17:57:50.996
+!MESSAGE Executing: [C:/altera/15.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --accept-bad-sysid --sidp=0x5020 /cygdrive/c/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab3/part2/quartus/software/nios_software/nios_software.elf]

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="nios_system" kind="nios_system" version="1.0" fabric="QSYS">
  <!-- Format version 15.1 185 (Future versions may contain additional information.) -->
- <!-- 2017.02.22.17:58:19 -->
+ <!-- 2017.02.26.17:13:19 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1487804299</value>
+  <value>1488147199</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -7380,7 +7380,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1487804299</value>
+   <value>1488147199</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -7400,7 +7400,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1487804299</value>
+   <value>1488147199</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -7416,7 +7416,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1487804299</value>
+   <value>1488147199</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>

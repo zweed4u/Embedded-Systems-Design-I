@@ -17,15 +17,17 @@
 #define PIO_EDGE_CAP_REG_OFFSET     3
 
 #define KEY1_BIT_MASK               0x1         // bit 0
-#define numBytes (6)
+#define numBytes (9)
 #define toWriteTo (4096)  //16384
 
 int randomNum = 0;                                                  // Global pattern variable
-int randomStore[numBytes];                                          // Array for storing the random pattern
 static alt_u32 sKey1Pressed = 0;
 
 volatile alt_u32* pushButtonPtr = (alt_u32*)(KEY1_BASE);
 unsigned long *ramBase_ptr = (unsigned long *) INFERRED_RAM_BASE;   // Pointer to the base address of Inferred RAM
+char *ramBaseByte_ptr = (char *) INFERRED_RAM_BASE;   // Pointer to the base address of Inferred RAM
+unsigned short *ramBaseHalfWord_ptr = (unsigned short *) INFERRED_RAM_BASE;   // Pointer to the base address of Inferred RAM
+
 unsigned char *ledBase_ptr = (unsigned char *) LEDS_BASE;           // Pointer to LED base memory location
 
 void pushButtonIsr(void *context)
@@ -40,7 +42,7 @@ void pushButtonIsr(void *context)
   // assume more than one could be pressed at the same time
   if (KEY1_BIT_MASK == (reg_value & KEY1_BIT_MASK))
   {
-	*ledBase_ptr = 0x0;  // Turn LEDs off
+    *ledBase_ptr = 0x0;  // Turn LEDs off
     sKey1Pressed = 1;
   }
 
@@ -49,57 +51,12 @@ void pushButtonIsr(void *context)
 }
 
 /* Returns a random number using the epoch as seed. */
-int getRandomPattern(void){
+int getRandomPattern(int bound){
     randomNum = rand();
+    if (bound != 0){
+        randomNum = (randomNum % bound);
+    }
     return randomNum;
-}
-
-/* Return 0 or 1, for False or True respectively, if memory passes test.
- * Params: ramLocation_ptr - location of the RAM wanted to check.
- * numBytesToCheck - Size in bytes of RAM wanted to check. */
-int ramConfidenceTest(unsigned long *ramLocation_ptr, unsigned int numBytesToCheck){
-    int i = 0;
-    while (numBytesToCheck){
-        if (randomStore[i] != *(ramLocation_ptr + i)){  // Test failed!
-            return 0; 
-        }
-        i++;
-        numBytesToCheck--;
-    }
-    return 1;                                           // Made it through all bytes and all match - test passed
-}
-
-
-
-/* Return 0 or 1, for False or True respectively, if memory passes test.
- * Params: ramLocation_ptr - location of the RAM wanted to check.
- * numBytesToCheck - Size in bytes of RAM wanted to check. */
-int ramTestByte(unsigned char *ramLocation_ptr, unsigned int numBytesToCheck){
-    int i = 0;
-    while (numBytesToCheck){
-        if (randomStore[i] != *(ramLocation_ptr + i)){  // Test failed!
-            return 0;
-        }
-        i++;
-        numBytesToCheck--;
-    }
-    return 1;                                           // Made it through all bytes and all match - test passed
-}
-
-
-/* Return 0 or 1, for False or True respectively, if memory passes test.
- * Params: ramLocation_ptr - location of the RAM wanted to check.
- * numBytesToCheck - Size in bytes of RAM wanted to check. */
-int ramTestHalfWord(unsigned short *ramLocation_ptr, unsigned int numBytesToCheck){
-    int i = 0;
-    while (numBytesToCheck){
-        if (randomStore[i] != *(ramLocation_ptr + i)){  // Test failed!
-            return 0;
-        }
-        i++;
-        numBytesToCheck--;
-    }
-    return 1;                                           // Made it through all bytes and all match - test passed
 }
 
 
@@ -108,41 +65,86 @@ int ramTestHalfWord(unsigned short *ramLocation_ptr, unsigned int numBytesToChec
  * ramSpan - Size of RAM wanted to write to. */
 void writeToRAMOriginal(unsigned long *ramLocation_ptr, unsigned int ramSpan){
     int i = 0;
-    while (ramSpan){                		// While we still need to write more bytes
-        getRandomPattern();                // Generate random number for randomNum variable
-        if (i<numBytes){  					// if the current index is fits in the array - store the data - use for compare
-        	randomStore[i] = randomNum;     // Store variable in array - this is going to be an array of sequentially written values
-        }
-        *(ramLocation_ptr + i) = randomNum; // +4 columns - write random number to next location
+    while (ramSpan){                        // While we still need to write more bytes
+        getRandomPattern(0);                // Generate random number for randomNum variable
+        *(ramLocation_ptr + i) = (unsigned long)randomNum; // +4 columns - write random number to next location
         i++;                                // Increment counter for mem address from base and array of pattern
-        ramSpan--;                  		// Decrement bytes for how many more to write to
+        ramSpan--;                          // Decrement bytes for how many more to write to
     }
 }
 
-void writeByteToRAM(unsigned char *ramLocation_ptr, unsigned int ramSpan){ // 8bits, 1byte, 0x00 -> 0xFF
+void writeByteToRAM(char *ramLocation_ptr, unsigned int ramSpan){ // 8bits, 1byte, 0x00 -> 0xFF
     int i = 0;
-    while (ramSpan){                		// While we still need to write more bytes
-        getRandomPattern();              // Generate random number for randomNum variable
-        if (i<numBytes){  					// if the current index is fits in the array - store the data - use for compare
-        	randomStore[i] = randomNum;     // Store variable in array - this is going to be an array of sequentially written values
-        }
-        *(ramLocation_ptr + i) = randomNum; // +4 columns - write random number to next location
+    while (ramSpan){                        // While we still need to write more bytes
+        getRandomPattern(255);              // Generate random number for randomNum variable
+        *(ramLocation_ptr + i) = (char)randomNum; // +4 columns - write random number to next location
         i++;                                // Increment counter for mem address from base and array of pattern
-        ramSpan--;                  		// Decrement bytes for how many more to write to
+        ramSpan--;                          // Decrement bytes for how many more to write to
     }
 }
 
 void writeHalfWordToRAM(unsigned short *ramLocation_ptr, unsigned int ramSpan){ // 16bits, 2bytes, 0x0000 -> 0xFFFF
     int i = 0;
-    while (ramSpan){                		// While we still need to write more bytes
-        getRandomPattern();            // Generate random number for randomNum variable
-        if (i<numBytes){  					// if the current index is fits in the array - store the data - use for compare
-        	randomStore[i] = randomNum;     // Store variable in array - this is going to be an array of sequentially written values
-        }
-        *(ramLocation_ptr + i) = randomNum; // +4 columns - write random number to next location
+    while (ramSpan){                        // While we still need to write more bytes
+        getRandomPattern(65535);            // Generate random number for randomNum variable
+        *(ramLocation_ptr + i) = (unsigned short)randomNum; // +4 columns - write random number to next location
         i++;                                // Increment counter for mem address from base and array of pattern
-        ramSpan--;                  		// Decrement bytes for how many more to write to
+        ramSpan--;                          // Decrement bytes for how many more to write to
     }
+}
+
+/* Return 0 or 1, for False or True respectively, if memory passes test.
+ * Params: ramLocation_ptr - location of the RAM wanted to check.
+ * numBytesToCheck - Size in bytes of RAM wanted to check. */
+int ramConfidenceTest(unsigned long *ramLocation_ptr, unsigned int numBytesToCheck){
+    int i = 0;
+    writeToRAMOriginal(ramBase_ptr, toWriteTo);              // Write values to fill RAM
+    srand((unsigned)time(NULL)); //Reseed to produce same vals
+    while (numBytesToCheck){
+    	getRandomPattern(0);
+        if ((unsigned long)randomNum != *(ramLocation_ptr + i)){  // Test failed!
+            return 0; 
+        }
+        i++;
+        numBytesToCheck--;
+    }
+    return 1;                                           // Made it through all bytes and all match - test passed
+}
+
+/* Return 0 or 1, for False or True respectively, if memory passes test.
+ * Params: ramLocation_ptr - location of the RAM wanted to check.
+ * numBytesToCheck - Size in bytes of RAM wanted to check. */
+int ramTestByte(char *ramLocation_ptr, unsigned int numBytesToCheck){
+    int i = 0;
+    writeByteToRAM(ramBaseByte_ptr, toWriteTo);              // Write values to fill RAM
+    srand((unsigned)time(NULL)); //Reseed to produce same vals
+    while (numBytesToCheck){
+    	getRandomPattern(255);
+        if ((char)randomNum != *(ramLocation_ptr + i)){  // Test failed!
+            return 0;
+        }
+        i++;
+        numBytesToCheck--;
+    }
+    return 1;                                           // Made it through all bytes and all match - test passed
+}
+
+/* Return 0 or 1, for False or True respectively, if memory passes test.
+ * Params: ramLocation_ptr - location of the RAM wanted to check.
+ * numBytesToCheck - Size in bytes of RAM wanted to check. */
+int ramTestHalfWord(unsigned short *ramLocation_ptr, unsigned int numBytesToCheck){
+    int i = 0;
+    writeHalfWordToRAM(ramBaseHalfWord_ptr, toWriteTo);
+    srand((unsigned)time(NULL));
+    while (numBytesToCheck){
+    	getRandomPattern(65535);
+        if ((unsigned short)randomNum != *(ramLocation_ptr + i)){  // Test failed!
+            return 0;
+        }
+        i++;
+        numBytesToCheck--;
+    }
+    return 1;                                           // Made it through all bytes and all match - test passed
 }
 
 int main(void)
@@ -156,19 +158,14 @@ int main(void)
     *(pushButtonPtr + PIO_INT_MASK_REG_OFFSET) = (KEY1_BIT_MASK);
     while (1) {
         if (sKey1Pressed)
-		{
-			//writeToRAMOriginal(ramBase_ptr, toWriteTo);              // Write values to fill RAM
-			//pass = ramConfidenceTest(ramBase_ptr, numBytes); 		   // Verify correct values written
-
-
-        	writeByteToRAM(ramBase_ptr, toWriteTo);              // Write values to fill RAM
-        	pass = ramTestByte(ramBase_ptr, numBytes);
-        	//writeHalfWordToRAM(ramBase_ptr, toWriteTo);
-        	//pass = ramTestHalfWord(ramBase_ptr, numBytes);
-			if (pass == 1){                                  // RAM test passed
-				*ledBase_ptr = 0xFF;                         // LEDs off - 1111 1111
-			}
-			sKey1Pressed = 0;
-		}
+        {
+            //pass = ramConfidenceTest(ramBase_ptr, numBytes);         // Verify correct values written
+            pass = ramTestByte(ramBaseByte_ptr, numBytes);
+            //pass = ramTestHalfWord(ramBaseHalfWord_ptr, numBytes);
+            if (pass == 1){                                  // RAM test passed
+                *ledBase_ptr = 0xFF;                         // LEDs off - 1111 1111
+            }
+            sKey1Pressed = 0;
+        }
     }
 }
