@@ -5331,7 +5331,7 @@ int alt_get_fd (alt_dev* dev)
    12cf4:	d9400015 	stw	r5,0(sp)
    12cf8:	d9800115 	stw	r6,4(sp)
    12cfc:	d9c00215 	stw	r7,8(sp)
-   12d00:	00000000 	call	0 <__reset-0x10000>
+   12d00:	00000000 	call	0 <__alt_mem_onchip_memory2_0-0x10000>
    12d04:	d9400017 	ldw	r5,0(sp)
    12d08:	d9800117 	ldw	r6,4(sp)
    12d0c:	d9c00217 	ldw	r7,8(sp)
@@ -5417,7 +5417,7 @@ int alt_get_fd (alt_dev* dev)
    12e44:	10003426 	beq	r2,zero,12f18 <__call_exitprocs+0x18c>
    12e48:	9809883a 	mov	r4,r19
    12e4c:	a8800015 	stw	r2,0(r21)
-   12e50:	00000000 	call	0 <__reset-0x10000>
+   12e50:	00000000 	call	0 <__alt_mem_onchip_memory2_0-0x10000>
    12e54:	acc00017 	ldw	r19,0(r21)
    12e58:	983fe41e 	bne	r19,zero,12dec <_gp+0xffff6118>
    12e5c:	dfc00b17 	ldw	ra,44(sp)
