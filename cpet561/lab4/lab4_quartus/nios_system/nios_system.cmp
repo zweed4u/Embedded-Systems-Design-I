@@ -1,0 +1,17 @@
+	component nios_system is
+		port (
+			clk_clk                : in    std_logic                     := 'X';             -- clk
+			reset_reset_n          : in    std_logic                     := 'X';             -- reset_n
+			bus_bridge_acknowledge : in    std_logic                     := 'X';             -- acknowledge
+			bus_bridge_irq         : in    std_logic                     := 'X';             -- irq
+			bus_bridge_address     : out   std_logic_vector(10 downto 0);                    -- address
+			bus_bridge_bus_enable  : out   std_logic;                                        -- bus_enable
+			bus_bridge_byte_enable : out   std_logic_vector(3 downto 0);                     -- byte_enable
+			bus_bridge_rw          : out   std_logic;                                        -- rw
+			bus_bridge_write_data  : out   std_logic_vector(31 downto 0);                    -- write_data
+			bus_bridge_read_data   : in    std_logic_vector(31 downto 0) := (others => 'X'); -- read_data
+			iicdatabit_export      : inout std_logic                     := 'X';             -- export
+			iicclockbit_export     : out   std_logic                                         -- export
+		);
+	end component nios_system;
+
