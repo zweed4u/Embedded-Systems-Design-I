@@ -22,8 +22,8 @@ end entity peripheral_on_external_bus;
 
 architecture peripheral_on_external_bus_arch of peripheral_on_external_bus is
   -- signal and component declarations
-  signal wren_a_sig : std_logic;
-  signal address_a_sig : std_logic_vector(9 DOWNTO 0);
+  signal wren_sig : std_logic;
+  signal address_sig : std_logic_vector(9 DOWNTO 0);
   signal bus_enable_d1 : std_logic;
   signal bus_enable_d2 : std_logic;
   
@@ -44,33 +44,30 @@ architecture peripheral_on_external_bus_arch of peripheral_on_external_bus is
 
 begin
 
-  address_a_sig <= '0'&i_address(10 DOWNTO 2);
-  wren_a_sig <= (NOT i_rw_n) AND i_bus_enable;
-  
+  address_sig <= '0'&i_address(10 DOWNTO 2);
+  wren_sig <= (NOT i_rw_n) AND i_bus_enable;
   process (clk) begin
     if (rising_edge(clk)) then
       if (reset_n = '0') then
         o_acknowledge <= '0';
       else
-		  bus_enable_d1<=i_bus_enable;
-		  bus_enable_d2<=bus_enable_d1;
-		end if;
+		    bus_enable_d1<=i_bus_enable;
+		    bus_enable_d2<=bus_enable_d1;
+        o_acknowledge<=bus_enable_d1 AND (NOT bus_enable_d2)
+		  end if;
     end if;
-	 o_acknowledge<=bus_enable_d1 AND (NOT bus_enable_d2)
   end process;
-  
   
   wave_ram_inst : wave_ram 
   PORT MAP (
-        address_a => address_a_sig,
-        address_b => , --
+        address_a => address_sig,
+        address_b => address_sig, --
         clock     => clk,
-        data_a    => , --
+        data_a    => i_write_data, --
         data_b    => , --
-        wren_a    => wren_a_sig,
-        wren_b    => , --
-        q_a       => , --
-        q_b       => --
+        wren_a    => wren_sig,
+        wren_b    => wren_sig, --
+        q_a       => o_read_data, --
+        q_b       => o_wave_data
     );
-
 end peripheral_on_external_bus_arch;
