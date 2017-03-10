@@ -23,7 +23,8 @@ end entity peripheral_on_external_bus;
 architecture peripheral_on_external_bus_arch of peripheral_on_external_bus is
   -- signal and component declarations
   signal wren_sig : std_logic;
-  signal address_sig : std_logic_vector(9 DOWNTO 0);
+  signal address_a_sig : std_logic_vector(9 DOWNTO 0);
+  signal address_b_sig : std_logic_vector(9 DOWNTO 0);
   signal bus_enable_d1 : std_logic;
   signal bus_enable_d2 : std_logic;
   
