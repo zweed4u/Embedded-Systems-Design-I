@@ -47,12 +47,6 @@ set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
-set_global_assignment -name VHDL_FILE ../lab4_src/lab4_hdl_src/synchronizer.vhd
-set_global_assignment -name VHDL_FILE ../lab4_src/lab4_hdl_src/peripheral_on_external_bus.vhd
-set_global_assignment -name VHDL_FILE ../lab4_src/lab4_hdl_src/lab4.vhd
-set_global_assignment -name VHDL_FILE ../lab4_src/lab4_hdl_src/hexDisplayDriver.vhd
-set_global_assignment -name VHDL_FILE ../lab4_src/lab4_hdl_src/debounce.vhd
-set_global_assignment -name VHDL_FILE ../lab4_src/lab4_hdl_src/codec_dac_interface.vhd
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity lights -section_id Top
@@ -252,4 +246,15 @@ set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_RO
 set_global_assignment -name PARTITION_COLOR 16764057 -entity equalizer -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity equalizer -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity lights -section_id Top
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VHDL_FILE ../lab4_src/lab4_hdl_src/synchronizer.vhd
+set_global_assignment -name VHDL_FILE ../lab4_src/lab4_hdl_src/peripheral_on_external_bus.vhd
+set_global_assignment -name VHDL_FILE ../lab4_src/lab4_hdl_src/lab4.vhd
+set_global_assignment -name VHDL_FILE ../lab4_src/lab4_hdl_src/hexDisplayDriver.vhd
+set_global_assignment -name VHDL_FILE ../lab4_src/lab4_hdl_src/debounce.vhd
+set_global_assignment -name VHDL_FILE ../lab4_src/lab4_hdl_src/codec_dac_interface.vhd
 set_global_assignment -name QIP_FILE wave_ram.qip
+set_global_assignment -name QIP_FILE nios_system/synthesis/nios_system.qip
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

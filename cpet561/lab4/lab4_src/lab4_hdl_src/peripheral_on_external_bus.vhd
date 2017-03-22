@@ -46,17 +46,17 @@ architecture peripheral_on_external_bus_arch of peripheral_on_external_bus is
 begin
 
   address_a_sig <= '0' & i_address(10 DOWNTO 2);
-  address_b_sig <= "00" & i_addressWave
+  address_b_sig <= "00" & i_addressWave;
   wren_sig <= (NOT i_rw_n) AND i_bus_enable;
   process (clk) begin
     if (rising_edge(clk)) then
       if (reset_n = '0') then
         o_acknowledge <= '0';
       else
-		    bus_enable_d1 <= i_bus_enable;
-		    bus_enable_d2 <= bus_enable_d1;
-        o_acknowledge <= bus_enable_d1 AND (NOT bus_enable_d2)
-		  end if;
+			bus_enable_d1 <= i_bus_enable;
+		   bus_enable_d2 <= bus_enable_d1;
+			o_acknowledge <= bus_enable_d1 AND (NOT bus_enable_d2);
+		end if;
     end if;
   end process;
   
