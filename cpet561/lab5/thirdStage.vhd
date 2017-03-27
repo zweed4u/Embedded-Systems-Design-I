@@ -19,18 +19,14 @@ ENTITY thirdStage is
 end entity thirdStage;
 
 architecture thirdStage_arch of thirdStage is
-  signal S : std_logic;
-  signal T : std_logic;
-  signal U : std_logic;
-  signal V : std_logic;
-  signal W : std_logic;
-  signal X : std_logic;
-  signal Y : std_logic;
-  signal Z : std_logic;
-  signal AA : std_logic;
-  signal BB : std_logic;
-  signal CC : std_logic;
-  signal DD : std_logic;
+  signal C_in : std_logic;
+  signal C_1 : std_logic;
+  signal C_2 : std_logic;
+  signal C_out : std_logic;
+  signal x_d0 : std_logic;
+  signal x_d1 : std_logic;
+  signal x_d2 : std_logic;
+
   constant b13_const : signed(35 downto 0) := x"000007FF6";
   constant b23_const : signed(35 downto 0) := x"00000FFEC";
   constant b33_const : signed(35 downto 0) := x"000007FF6";
@@ -38,25 +34,29 @@ architecture thirdStage_arch of thirdStage is
   constant a33_const : signed(35 downto 0) := x"000004864";
   
   begin 
-  S<=thirdStageInput;
-  T<=S-AA;
-  U<=T-DD;
-  V<=b(1)(3)*U;
-  X<=V+Y;
-  Y<=b(2)(3)*Z;
+  C_in <= thirdStageInput;
+  C_1 <= C_in-(x_d1*a23_const);
+  x_d0 <= C_1-(x_d2*a33_const);
+  C_2 <= (x_d0*b13_const)+(x_d1*b23_const);
+  C_out <= C_2+(x_d2*b33_const);
+
+  --clk'd process
   if (rising_edge(clk)) then
-    if (data_reg='1') then
-      Z<=U;
+    if (i_reset='1') then
+      x_d1 <= '0';
+    elsif (i_dataReq = '1') then
+      x_d1 <= x_d0;
     end if;
   end if;
-  AA<=a(2)(3)*Z
+
+  --clk'd process (should this be nested in above process or its own?)
   if (rising_edge(clk)) then
-    if (data_reg='1') then
-      BB<=Z;
+    if (i_reset='1') then
+      x_d2 <= '0';
+    elsif (i_dataReq = '1') then
+      x_d2 <= x_d1;
     end if;
   end if;
-  CC<=b(3)(3)*BB;
-  DD<=a(3)(3)*BB;
-  W<=X+CC;
-  thirdStageOutput<=W;
+
+  thirdStageOutput <= C_out;
 end architecture thirdStage_arch;

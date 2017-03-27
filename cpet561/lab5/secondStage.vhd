@@ -19,43 +19,45 @@ ENTITY secondStage is
 end entity secondStage;
 
 architecture secondStage_arch of secondStage is
-  signal H : std_logic;
-  signal I : std_logic;
-  signal J : std_logic;
-  signal K : std_logic;
-  signal L : std_logic;
-  signal M : std_logic;
-  signal N : std_logic;
-  signal O : std_logic;
-  signal P : std_logic;
-  signal Q : std_logic;
-  signal R : std_logic;
-  signal S : std_logic;
+  signal B_in : std_logic;
+  signal B_1 : std_logic;
+  signal B_2 : std_logic;
+  signal B_out : std_logic;
+  signal x_d0 : std_logic;
+  signal x_d1 : std_logic;
+  signal x_d2 : std_logic;
+
   constant b12_const : signed(35 downto 0) := x"0000000A5";
   constant b22_const : signed(35 downto 0) := x"00000014B";
   constant b32_const : signed(35 downto 0) := x"0000000A5";
   constant a22_const : signed(35 downto 0) := x"FFFFF2155";
   constant a32_const : signed(35 downto 0) := x"000001CEA";
+  
   begin
-  H<=secondStageInput;
-  I<=H-O;
-  J<=I-Q;
-  K<=b(1)(2)*J;
-  L<=K+M;
-  M<=b(2)(2)*N;
+  B_in <= secondStageInput;
+  B_1 <= B_in-(x_d1*a22_const);
+  x_d0 <= B_1-(x_d2*a32_const);
+  B_2 <= (x_d0*b12_const)+(x_d1*b22_const);
+  B_out <= B_2+(x_d2*b32_const);
+
+  --clk'd process
   if (rising_edge(clk)) then
-    if (data_reg='1') then
-      N<= J;
+    if (i_reset='1') then
+      x_d1 <= '0';
+    elsif (i_dataReq = '1') then
+      x_d1 <= x_d0;
     end if;
   end if;
-  O<=a(2)(2)*N;
+
+  --clk'd process (should this be nested in above process or its own?)
   if (rising_edge(clk)) then
-    if (data_reg='1') then
-      P<= N;
+    if (i_reset='1') then
+      x_d2 <= '0';
+    elsif (i_dataReq = '1') then
+      x_d2 <= x_d1;
     end if;
   end if;
-  Q<=a(3)(2)*P;
-  R<=b(3)(2)*P;
-  S<=L+R;
-  secondStageOutput<=S;
+
+
+  secondStageOutput <= B_out;
 end architecture secondStage_arch;

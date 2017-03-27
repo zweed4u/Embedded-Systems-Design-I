@@ -19,10 +19,10 @@ ENTITY firstStage is
 end entity firstStage;
 
 architecture firstStage_arch of firstStage is
-  signal A' : std_logic;
+  signal A_in : std_logic;
   signal x_d0 : std_logic;
   signal x_d1 : std_logic;
-  signal A0 : std_logic;
+  signal A_out : std_logic;
   
   constant b11_const : signed(35 downto 0) := x"000000049";
   constant b21_const : signed(35 downto 0) := x"000000049";
@@ -31,8 +31,9 @@ architecture firstStage_arch of firstStage is
   constant a31_const : signed(35 downto 0) := x"000000000";
   
   begin
-  x_d0 <= A'-(a21_const*x_d1);
-  A0 <= (b11_const*x_d0)+(b21_const*x_d1);
+  A_in <= firstStageInput;
+  x_d0 <= A_in-(a21_const*x_d1);
+  A_out <= (b11_const*x_d0)+(b21_const*x_d1);
   
   --clk'd process
   if (rising_edge(clk)) then
@@ -43,5 +44,5 @@ architecture firstStage_arch of firstStage is
     end if;
   end if;
 
-  firstStageOutput<=A0;
+  firstStageOutput<=A_out;
 end architecture firstStage_arch;
