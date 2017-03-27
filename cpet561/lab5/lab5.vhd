@@ -27,6 +27,7 @@ architecture lab5_arch of lab5 is
     port(
       clk : in std_logic;
       i_reset : in std_logic;
+      i_dataReq : in std_logic;
       firstStageInput : in std_logic;
       firstStageOutput : out std_logic
       );
@@ -36,6 +37,7 @@ architecture lab5_arch of lab5 is
     port(
       clk : in std_logic;
       i_reset : in std_logic;
+      i_dataReq : in std_logic;
       secondStageInput : in std_logic;
       secondStageOutput : out std_logic
       );
@@ -45,6 +47,7 @@ architecture lab5_arch of lab5 is
     port(
       clk : in std_logic;   
       i_reset : in std_logic;
+      i_dataReq : in std_logic;
       thirdStageInput : in std_logic;
       thirdStageOutput : out std_logic
       );
