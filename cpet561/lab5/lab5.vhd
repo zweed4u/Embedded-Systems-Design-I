@@ -10,10 +10,13 @@ use ieee.std_logic_arith.all;
 
 ENTITY lab5 is
   port (
-    clk : in std_logic;
-    topInput : in std_logic; 
-    topOutput : out std_logic
+    i_clk_50 : in std_logic;
+    i_reset : in std_logic;
+    i_audioSample : in signed(31 downto 0);
+    i_dataReq : in std_logic;
+    o_audioSampleFiltered : out signed(31 downto 0)
   );
+
 end entity lab5;
 
 architecture lab5_arch of lab5 is
@@ -23,6 +26,7 @@ architecture lab5_arch of lab5 is
   component firstStage is
     port(
       clk : in std_logic;
+      i_reset : in std_logic;
       firstStageInput : in std_logic;
       firstStageOutput : out std_logic
       );
@@ -31,6 +35,7 @@ architecture lab5_arch of lab5 is
    component secondStage is
     port(
       clk : in std_logic;
+      i_reset : in std_logic;
       secondStageInput : in std_logic;
       secondStageOutput : out std_logic
       );
@@ -38,7 +43,8 @@ architecture lab5_arch of lab5 is
 
    component thirdStage is
     port(
-      clk : in std_logic;	
+      clk : in std_logic;   
+      i_reset : in std_logic;
       thirdStageInput : in std_logic;
       thirdStageOutput : out std_logic
       );
@@ -48,13 +54,17 @@ architecture lab5_arch of lab5 is
   firstStage_inst1 : firstStage
     port map (
       clk => clk,
-      firstStageInput => topInput,
+      i_dataReq => i_dataReq,
+      i_reset => i_reset,
+      firstStageInput => i_audioSample,
       firstStageOutput => firstToSecondIntermediary
     );
 
   secondStage_inst1 : secondStage
     port map (
       clk => clk,
+      i_dataReq => i_dataReq,
+      i_reset => i_reset,
       secondStageInput => firstToSecondIntermediary,
       secondStageOutput => secondToThirdIntermediary
     );
@@ -62,7 +72,9 @@ architecture lab5_arch of lab5 is
   thirdStage_inst1 : thirdStage
     port map (
       clk => clk,
+      i_dataReq => i_dataReq,
+      i_reset => i_reset,
       thirdStageInput => secondToThirdIntermediary,
-      thirdStageOutput => topOutput
+      thirdStageOutput => o_audioSampleFiltered
     );
 end architecture lab5_arch;

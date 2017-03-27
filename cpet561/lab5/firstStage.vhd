@@ -11,33 +11,37 @@ use ieee.std_logic_arith.all;
 ENTITY firstStage is
   port (
     clk : in std_logic;
+    i_dataReq : in std_logic;
+    i_reset : in std_logic;
     firstStageInput : in std_logic; 
     firstStageOutput : out std_logic
   );
 end entity firstStage;
 
 architecture firstStage_arch of firstStage is
-  signal A : std_logic;
-  signal B : std_logic;
-  signal C : std_logic;
-  signal D : std_logic;
-  signal E : std_logic;
-  signal F : std_logic;
-  signal G : std_logic;
-  signal H : std_logic;
+  signal A' : std_logic;
+  signal x_d0 : std_logic;
+  signal x_d1 : std_logic;
+  signal A0 : std_logic;
+  
+  constant b11_const : signed(35 downto 0) := x"000000049";
+  constant b21_const : signed(35 downto 0) := x"000000049";
+  constant b31_const : signed(35 downto 0) := x"000000000";
+  constant a21_const : signed(35 downto 0) := x"FFFFE2E14";
+  constant a31_const : signed(35 downto 0) := x"000000000";
   
   begin
-  A<=firstStageInput;
-  B<=s(1)*A;
-  C<=B-F;
-  D<=b(1)(1)*C;
+  x_d0 <= A'-(a21_const*x_d1);
+  A0 <= (b11_const*x_d0)+(b21_const*x_d1);
+  
+  --clk'd process
   if (rising_edge(clk)) then
-    if (data_reg='1') then
-      E<=C;
+    if (i_reset='1') then
+      x_d1 <= '0';
+    elsif (i_dataReq = '1') then
+      x_d1 <= x_d0;
     end if;
   end if;
-  F<=a(2)(1)*E;
-  G<=b(2)(1)*E;
-  H<=D+G;
-  firstStageOutput<=H;
+
+  firstStageOutput<=A0;
 end architecture firstStage_arch;

@@ -11,6 +11,8 @@ use ieee.std_logic_arith.all;
 ENTITY thirdStage is
   port (
     clk : in std_logic;
+    i_dataReq : in std_logic;
+    i_reset : in std_logic;
     thirdStageInput : in std_logic; 
     thirdStageOutput : out std_logic
   );
@@ -29,6 +31,11 @@ architecture thirdStage_arch of thirdStage is
   signal BB : std_logic;
   signal CC : std_logic;
   signal DD : std_logic;
+  constant b13_const : signed(35 downto 0) := x"000007FF6";
+  constant b23_const : signed(35 downto 0) := x"00000FFEC";
+  constant b33_const : signed(35 downto 0) := x"000007FF6";
+  constant a23_const : signed(35 downto 0) := x"FFFFF4C98";
+  constant a33_const : signed(35 downto 0) := x"000004864";
   
   begin 
   S<=thirdStageInput;
@@ -38,9 +45,9 @@ architecture thirdStage_arch of thirdStage is
   X<=V+Y;
   Y<=b(2)(3)*Z;
   if (rising_edge(clk)) then
-  	if (data_reg='1') then
-  	  Z<=U;
-  	end if;
+    if (data_reg='1') then
+      Z<=U;
+    end if;
   end if;
   AA<=a(2)(3)*Z
   if (rising_edge(clk)) then
