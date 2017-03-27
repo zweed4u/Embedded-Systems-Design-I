@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for lab4
-Wed Mar 22 15:42:07 2017
+Sun Mar 26 21:32:50 2017
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Standard Edition
 
 
@@ -117,8 +117,8 @@ agreement for further details.
 +-------------------------------------------------------------------+--------+--------------------------+
 ; SDC File Path                                                     ; Status ; Read at                  ;
 +-------------------------------------------------------------------+--------+--------------------------+
-; nios_system/synthesis/submodules/altera_reset_controller.sdc      ; OK     ; Wed Mar 22 15:41:59 2017 ;
-; nios_system/synthesis/submodules/nios_system_nios2_gen2_0_cpu.sdc ; OK     ; Wed Mar 22 15:41:59 2017 ;
+; nios_system/synthesis/submodules/altera_reset_controller.sdc      ; OK     ; Sun Mar 26 21:32:42 2017 ;
+; nios_system/synthesis/submodules/nios_system_nios2_gen2_0_cpu.sdc ; OK     ; Sun Mar 26 21:32:42 2017 ;
 +-------------------------------------------------------------------+--------+--------------------------+
 
 
@@ -1580,7 +1580,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 15.1.0 Build 185 10/21/2015 SJ Standard Edition
-    Info: Processing started: Wed Mar 22 15:41:57 2017
+    Info: Processing started: Sun Mar 26 21:32:39 2017
 Info: Command: quartus_sta lab4 -c lab4
 Info: qsta_default_script.tcl version: #1
 Warning (20013): Ignored 24 assignments for entity "equalizer" -- entity does not exist in design
@@ -1829,9 +1829,9 @@ Info (332114): Report Metastability: Found 2 synchronizer chains.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 54 warnings
-    Info: Peak virtual memory: 1245 megabytes
-    Info: Processing ended: Wed Mar 22 15:42:07 2017
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:13
+    Info: Peak virtual memory: 1253 megabytes
+    Info: Processing ended: Sun Mar 26 21:32:50 2017
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:14
 
 

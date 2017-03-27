@@ -1,5 +1,5 @@
 Fitter report for lab4
-Wed Mar 22 15:41:39 2017
+Sun Mar 26 21:32:15 2017
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Standard Edition
 
 
@@ -66,7 +66,7 @@ agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                    ;
 +---------------------------------+-------------------------------------------------+
-; Fitter Status                   ; Successful - Wed Mar 22 15:41:39 2017           ;
+; Fitter Status                   ; Successful - Sun Mar 26 21:32:15 2017           ;
 ; Quartus Prime Version           ; 15.1.0 Build 185 10/21/2015 SJ Standard Edition ;
 ; Revision Name                   ; lab4                                            ;
 ; Top-level Entity Name           ; lab4                                            ;
@@ -156,12 +156,12 @@ agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.24        ;
+; Average used               ; 1.17        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   8.2%      ;
+;     Processors 2-4         ;   5.6%      ;
 +----------------------------+-------------+
 
 
@@ -2966,12 +2966,12 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:03
-Info (11888): Total time spent on timing analysis during the Fitter is 1.85 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 1.83 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:10
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:11
 Warning (169064): Following 91 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
     Info (169065): Pin AUD_ADCLRCK has a permanently disabled output enable File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab4/lab4_src/lab4_hdl_src/lab4.vhd Line: 15
     Info (169065): Pin DRAM_DQ[0] has a permanently disabled output enable File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab4/lab4_src/lab4_hdl_src/lab4.vhd Line: 34
@@ -3066,10 +3066,10 @@ Warning (169064): Following 91 pins have no output enable or a GND or VCC output
     Info (169065): Pin AUD_DACLRCK has a permanently disabled output enable File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab4/lab4_src/lab4_hdl_src/lab4.vhd Line: 18
 Info (144001): Generated suppressed messages file C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab4/lab4_quartus/output_files/lab4.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 2728 megabytes
-    Info: Processing ended: Wed Mar 22 15:41:40 2017
-    Info: Elapsed time: 00:00:51
-    Info: Total CPU time (on all processors): 00:01:39
+    Info: Peak virtual memory: 2748 megabytes
+    Info: Processing ended: Sun Mar 26 21:32:18 2017
+    Info: Elapsed time: 00:01:01
+    Info: Total CPU time (on all processors): 00:01:42
 
 
 +----------------------------+

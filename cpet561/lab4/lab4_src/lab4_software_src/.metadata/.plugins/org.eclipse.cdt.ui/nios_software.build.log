@@ -1,4 +1,4 @@
-15:53:15 **** Incremental Build of configuration Nios II for project nios_software ****
+21:38:50 **** Incremental Build of configuration Nios II for project nios_software ****
 make all 
 Info: Building C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab4/lab4_src/lab4_software_src/nios_software_bsp/
 C:/altera/15.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab4/lab4_src/lab4_software_src/nios_software_bsp/
@@ -10,5 +10,5 @@ C:\Users\zdw7287\Downloads\Embedded-Systems-Design-I\cpet561\lab4\lab4_src\lab4_
 collect2.exe: error: ld returned 1 exit status
 make: *** [nios_software.elf] Error 1
 
-15:53:17 Build Finished (took 1s.887ms)
+21:38:53 Build Finished (took 2s.247ms)
 
