@@ -738,56 +738,55 @@ int main(void) {
     826c:	dfc00215 	stw	ra,8(sp)
     8270:	df000115 	stw	fp,4(sp)
     8274:	df000104 	addi	fp,sp,4
-  
-  volatile bool final_result;
-  final_result = FALSE;
+	volatile bool final_result;
+	final_result = FALSE;
     8278:	e03fff05 	stb	zero,-4(fp)
 	final_result = codecInit();
     827c:	000830c0 	call	830c <codecInit>
     8280:	e0bfff05 	stb	r2,-4(fp)
   
 	while (1) {
-    dataToWrite = 0x12345678;
+		dataToWrite = 0x12345678;
     8284:	00848d34 	movhi	r2,4660
     8288:	10959e04 	addi	r2,r2,22136
     828c:	d0a5a915 	stw	r2,-26972(gp)
-//leds = 0xabcd;
-    *busBridgePtr = dataToWrite;
+		//leds = 0xabcd;
+		*busBridgePtr = dataToWrite;
     8290:	d0a5a517 	ldw	r2,-26988(gp)
     8294:	d0e5a917 	ldw	r3,-26972(gp)
     8298:	10c00015 	stw	r3,0(r2)
-    dataToWrite += 0x01010101;
+		dataToWrite += 0x01010101;
     829c:	d0e5a917 	ldw	r3,-26972(gp)
     82a0:	00804074 	movhi	r2,257
     82a4:	10804044 	addi	r2,r2,257
     82a8:	1885883a 	add	r2,r3,r2
     82ac:	d0a5a915 	stw	r2,-26972(gp)
-    *(busBridgePtr + 1) = dataToWrite;
+		*(busBridgePtr + 1) = dataToWrite;
     82b0:	d0a5a517 	ldw	r2,-26988(gp)
     82b4:	10800104 	addi	r2,r2,4
     82b8:	d0e5a917 	ldw	r3,-26972(gp)
     82bc:	10c00015 	stw	r3,0(r2)
-    dataToWrite += 0x01010101;
+		dataToWrite += 0x01010101;
     82c0:	d0e5a917 	ldw	r3,-26972(gp)
     82c4:	00804074 	movhi	r2,257
     82c8:	10804044 	addi	r2,r2,257
     82cc:	1885883a 	add	r2,r3,r2
     82d0:	d0a5a915 	stw	r2,-26972(gp)
-    *(busBridgePtr + 2) = dataToWrite;
+		*(busBridgePtr + 2) = dataToWrite;
     82d4:	d0a5a517 	ldw	r2,-26988(gp)
     82d8:	10800204 	addi	r2,r2,8
     82dc:	d0e5a917 	ldw	r3,-26972(gp)
     82e0:	10c00015 	stw	r3,0(r2)
-    
-    first  = *busBridgePtr;
+
+		first  = *busBridgePtr;
     82e4:	d0a5a517 	ldw	r2,-26988(gp)
     82e8:	10800017 	ldw	r2,0(r2)
     82ec:	d0a5a815 	stw	r2,-26976(gp)
-    second = *(busBridgePtr + 1);
+		second = *(busBridgePtr + 1);
     82f0:	d0a5a517 	ldw	r2,-26988(gp)
     82f4:	10800117 	ldw	r2,4(r2)
     82f8:	d0a5a615 	stw	r2,-26984(gp)
-    third  = *(busBridgePtr + 2);
+		third  = *(busBridgePtr + 2);
     82fc:	d0a5a517 	ldw	r2,-26988(gp)
     8300:	10800217 	ldw	r2,8(r2)
     8304:	d0a5a715 	stw	r2,-26980(gp)
@@ -803,109 +802,109 @@ bool codecInit(void){
     8310:	dfc00215 	stw	ra,8(sp)
     8314:	df000115 	stw	fp,4(sp)
     8318:	df000104 	addi	fp,sp,4
-  bool success = TRUE;
+	bool success = TRUE;
     831c:	00800044 	movi	r2,1
     8320:	e0bfff05 	stb	r2,-4(fp)
-  if (success)
+	if (success)
     8324:	e0bfff03 	ldbu	r2,-4(fp)
     8328:	10000426 	beq	r2,zero,833c <codecInit+0x30>
-    success = audioRegWrite(15, 0x0000);  // reset
+		success = audioRegWrite(15, 0x0000);  // reset
     832c:	010003c4 	movi	r4,15
     8330:	000b883a 	mov	r5,zero
     8334:	000845c0 	call	845c <audioRegWrite>
     8338:	e0bfff05 	stb	r2,-4(fp)
-  if (success)
+	if (success)
     833c:	e0bfff03 	ldbu	r2,-4(fp)
     8340:	10000426 	beq	r2,zero,8354 <codecInit+0x48>
-    success = audioRegWrite(9, 0x0000);  // inactive interface
+		success = audioRegWrite(9, 0x0000);  // inactive interface
     8344:	01000244 	movi	r4,9
     8348:	000b883a 	mov	r5,zero
     834c:	000845c0 	call	845c <audioRegWrite>
     8350:	e0bfff05 	stb	r2,-4(fp)
-  //usleep(20*1000);
-  if (success)
+  	  	  //usleep(20*1000);
+	if (success)
     8354:	e0bfff03 	ldbu	r2,-4(fp)
     8358:	10000426 	beq	r2,zero,836c <codecInit+0x60>
-    success = audioRegWrite(0, 0x0017);  // Left Line In: set left line in volume
+		success = audioRegWrite(0, 0x0017);  // Left Line In: set left line in volume
     835c:	0009883a 	mov	r4,zero
     8360:	014005c4 	movi	r5,23
     8364:	000845c0 	call	845c <audioRegWrite>
     8368:	e0bfff05 	stb	r2,-4(fp)
-  if (success)
+	if (success)
     836c:	e0bfff03 	ldbu	r2,-4(fp)
     8370:	10000426 	beq	r2,zero,8384 <codecInit+0x78>
-    success = audioRegWrite(1, 0x0017);  // Right Line In: set right line in volume
+		success = audioRegWrite(1, 0x0017);  // Right Line In: set right line in volume
     8374:	01000044 	movi	r4,1
     8378:	014005c4 	movi	r5,23
     837c:	000845c0 	call	845c <audioRegWrite>
     8380:	e0bfff05 	stb	r2,-4(fp)
-  if (success)
+	if (success)
     8384:	e0bfff03 	ldbu	r2,-4(fp)
     8388:	10000426 	beq	r2,zero,839c <codecInit+0x90>
-    success = audioRegWrite(2, 0x005B);  // Left Headphone Out: set left line out volume
+		success = audioRegWrite(2, 0x005B);  // Left Headphone Out: set left line out volume
     838c:	01000084 	movi	r4,2
     8390:	014016c4 	movi	r5,91
     8394:	000845c0 	call	845c <audioRegWrite>
     8398:	e0bfff05 	stb	r2,-4(fp)
-  if (success)
+	if (success)
     839c:	e0bfff03 	ldbu	r2,-4(fp)
     83a0:	10000426 	beq	r2,zero,83b4 <codecInit+0xa8>
-    success = audioRegWrite(3, 0x005B);  // Right Headphone Out: set right line out volume
+		success = audioRegWrite(3, 0x005B);  // Right Headphone Out: set right line out volume
     83a4:	010000c4 	movi	r4,3
     83a8:	014016c4 	movi	r5,91
     83ac:	000845c0 	call	845c <audioRegWrite>
     83b0:	e0bfff05 	stb	r2,-4(fp)
-  if (success)
+	if (success)
     83b4:	e0bfff03 	ldbu	r2,-4(fp)
     83b8:	10000426 	beq	r2,zero,83cc <codecInit+0xc0>
-    success = audioRegWrite(4, 0x0015);  // Analogue Audio Path Control: set mic as input and boost it, and enable dac
+		success = audioRegWrite(4, 0x0015);  // Analogue Audio Path Control: set mic as input and boost it, and enable dac
     83bc:	01000104 	movi	r4,4
     83c0:	01400544 	movi	r5,21
     83c4:	000845c0 	call	845c <audioRegWrite>
     83c8:	e0bfff05 	stb	r2,-4(fp)
-  if (success)
+	if (success)
     83cc:	e0bfff03 	ldbu	r2,-4(fp)
     83d0:	10000426 	beq	r2,zero,83e4 <codecInit+0xd8>
-    success = audioRegWrite(5, 0x0000);  // Digital Audio Path Control: disable soft mute
+		success = audioRegWrite(5, 0x0000);  // Digital Audio Path Control: disable soft mute
     83d4:	01000144 	movi	r4,5
     83d8:	000b883a 	mov	r5,zero
     83dc:	000845c0 	call	845c <audioRegWrite>
     83e0:	e0bfff05 	stb	r2,-4(fp)
-  if (success)
+	if (success)
     83e4:	e0bfff03 	ldbu	r2,-4(fp)
     83e8:	10000426 	beq	r2,zero,83fc <codecInit+0xf0>
-    success = audioRegWrite(6, 0);  // power down control: power on all
+		success = audioRegWrite(6, 0);  // power down control: power on all
     83ec:	01000184 	movi	r4,6
     83f0:	000b883a 	mov	r5,zero
     83f4:	000845c0 	call	845c <audioRegWrite>
     83f8:	e0bfff05 	stb	r2,-4(fp)
-  if (success)
+	if (success)
     83fc:	e0bfff03 	ldbu	r2,-4(fp)
     8400:	10000426 	beq	r2,zero,8414 <codecInit+0x108>
-    success = audioRegWrite(7, 0x0042);  // I2S, iwl=16-bits, Enable Master Mode
+		success = audioRegWrite(7, 0x0042);  // I2S, iwl=16-bits, Enable Master Mode
     8404:	010001c4 	movi	r4,7
     8408:	01401084 	movi	r5,66
     840c:	000845c0 	call	845c <audioRegWrite>
     8410:	e0bfff05 	stb	r2,-4(fp)
-  // success = audioRegWrite(7, 0x0041);  // MSB-First, left justified, iwl=16-bits, Enable Master Mode
-  if (success)
+   	   	//success = audioRegWrite(7, 0x0041);  // MSB-First, left justified, iwl=16-bits, Enable Master Mode
+	if (success)
     8414:	e0bfff03 	ldbu	r2,-4(fp)
     8418:	10000426 	beq	r2,zero,842c <codecInit+0x120>
-    success = audioRegWrite(8, 0x0020);  // Normal, Base OVer-Sampleing Rate 384 fs (BOSR=1)
+		success = audioRegWrite(8, 0x0020);  // Normal, Base OVer-Sampleing Rate 384 fs (BOSR=1)
     841c:	01000204 	movi	r4,8
     8420:	01400804 	movi	r5,32
     8424:	000845c0 	call	845c <audioRegWrite>
     8428:	e0bfff05 	stb	r2,-4(fp)
-  if (success)
+	if (success)
     842c:	e0bfff03 	ldbu	r2,-4(fp)
     8430:	10000426 	beq	r2,zero,8444 <codecInit+0x138>
-    success = audioRegWrite(9, 0x0001);  // active interface
+		success = audioRegWrite(9, 0x0001);  // active interface
     8434:	01000244 	movi	r4,9
     8438:	01400044 	movi	r5,1
     843c:	000845c0 	call	845c <audioRegWrite>
     8440:	e0bfff05 	stb	r2,-4(fp)
 
-  return success;
+	return success;
     8444:	e0bfff03 	ldbu	r2,-4(fp)
 }
     8448:	e037883a 	mov	sp,fp
@@ -928,16 +927,16 @@ bool audioRegWrite(alt_u8 codecRegAddr, alt_u16 data16) {
     8470:	2805883a 	mov	r2,r5
     8474:	e0fffe05 	stb	r3,-8(fp)
     8478:	e0bfff0d 	sth	r2,-4(fp)
-  bool success;
-  alt_u8 dataByte, controlByte;
-  dataByte = data16 & 0xFF;
+	bool success;
+	alt_u8 dataByte, controlByte;
+	dataByte = data16 & 0xFF;
     847c:	e0bfff0b 	ldhu	r2,-4(fp)
     8480:	e0bffd05 	stb	r2,-12(fp)
-  controlByte = (codecRegAddr << 1) & 0xFE;
+	controlByte = (codecRegAddr << 1) & 0xFE;
     8484:	e0bffe03 	ldbu	r2,-8(fp)
     8488:	1085883a 	add	r2,r2,r2
     848c:	e0bffd45 	stb	r2,-11(fp)
-  controlByte |= ((data16 >> 8) & 0x01);
+	controlByte |= ((data16 >> 8) & 0x01);
     8490:	e0bfff0b 	ldhu	r2,-4(fp)
     8494:	1004d23a 	srli	r2,r2,8
     8498:	1080004c 	andi	r2,r2,1
@@ -945,32 +944,32 @@ bool audioRegWrite(alt_u8 codecRegAddr, alt_u16 data16) {
     84a0:	e0bffd43 	ldbu	r2,-11(fp)
     84a4:	1884b03a 	or	r2,r3,r2
     84a8:	e0bffd45 	stb	r2,-11(fp)
-  i2cStart();
+	i2cStart();
     84ac:	000861c0 	call	861c <i2cStart>
-  success = i2cWriteByte(CODEC_I2C_ADDR);
+	success = i2cWriteByte(CODEC_I2C_ADDR);
     84b0:	01000d04 	movi	r4,52
     84b4:	00085080 	call	8508 <i2cWriteByte>
     84b8:	e0bffd85 	stb	r2,-10(fp)
-  success = i2cWriteByte(controlByte);
+	success = i2cWriteByte(controlByte);
     84bc:	e0bffd43 	ldbu	r2,-11(fp)
     84c0:	1009883a 	mov	r4,r2
     84c4:	00085080 	call	8508 <i2cWriteByte>
     84c8:	e0bffd85 	stb	r2,-10(fp)
-  success = i2cWriteByte(dataByte);
+	success = i2cWriteByte(dataByte);
     84cc:	e0bffd03 	ldbu	r2,-12(fp)
     84d0:	1009883a 	mov	r4,r2
     84d4:	00085080 	call	8508 <i2cWriteByte>
     84d8:	e0bffd85 	stb	r2,-10(fp)
-  i2cStop();
+	i2cStop();
     84dc:	00086900 	call	8690 <i2cStop>
     
-  usleep(7*1000);
+	usleep(7*1000);
     84e0:	0106d604 	movi	r4,7000
     84e4:	00088500 	call	8850 <usleep>
-  usleep(50*1000);
+	usleep(50*1000);
     84e8:	0130d414 	movui	r4,50000
     84ec:	00088500 	call	8850 <usleep>
-  return success;
+	return success;
     84f0:	e0bffd83 	ldbu	r2,-10(fp)
 }
     84f4:	e037883a 	mov	sp,fp
@@ -989,70 +988,71 @@ bool i2cWriteByte(alt_u8 Data) { // return true if device response ack
     8514:	df000404 	addi	fp,sp,16
     8518:	2005883a 	mov	r2,r4
     851c:	e0bfff05 	stb	r2,-4(fp)
-  alt_u8 Mask = 0x80;
+	alt_u8 Mask = 0x80;
     8520:	00bfe004 	movi	r2,-128
     8524:	e0bffc05 	stb	r2,-16(fp)
-  bool success;
-  int i;
+	bool success;
+	int i;
     
-  i2cDataBitDirection = 1;
+	i2cDataBitDirection = 1;
     8528:	d0a00017 	ldw	r2,-32768(gp)
     852c:	10800104 	addi	r2,r2,4
     8530:	00c00044 	movi	r3,1
     8534:	10c00015 	stw	r3,0(r2)
-  for(i=0; i<8; i++) {
+	for(i=0; i<8; i++) {
     8538:	e03ffd15 	stw	zero,-12(fp)
     853c:	00001c06 	br	85b0 <i2cWriteByte+0xa8>
-    i2cClockBit = 0;
+		i2cClockBit = 0;
     8540:	d0a00117 	ldw	r2,-32764(gp)
     8544:	10000015 	stw	zero,0(r2)
-    if (Data & Mask) {
+		if (Data & Mask) {
     8548:	e0ffff03 	ldbu	r3,-4(fp)
     854c:	e0bffc03 	ldbu	r2,-16(fp)
     8550:	1884703a 	and	r2,r3,r2
     8554:	10803fcc 	andi	r2,r2,255
     8558:	10000426 	beq	r2,zero,856c <i2cWriteByte+0x64>
-      i2cDataBit = 1;
+			i2cDataBit = 1;
     855c:	d0a00017 	ldw	r2,-32768(gp)
     8560:	00c00044 	movi	r3,1
     8564:	10c00015 	stw	r3,0(r2)
     8568:	00000206 	br	8574 <i2cWriteByte+0x6c>
-    } else {
-      i2cDataBit = 0;
+		}
+		else {
+			i2cDataBit = 0;
     856c:	d0a00017 	ldw	r2,-32768(gp)
     8570:	10000015 	stw	zero,0(r2)
-    }
-    Mask >>= 1;
+		}
+		Mask >>= 1;
     8574:	e0bffc03 	ldbu	r2,-16(fp)
     8578:	1004d07a 	srli	r2,r2,1
     857c:	e0bffc05 	stb	r2,-16(fp)
-    SCL_DELAY;
+		SCL_DELAY;
     8580:	01000044 	movi	r4,1
     8584:	00088500 	call	8850 <usleep>
-    i2cClockBit = 1;
+		i2cClockBit = 1;
     8588:	d0a00117 	ldw	r2,-32764(gp)
     858c:	00c00044 	movi	r3,1
     8590:	10c00015 	stw	r3,0(r2)
-    SCL_DELAY;
+		SCL_DELAY;
     8594:	01000044 	movi	r4,1
     8598:	00088500 	call	8850 <usleep>
-    i2cClockBit = 0;
+		i2cClockBit = 0;
     859c:	d0a00117 	ldw	r2,-32764(gp)
     85a0:	10000015 	stw	zero,0(r2)
-  alt_u8 Mask = 0x80;
-  bool success;
-  int i;
+	alt_u8 Mask = 0x80;
+	bool success;
+	int i;
     
-  i2cDataBitDirection = 1;
-  for(i=0; i<8; i++) {
+	i2cDataBitDirection = 1;
+	for(i=0; i<8; i++) {
     85a4:	e0bffd17 	ldw	r2,-12(fp)
     85a8:	10800044 	addi	r2,r2,1
     85ac:	e0bffd15 	stw	r2,-12(fp)
     85b0:	e0bffd17 	ldw	r2,-12(fp)
     85b4:	10800210 	cmplti	r2,r2,8
     85b8:	103fe11e 	bne	r2,zero,8540 <_gp+0xffff42a8>
-    SCL_DELAY;
-    i2cClockBit = 0;
+		SCL_DELAY;
+		i2cClockBit = 0;
     }
     
     // get ack
@@ -1098,32 +1098,32 @@ void i2cStart(void) {
     8620:	dfc00115 	stw	ra,4(sp)
     8624:	df000015 	stw	fp,0(sp)
     8628:	d839883a 	mov	fp,sp
-  i2cDataBitDirection = 1;
+	i2cDataBitDirection = 1;
     862c:	d0a00017 	ldw	r2,-32768(gp)
     8630:	10800104 	addi	r2,r2,4
     8634:	00c00044 	movi	r3,1
     8638:	10c00015 	stw	r3,0(r2)
-  i2cDataBit = 1;
+	i2cDataBit = 1;
     863c:	d0a00017 	ldw	r2,-32768(gp)
     8640:	00c00044 	movi	r3,1
     8644:	10c00015 	stw	r3,0(r2)
-  i2cClockBit = 1;
+	i2cClockBit = 1;
     8648:	d0a00117 	ldw	r2,-32764(gp)
     864c:	00c00044 	movi	r3,1
     8650:	10c00015 	stw	r3,0(r2)
-  SCL_DELAY;
+	SCL_DELAY;
     8654:	01000044 	movi	r4,1
     8658:	00088500 	call	8850 <usleep>
-  i2cDataBit = 0;
+	i2cDataBit = 0;
     865c:	d0a00017 	ldw	r2,-32768(gp)
     8660:	10000015 	stw	zero,0(r2)
-  SCL_DELAY;
+	SCL_DELAY;
     8664:	01000044 	movi	r4,1
     8668:	00088500 	call	8850 <usleep>
-  i2cClockBit = 0;
+	i2cClockBit = 0;
     866c:	d0a00117 	ldw	r2,-32764(gp)
     8670:	10000015 	stw	zero,0(r2)
-  SCL_DELAY;
+	SCL_DELAY;
     8674:	01000044 	movi	r4,1
     8678:	00088500 	call	8850 <usleep>
 }
@@ -1141,26 +1141,26 @@ void i2cStop(void) {
     8694:	dfc00115 	stw	ra,4(sp)
     8698:	df000015 	stw	fp,0(sp)
     869c:	d839883a 	mov	fp,sp
-  i2cDataBitDirection = 1;
+	i2cDataBitDirection = 1;
     86a0:	d0a00017 	ldw	r2,-32768(gp)
     86a4:	10800104 	addi	r2,r2,4
     86a8:	00c00044 	movi	r3,1
     86ac:	10c00015 	stw	r3,0(r2)
-  i2cDataBit = 0;
+	i2cDataBit = 0;
     86b0:	d0a00017 	ldw	r2,-32768(gp)
     86b4:	10000015 	stw	zero,0(r2)
-  i2cClockBit = 1;
+	i2cClockBit = 1;
     86b8:	d0a00117 	ldw	r2,-32764(gp)
     86bc:	00c00044 	movi	r3,1
     86c0:	10c00015 	stw	r3,0(r2)
-  SCL_DELAY;
+	SCL_DELAY;
     86c4:	01000044 	movi	r4,1
     86c8:	00088500 	call	8850 <usleep>
-  i2cDataBit = 1;
+	i2cDataBit = 1;
     86cc:	d0a00017 	ldw	r2,-32768(gp)
     86d0:	00c00044 	movi	r3,1
     86d4:	10c00015 	stw	r3,0(r2)
-  SCL_DELAY;
+	SCL_DELAY;
     86d8:	01000044 	movi	r4,1
     86dc:	00088500 	call	8850 <usleep>
 }
