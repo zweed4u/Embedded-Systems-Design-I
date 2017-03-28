@@ -4946,7 +4946,7 @@ alt_exception_cause_generated_bad_addr(alt_exception_cause cause)
     a880:	d9400015 	stw	r5,0(sp)
     a884:	d9800115 	stw	r6,4(sp)
     a888:	d9c00215 	stw	r7,8(sp)
-    a88c:	00000000 	call	0 <__reset-0x8000>
+    a88c:	00000000 	call	0 <__alt_mem_onchip_memory2_0-0x8000>
     a890:	d9400017 	ldw	r5,0(sp)
     a894:	d9800117 	ldw	r6,4(sp)
     a898:	d9c00217 	ldw	r7,8(sp)
@@ -5032,7 +5032,7 @@ alt_exception_cause_generated_bad_addr(alt_exception_cause cause)
     a9d0:	10003426 	beq	r2,zero,aaa4 <__call_exitprocs+0x18c>
     a9d4:	9809883a 	mov	r4,r19
     a9d8:	a8800015 	stw	r2,0(r21)
-    a9dc:	00000000 	call	0 <__reset-0x8000>
+    a9dc:	00000000 	call	0 <__alt_mem_onchip_memory2_0-0x8000>
     a9e0:	acc00017 	ldw	r19,0(r21)
     a9e4:	983fe41e 	bne	r19,zero,a978 <_gp+0xffff66e0>
     a9e8:	dfc00b17 	ldw	ra,44(sp)
