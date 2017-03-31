@@ -103,6 +103,7 @@ architecture lab4_arch of lab4 is
   signal adclrckRisingEdge : std_logic;
   signal bclkRisingEdge : std_logic;
   signal dataReq : std_logic;
+  signal aud_daclrck_sig : std_logic;
 
   component codec_dac_interface is
     port (
@@ -184,6 +185,11 @@ begin
   ----- Control the 10 LEDs
   LEDR(0) <= cntr(25);
   LEDR(9) <= temp_sig;
+  
+  --Added for measuring the sample rate of codec
+  aud_daclrck_sig <= AUD_DACLRCK;
+  GPIO_1(0) <= aud_daclrck_sig;
+
   
   ----- Syncronize the user inputs i.e. slide switches(SW) and pushbuttons(KEYS) 
   synchronizer_inst : synchronizer
