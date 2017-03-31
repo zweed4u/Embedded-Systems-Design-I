@@ -20,7 +20,7 @@
 ## PROGRAM "Quartus Prime"
 ## VERSION "Version 15.1.0 Build 185 10/21/2015 SJ Standard Edition"
 
-## DATE    "Wed Mar 29 16:13:04 2017"
+## DATE    "Fri Mar 31 17:47:11 2017"
 
 ##
 ## DEVICE  "5CSEMA5F31C6"
@@ -39,7 +39,7 @@ set_time_format -unit ns -decimal_places 3
 # Create Clock
 #**************************************************************
 
-create_clock -name {clk} -period 20.000 -waveform { 0.000 10.000 } [get_ports {CLOCK2_50}]
+create_clock -name {clock2_50} -period 20.000 -waveform { 0.000 10.000 } [get_ports {CLOCK2_50}]
 
 
 #**************************************************************
@@ -58,14 +58,14 @@ create_clock -name {clk} -period 20.000 -waveform { 0.000 10.000 } [get_ports {C
 # Set Clock Uncertainty
 #**************************************************************
 
-set_clock_uncertainty -rise_from [get_clocks {clk}] -rise_to [get_clocks {clk}] -setup 0.170  
-set_clock_uncertainty -rise_from [get_clocks {clk}] -rise_to [get_clocks {clk}] -hold 0.060  
-set_clock_uncertainty -rise_from [get_clocks {clk}] -fall_to [get_clocks {clk}] -setup 0.170  
-set_clock_uncertainty -rise_from [get_clocks {clk}] -fall_to [get_clocks {clk}] -hold 0.060  
-set_clock_uncertainty -fall_from [get_clocks {clk}] -rise_to [get_clocks {clk}] -setup 0.170  
-set_clock_uncertainty -fall_from [get_clocks {clk}] -rise_to [get_clocks {clk}] -hold 0.060  
-set_clock_uncertainty -fall_from [get_clocks {clk}] -fall_to [get_clocks {clk}] -setup 0.170  
-set_clock_uncertainty -fall_from [get_clocks {clk}] -fall_to [get_clocks {clk}] -hold 0.060  
+set_clock_uncertainty -rise_from [get_clocks {clock2_50}] -rise_to [get_clocks {clock2_50}] -setup 0.170  
+set_clock_uncertainty -rise_from [get_clocks {clock2_50}] -rise_to [get_clocks {clock2_50}] -hold 0.060  
+set_clock_uncertainty -rise_from [get_clocks {clock2_50}] -fall_to [get_clocks {clock2_50}] -setup 0.170  
+set_clock_uncertainty -rise_from [get_clocks {clock2_50}] -fall_to [get_clocks {clock2_50}] -hold 0.060  
+set_clock_uncertainty -fall_from [get_clocks {clock2_50}] -rise_to [get_clocks {clock2_50}] -setup 0.170  
+set_clock_uncertainty -fall_from [get_clocks {clock2_50}] -rise_to [get_clocks {clock2_50}] -hold 0.060  
+set_clock_uncertainty -fall_from [get_clocks {clock2_50}] -fall_to [get_clocks {clock2_50}] -setup 0.170  
+set_clock_uncertainty -fall_from [get_clocks {clock2_50}] -fall_to [get_clocks {clock2_50}] -hold 0.060  
 
 
 #**************************************************************

@@ -249,6 +249,7 @@ set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_RO
 set_global_assignment -name PARTITION_COLOR 16764057 -entity equalizer -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity equalizer -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity lights -section_id Top
+set_global_assignment -name SDC_FILE lab4.out.sdc
 set_global_assignment -name QIP_FILE nios_system/synthesis/nios_system.qip
 set_global_assignment -name VHDL_FILE ../lab4_src/lab4_hdl_src/synchronizer.vhd
 set_global_assignment -name VHDL_FILE ../lab4_src/lab4_hdl_src/peripheral_on_external_bus.vhd

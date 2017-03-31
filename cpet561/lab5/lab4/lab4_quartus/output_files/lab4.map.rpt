@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab4
-Wed Mar 29 15:24:57 2017
+Fri Mar 31 17:49:47 2017
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Standard Edition
 
 
@@ -218,7 +218,7 @@ agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Mar 29 15:24:57 2017           ;
+; Analysis & Synthesis Status     ; Successful - Fri Mar 31 17:49:47 2017           ;
 ; Quartus Prime Version           ; 15.1.0 Build 185 10/21/2015 SJ Standard Edition ;
 ; Revision Name                   ; lab4                                            ;
 ; Top-level Entity Name           ; lab4                                            ;
@@ -445,14 +445,14 @@ agreement for further details.
 +---------------------------------------------+-----------------+
 ; Resource                                    ; Usage           ;
 +---------------------------------------------+-----------------+
-; Estimate of Logic utilization (ALMs needed) ; 839             ;
+; Estimate of Logic utilization (ALMs needed) ; 840             ;
 ;                                             ;                 ;
 ; Combinational ALUT usage for logic          ; 1299            ;
-;     -- 7 input functions                    ; 18              ;
+;     -- 7 input functions                    ; 19              ;
 ;     -- 6 input functions                    ; 235             ;
-;     -- 5 input functions                    ; 278             ;
+;     -- 5 input functions                    ; 276             ;
 ;     -- 4 input functions                    ; 191             ;
-;     -- <=3 input functions                  ; 577             ;
+;     -- <=3 input functions                  ; 578             ;
 ;                                             ;                 ;
 ; Dedicated logic registers                   ; 1126            ;
 ;                                             ;                 ;
@@ -4668,21 +4668,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         2 data inputs ; 20                          ;
 ;         3 data inputs ; 31                          ;
 ;         4 data inputs ; 1                           ;
-;     extend            ; 15                          ;
-;         7 data inputs ; 15                          ;
-;     normal            ; 994                         ;
+;     extend            ; 16                          ;
+;         7 data inputs ; 16                          ;
+;     normal            ; 993                         ;
 ;         0 data inputs ; 3                           ;
 ;         1 data inputs ; 15                          ;
 ;         2 data inputs ; 144                         ;
-;         3 data inputs ; 187                         ;
+;         3 data inputs ; 188                         ;
 ;         4 data inputs ; 177                         ;
-;         5 data inputs ; 256                         ;
+;         5 data inputs ; 254                         ;
 ;         6 data inputs ; 212                         ;
 ; boundary_port         ; 243                         ;
 ; stratixv_ram_block    ; 176                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 1.98                        ;
+; Average LUT depth     ; 1.97                        ;
 +-----------------------+-----------------------------+
 
 
@@ -4691,7 +4691,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -4701,7 +4701,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 15.1.0 Build 185 10/21/2015 SJ Standard Edition
-    Info: Processing started: Wed Mar 29 15:24:29 2017
+    Info: Processing started: Fri Mar 31 17:49:16 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab4 -c lab4
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file nios_system/synthesis/nios_system.vhd
@@ -5109,7 +5109,7 @@ Critical Warning (127005): Memory depth (1024) in the design file differs from m
 Info (12128): Elaborating entity "hexDisplayDriver" for hierarchy "hexDisplayDriver:hexDisplayDriver_inst0" File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/lab4.vhd Line: 250
 Info (12128): Elaborating entity "codec_dac_interface" for hierarchy "codec_dac_interface:codec_dac_inst" File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/lab4.vhd Line: 374
 Info (11170): Start IP generation for the debug fabric within sld_hub.
-Info (11172): 2017.03.29.15:24:47 Progress: Loading sld2dead247/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2017.03.31.17:49:35 Progress: Loading sld2dead247/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -5379,10 +5379,10 @@ Info (21057): Implemented 2141 device resources after synthesis - the final reso
     Info (21061): Implemented 1771 logic cells
     Info (21064): Implemented 176 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 253 warnings
-    Info: Peak virtual memory: 994 megabytes
-    Info: Processing ended: Wed Mar 29 15:24:57 2017
-    Info: Elapsed time: 00:00:28
-    Info: Total CPU time (on all processors): 00:00:48
+    Info: Peak virtual memory: 996 megabytes
+    Info: Processing ended: Fri Mar 31 17:49:47 2017
+    Info: Elapsed time: 00:00:31
+    Info: Total CPU time (on all processors): 00:00:55
 
 
 +------------------------------------------+
