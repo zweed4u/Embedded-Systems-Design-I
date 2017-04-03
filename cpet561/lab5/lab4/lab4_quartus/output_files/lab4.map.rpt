@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab4
-Fri Mar 31 18:15:36 2017
+Mon Apr 03 14:34:42 2017
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Standard Edition
 
 
@@ -218,7 +218,7 @@ agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Mar 31 18:15:36 2017           ;
+; Analysis & Synthesis Status     ; Successful - Mon Apr 03 14:34:42 2017           ;
 ; Quartus Prime Version           ; 15.1.0 Build 185 10/21/2015 SJ Standard Edition ;
 ; Revision Name                   ; lab4                                            ;
 ; Top-level Entity Name           ; lab4                                            ;
@@ -4701,7 +4701,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 15.1.0 Build 185 10/21/2015 SJ Standard Edition
-    Info: Processing started: Fri Mar 31 18:15:06 2017
+    Info: Processing started: Mon Apr 03 14:34:13 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab4 -c lab4
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file nios_system/synthesis/nios_system.vhd
@@ -5110,7 +5110,7 @@ Critical Warning (127005): Memory depth (1024) in the design file differs from m
 Info (12128): Elaborating entity "hexDisplayDriver" for hierarchy "hexDisplayDriver:hexDisplayDriver_inst0" File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/lab4.vhd Line: 256
 Info (12128): Elaborating entity "codec_dac_interface" for hierarchy "codec_dac_interface:codec_dac_inst" File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/lab4.vhd Line: 380
 Info (11170): Start IP generation for the debug fabric within sld_hub.
-Info (11172): 2017.03.31.18:15:25 Progress: Loading sld2dead247/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2017.04.03.14:34:31 Progress: Loading sld2dead247/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -5382,8 +5382,8 @@ Info (21057): Implemented 2141 device resources after synthesis - the final reso
     Info (21064): Implemented 176 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 255 warnings
     Info: Peak virtual memory: 994 megabytes
-    Info: Processing ended: Fri Mar 31 18:15:36 2017
-    Info: Elapsed time: 00:00:30
+    Info: Processing ended: Mon Apr 03 14:34:42 2017
+    Info: Elapsed time: 00:00:29
     Info: Total CPU time (on all processors): 00:00:53
 
 

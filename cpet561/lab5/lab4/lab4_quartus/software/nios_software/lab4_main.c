@@ -4,8 +4,6 @@
 #include "alt_types.h"
 #include <unistd.h>
 
-//#define leds (*ledsBasePtr)
-
 typedef unsigned char bool;
 
 // ++++++++++++++++++ Pointer to memory mapped i/o registers ++++++++++++++++++++++
@@ -14,7 +12,6 @@ volatile alt_u32* i2cClockBit_ptr = (volatile alt_u32*)IIC_CLOCK_BIT_BASE;
 #define i2cDataBit (*i2cDataBit_ptr)
 #define i2cDataBitDirection (*(i2cDataBit_ptr+1))
 #define i2cClockBit (*i2cClockBit_ptr)
-//alt_u32 *ledsBasePtr = (alt_u32 *) PIO_1_BASE;
 alt_u32 *busBridgePtr = (alt_u32 *) 0;
 alt_u32 first;
 alt_u32 second;
@@ -37,24 +34,26 @@ void i2cStop(void);
 #define TRUE 1
 
 int main(void) {
-  
+  int randNum=0;
+
   volatile bool final_result;
+
+  srand( (unsigned)time(NULL) ); //seed randomizer with epoch
   final_result = FALSE;
-	final_result = codecInit();
-  
-	while (1) {
-    dataToWrite = 0x12345678;
-	//	leds = 0xabcd;
-    *busBridgePtr = dataToWrite;
-    dataToWrite += 0x01010101;
-    *(busBridgePtr + 1) = dataToWrite;
-    dataToWrite += 0x01010101;
-    *(busBridgePtr + 2) = dataToWrite;
+  final_result = codecInit();
+  while (1) { //code in this while loop is negligible - professor said he shouldve removed it
+	  randNum = rand();
+	  dataToWrite = 0x12345678;
+	  *busBridgePtr = dataToWrite;
+	  dataToWrite += 0x01010101;
+	  *(busBridgePtr + 1) = dataToWrite;
+	  dataToWrite += 0x01010101;
+	  *(busBridgePtr + 2) = dataToWrite;
     
-    first  = *busBridgePtr;
-    second = *(busBridgePtr + 1);
-    third  = *(busBridgePtr + 2);
-	}
+	  first  = *busBridgePtr;
+	  second = *(busBridgePtr + 1);
+	  third  = *(busBridgePtr + 2);
+  }
 }
 
 // ++++++++++++++++++++++++++++++++ CodecInit +++++++++++++++++++++++++++++++++++

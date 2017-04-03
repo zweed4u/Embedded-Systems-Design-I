@@ -1,5 +1,5 @@
 Fitter report for lab4
-Fri Mar 31 18:16:47 2017
+Mon Apr 03 14:35:45 2017
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Standard Edition
 
 
@@ -66,7 +66,7 @@ agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                    ;
 +---------------------------------+-------------------------------------------------+
-; Fitter Status                   ; Successful - Fri Mar 31 18:16:47 2017           ;
+; Fitter Status                   ; Successful - Mon Apr 03 14:35:45 2017           ;
 ; Quartus Prime Version           ; 15.1.0 Build 185 10/21/2015 SJ Standard Edition ;
 ; Revision Name                   ; lab4                                            ;
 ; Top-level Entity Name           ; lab4                                            ;
@@ -161,7 +161,7 @@ agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   1.5%      ;
+;     Processors 2-4         ;   1.7%      ;
 +----------------------------+-------------+
 
 
@@ -2803,7 +2803,7 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 ; Source Clock(s)         ; Destination Clock(s) ; Delay Added in ns ;
 +-------------------------+----------------------+-------------------+
 ; altera_reserved_tck     ; altera_reserved_tck  ; 193.8             ;
-; clock2_50               ; clock2_50            ; 145.2             ;
+; CLOCK2_50               ; CLOCK2_50            ; 145.2             ;
 ; altera_reserved_tck,I/O ; altera_reserved_tck  ; 13.8              ;
 +-------------------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
@@ -2978,28 +2978,28 @@ Info (332111): Found 2 clocks
     Info (332111):   Period   Clock Name
     Info (332111): ======== ============
     Info (332111):   33.333 altera_reserved_tck
-    Info (332111):   20.000    clock2_50
+    Info (332111):   20.000    CLOCK2_50
 Info (176235): Finished register packing
     Extra Info (176218): Packed 8 registers into blocks of type EC
-Info (11798): Fitter preparation operations ending: elapsed time is 00:00:13
+Info (11798): Fitter preparation operations ending: elapsed time is 00:00:12
 Info (170189): Fitter placement preparation operations beginning
 Info (14951): The Fitter is using Advanced Physical Optimization.
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:05
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:06
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:05
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
     Info (170196): Router estimated peak interconnect usage is 15% of the available device resources in the region that extends from location X22_Y0 to location X32_Y10
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:12
-Info (11888): Total time spent on timing analysis during the Fitter is 5.08 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:10
+Info (11888): Total time spent on timing analysis during the Fitter is 4.65 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:12
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:10
 Warning (169064): Following 91 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
     Info (169065): Pin AUD_ADCLRCK has a permanently disabled output enable File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/lab4.vhd Line: 15
     Info (169065): Pin DRAM_DQ[0] has a permanently disabled output enable File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/lab4.vhd Line: 34
@@ -3094,10 +3094,10 @@ Warning (169064): Following 91 pins have no output enable or a GND or VCC output
     Info (169065): Pin GPIO_1[0] has a permanently enabled output enable File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/lab4.vhd Line: 65
 Info (144001): Generated suppressed messages file C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_quartus/output_files/lab4.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 2746 megabytes
-    Info: Processing ended: Fri Mar 31 18:16:49 2017
-    Info: Elapsed time: 00:01:08
-    Info: Total CPU time (on all processors): 00:02:12
+    Info: Peak virtual memory: 2735 megabytes
+    Info: Processing ended: Mon Apr 03 14:35:46 2017
+    Info: Elapsed time: 00:01:00
+    Info: Total CPU time (on all processors): 00:02:03
 
 
 +----------------------------+
