@@ -63,6 +63,16 @@ architecture lab5_arch of lab5 is
       firstStageOutput => firstToSecondIntermediary
     );
 
+  --add delay between stages z^-1
+  --like...
+  --if (rising_edge(clk)) then
+  --  if (i_reset='1') then
+  --    x_d1 <= '0';
+  --  elsif (i_dataReq = '1') then
+  --    x_d1 <= x_d0;
+  --  end if;
+  --end if;
+
   secondStage_inst1 : secondStage
     port map (
       clk => clk,
@@ -71,6 +81,16 @@ architecture lab5_arch of lab5 is
       secondStageInput => firstToSecondIntermediary,
       secondStageOutput => secondToThirdIntermediary
     );
+
+  --add delay between stages z^-1
+  --like...
+  --if (rising_edge(clk)) then
+  --  if (i_reset='1') then
+  --    x_d1 <= '0';
+  --  elsif (i_dataReq = '1') then
+  --    x_d1 <= x_d0;
+  --  end if;
+  --end if;
 
   thirdStage_inst1 : thirdStage
     port map (
