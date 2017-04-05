@@ -27,11 +27,11 @@ architecture secondStage_arch of secondStage is
   signal x_d1 : std_logic;
   signal x_d2 : std_logic;
 
-  constant b12_const : signed(35 downto 0) := x"0000000A5";
-  constant b22_const : signed(35 downto 0) := x"00000014B";
-  constant b32_const : signed(35 downto 0) := x"0000000A5";
-  constant a22_const : signed(35 downto 0) := x"FFFFF2155";
-  constant a32_const : signed(35 downto 0) := x"000001CEA";
+  constant b12_const : signed(35 downto 0) := x"00000015B"; -- 0.0026446*(2^17) = 347
+  constant b22_const : signed(35 downto 0) := x"00000027F"; -- 0.0052893*(2^17) = 639
+  constant b32_const : signed(35 downto 0) := x"00000015B"; -- 0.0026446*(2^17) = 347
+  constant a22_const : signed(35 downto 0) := x"FFFFC2155"; -- -1.9349*(2^17) = -253611
+  constant a32_const : signed(35 downto 0) := x"00001E316"; -- 0.94353*(2^17) = 123670
   
   begin
   B_in <= secondStageInput;

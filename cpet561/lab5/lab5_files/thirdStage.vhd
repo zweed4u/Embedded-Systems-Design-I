@@ -27,11 +27,11 @@ architecture thirdStage_arch of thirdStage is
   signal x_d1 : std_logic;
   signal x_d2 : std_logic;
 
-  constant b13_const : signed(35 downto 0) := x"000007FF6";
-  constant b23_const : signed(35 downto 0) := x"00000FFEC";
-  constant b33_const : signed(35 downto 0) := x"000007FF6";
-  constant a23_const : signed(35 downto 0) := x"FFFFF4C98";
-  constant a33_const : signed(35 downto 0) := x"000004864";
+  constant b13_const : signed(35 downto 0) := x"00000800A"; -- 0.25008*(2^17) = 32778
+  constant b23_const : signed(35 downto 0) := x"000010014"; -- 0.50015*(2^17) = 65556
+  constant b33_const : signed(35 downto 0) := x"00000800A"; -- 0.25008*(2^17) = 32778
+  constant a23_const : signed(35 downto 0) := x"FFFFC4C98"; -- -1.8504*(2^17) = -242536
+  constant a33_const : signed(35 downto 0) := x"00001B79C"; -- 0.85861*(2^17) = 112540
   
   begin 
   C_in <= thirdStageInput;

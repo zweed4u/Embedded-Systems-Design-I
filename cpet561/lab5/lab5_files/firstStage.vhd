@@ -24,10 +24,10 @@ architecture firstStage_arch of firstStage is
   signal x_d1 : std_logic;
   signal A_out : std_logic;
   
-  constant b11_const : signed(35 downto 0) := x"000000049";
-  constant b21_const : signed(35 downto 0) := x"000000049";
+  constant b11_const : signed(35 downto 0) := x"0000001B7"; -- 0.0033507*(2^17) = 439
+  constant b21_const : signed(35 downto 0) := x"0000001B7"; -- 0.0033507*(2^17) = 439
   constant b31_const : signed(35 downto 0) := x"000000000";
-  constant a21_const : signed(35 downto 0) := x"FFFFE2E14";
+  constant a21_const : signed(35 downto 0) := x"FFFFE2E14"; -- -0.91*(2^17) = 119276
   constant a31_const : signed(35 downto 0) := x"000000000";
   
   begin
