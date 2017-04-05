@@ -32,7 +32,7 @@ void i2cStop(void);
 #define TRUE 1
 
 int main(void) {
-  alt_u32 i = 1;
+  alt_u32 i = 1; //test to make sure that first pass writes to 0x0 -> +1
   alt_u32 randNum;
   volatile bool final_result;
   srand( (unsigned)time(NULL) ); //seed randomizer with epoch
