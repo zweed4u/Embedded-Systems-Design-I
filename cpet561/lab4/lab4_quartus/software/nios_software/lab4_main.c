@@ -42,17 +42,7 @@ int main(void) {
 	final_result = codecInit();
   
 	while (1) {
-		dataToWrite = 0x12345678;
-		//leds = 0xabcd;
-		*busBridgePtr = dataToWrite;
-		dataToWrite += 0x01010101;
-		*(busBridgePtr + 1) = dataToWrite;
-		dataToWrite += 0x01010101;
-		*(busBridgePtr + 2) = dataToWrite;
-
-		first  = *busBridgePtr;
-		second = *(busBridgePtr + 1);
-		third  = *(busBridgePtr + 2);
+		//
 	}
 }
 
