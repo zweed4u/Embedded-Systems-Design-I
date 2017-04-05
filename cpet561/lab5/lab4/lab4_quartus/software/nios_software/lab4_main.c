@@ -3,6 +3,7 @@
 #include "system.h"
 #include "alt_types.h"
 #include <unistd.h>
+#include <stdio.h>
 
 typedef unsigned char bool;
 
@@ -13,9 +14,6 @@ volatile alt_u32* i2cClockBit_ptr = (volatile alt_u32*)IIC_CLOCK_BIT_BASE;
 #define i2cDataBitDirection (*(i2cDataBit_ptr+1))
 #define i2cClockBit (*i2cClockBit_ptr)
 alt_u32 *busBridgePtr = (alt_u32 *) 0;
-alt_u32 first;
-alt_u32 second;
-alt_u32 third;
 alt_u32 dataToWrite;
 
 // ++++++++++++++++++++++++++++++++ Macros +++++++++++++++++++++++++++++++++++++
@@ -34,26 +32,24 @@ void i2cStop(void);
 #define TRUE 1
 
 int main(void) {
-  int randNum=0;
-
+  alt_u32 i = 0;
+  alt_u32 randNum;
   volatile bool final_result;
-
   srand( (unsigned)time(NULL) ); //seed randomizer with epoch
   final_result = FALSE;
   final_result = codecInit();
-  while (1) { //code in this while loop is negligible - professor said he shouldve removed it
-	  randNum = rand();
-	  dataToWrite = 0x12345678;
-	  *busBridgePtr = dataToWrite;
-	  dataToWrite += 0x01010101;
-	  *(busBridgePtr + 1) = dataToWrite;
-	  dataToWrite += 0x01010101;
-	  *(busBridgePtr + 2) = dataToWrite;
-    
-	  first  = *busBridgePtr;
-	  second = *(busBridgePtr + 1);
-	  third  = *(busBridgePtr + 2);
+
+  while (i < (256)){
+	  randNum = rand(); // 0000 - FFFF
+	  randNum = (randNum % 65535); //16 random not 32 because the full contents are left 16 AND right 16
+	  dataToWrite = randNum | (randNum<<16); // writes to top and bottom 16 with or'ing bitshift
+	  *(busBridgePtr + i) = dataToWrite;
+	  i += 1;
   }
+  while(1){
+	  //
+  }
+  return 0;
 }
 
 // ++++++++++++++++++++++++++++++++ CodecInit +++++++++++++++++++++++++++++++++++

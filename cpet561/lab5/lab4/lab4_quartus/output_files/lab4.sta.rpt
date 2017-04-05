@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for lab4
-Mon Apr 03 14:36:14 2017
+Wed Apr 05 15:33:41 2017
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Standard Edition
 
 
@@ -103,12 +103,12 @@ agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.33        ;
+; Average used               ; 1.30        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;  11.1%      ;
+;     Processors 2-4         ;  10.0%      ;
 +----------------------------+-------------+
 
 
@@ -117,9 +117,9 @@ agreement for further details.
 +-------------------------------------------------------------------+--------+--------------------------+
 ; SDC File Path                                                     ; Status ; Read at                  ;
 +-------------------------------------------------------------------+--------+--------------------------+
-; lab4.out.sdc                                                      ; OK     ; Mon Apr 03 14:36:06 2017 ;
-; nios_system/synthesis/submodules/altera_reset_controller.sdc      ; OK     ; Mon Apr 03 14:36:06 2017 ;
-; nios_system/synthesis/submodules/nios_system_nios2_gen2_0_cpu.sdc ; OK     ; Mon Apr 03 14:36:06 2017 ;
+; lab4.out.sdc                                                      ; OK     ; Wed Apr 05 15:33:33 2017 ;
+; nios_system/synthesis/submodules/altera_reset_controller.sdc      ; OK     ; Wed Apr 05 15:33:33 2017 ;
+; nios_system/synthesis/submodules/nios_system_nios2_gen2_0_cpu.sdc ; OK     ; Wed Apr 05 15:33:33 2017 ;
 +-------------------------------------------------------------------+--------+--------------------------+
 
 
@@ -1616,7 +1616,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 15.1.0 Build 185 10/21/2015 SJ Standard Edition
-    Info: Processing started: Mon Apr 03 14:36:04 2017
+    Info: Processing started: Wed Apr 05 15:33:30 2017
 Info: Command: quartus_sta lab4 -c lab4
 Info: qsta_default_script.tcl version: #1
 Warning (20013): Ignored 24 assignments for entity "equalizer" -- entity does not exist in design
@@ -1889,9 +1889,9 @@ Info (332114): Report Metastability: Found 14 synchronizer chains.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 50 warnings
-    Info: Peak virtual memory: 1249 megabytes
-    Info: Processing ended: Mon Apr 03 14:36:14 2017
-    Info: Elapsed time: 00:00:10
+    Info: Peak virtual memory: 1247 megabytes
+    Info: Processing ended: Wed Apr 05 15:33:41 2017
+    Info: Elapsed time: 00:00:11
     Info: Total CPU time (on all processors): 00:00:14
 
 

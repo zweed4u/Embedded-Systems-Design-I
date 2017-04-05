@@ -1,0 +1,155 @@
+// Written by Gregg Guarino Ph.D.
+
+#include "system.h"
+#include "alt_types.h"
+#include <unistd.h>
+#include <stdio.h>
+
+typedef unsigned char bool;
+
+// ++++++++++++++++++ Pointer to memory mapped i/o registers ++++++++++++++++++++++
+volatile alt_u32* i2cDataBit_ptr = (volatile alt_u32*)IIC_DATA_BIT_BASE;
+volatile alt_u32* i2cClockBit_ptr = (volatile alt_u32*)IIC_CLOCK_BIT_BASE;
+#define i2cDataBit (*i2cDataBit_ptr)
+#define i2cDataBitDirection (*(i2cDataBit_ptr+1))
+#define i2cClockBit (*i2cClockBit_ptr)
+alt_u32 *busBridgePtr = (alt_u32 *) 0;
+alt_u32 dataToWrite;
+
+// ++++++++++++++++++++++++++++++++ Macros +++++++++++++++++++++++++++++++++++++
+#define SCL_DELAY    (usleep(1))
+
+// +++++++++++++++++++++++++++ Function Prototypes ++++++++++++++++++++++++++++++++
+bool codecInit(void);
+bool audioRegWrite(alt_u8 codecRegAddr, alt_u16 data16);
+bool i2cWriteByte(alt_u8 Data);
+void i2cStart(void);
+void i2cStop(void);
+
+// +++++++++++++++++++++++++++ Misc. Defines +++++++++++++++++++++++++++++++++++++
+#define CODEC_I2C_ADDR  0x34
+#define FALSE 0
+#define TRUE 1
+
+int main(void) {
+  int i=0;
+  alt_u32 randNum;
+  volatile bool final_result;
+  srand( (unsigned)time(NULL) ); //seed randomizer with epoch
+  final_result = FALSE;
+  final_result = codecInit();
+
+  while (i<256){
+	  randNum = rand();
+	  dataToWrite = randNum;
+	  *(busBridgePtr+i) = dataToWrite;
+  }
+
+}
+
+// ++++++++++++++++++++++++++++++++ CodecInit +++++++++++++++++++++++++++++++++++
+bool codecInit(void){
+  bool success = TRUE;
+  if (success)
+    success = audioRegWrite(15, 0x0000);  // reset
+  if (success)
+    success = audioRegWrite(9, 0x0000);  // inactive interface
+  //usleep(20*1000);
+  if (success)
+    success = audioRegWrite(0, 0x0017);  // Left Line In: set left line in volume
+  if (success)
+    success = audioRegWrite(1, 0x0017);  // Right Line In: set right line in volume
+  if (success)
+    success = audioRegWrite(2, 0x005B);  // Left Headphone Out: set left line out volume
+  if (success)
+    success = audioRegWrite(3, 0x005B);  // Right Headphone Out: set right line out volume
+  if (success)
+    success = audioRegWrite(4, 0x0015);  // Analogue Audio Path Control: set mic as input and boost it, and enable dac
+  if (success)
+    success = audioRegWrite(5, 0x0000);  // Digital Audio Path Control: disable soft mute
+  if (success)
+    success = audioRegWrite(6, 0);  // power down control: power on all
+  if (success)
+    success = audioRegWrite(7, 0x0042);  // I2S, iwl=16-bits, Enable Master Mode
+  // success = audioRegWrite(7, 0x0041);  // MSB-First, left justified, iwl=16-bits, Enable Master Mode
+  if (success)
+    success = audioRegWrite(8, 0x0020);  // Normal, Base OVer-Sampleing Rate 384 fs (BOSR=1)
+  if (success)
+    success = audioRegWrite(9, 0x0001);  // active interface
+
+  return success;
+}
+
+// +++++++++++++++++++++++++++++ audioRegWrite ++++++++++++++++++++++++++++++++++
+// ++ This function writes the given 9 bit data to the specified register in the
+// ++ Codec
+bool audioRegWrite(alt_u8 codecRegAddr, alt_u16 data16) {
+  bool success;
+  alt_u8 dataByte, controlByte;
+  dataByte = data16 & 0xFF;
+  controlByte = (codecRegAddr << 1) & 0xFE;
+  controlByte |= ((data16 >> 8) & 0x01);
+  i2cStart();
+  success = i2cWriteByte(CODEC_I2C_ADDR);
+  success = i2cWriteByte(controlByte);
+  success = i2cWriteByte(dataByte);
+  i2cStop();
+    
+  usleep(7*1000);
+  usleep(50*1000);
+  return success;
+}
+
+// +++++++++++++++++++++++++++++ i2cWriteByte ++++++++++++++++++++++++++++++++++
+bool i2cWriteByte(alt_u8 Data) { // return true if device response ack
+  alt_u8 Mask = 0x80;
+  bool success;
+  int i;
+    
+  i2cDataBitDirection = 1;
+  for(i=0; i<8; i++) {
+    i2cClockBit = 0;
+    if (Data & Mask) {
+      i2cDataBit = 1;
+    } else {
+      i2cDataBit = 0;
+    }
+    Mask >>= 1;
+    SCL_DELAY;
+    i2cClockBit = 1;
+    SCL_DELAY;
+    i2cClockBit = 0;
+    }
+    
+    // get ack
+    i2cDataBitDirection = 0;
+    SCL_DELAY;
+    i2cClockBit = 1;
+    SCL_DELAY;
+    success = ((i2cDataBit && 1) == 0) ? TRUE : FALSE;
+    i2cClockBit = 0; // clock low         
+    SCL_DELAY; // clock low delay
+    return success;
+}    
+
+// ++++++++++++++++++++++++++++++++ i2cStart +++++++++++++++++++++++++++++++++++
+void i2cStart(void) {
+  i2cDataBitDirection = 1;
+  i2cDataBit = 1;
+  i2cClockBit = 1;
+  SCL_DELAY;
+  i2cDataBit = 0;
+  SCL_DELAY;
+  i2cClockBit = 0;
+  SCL_DELAY;
+}
+
+// ++++++++++++++++++++++++++++++++ i2cStop +++++++++++++++++++++++++++++++++++
+void i2cStop(void) {
+  i2cDataBitDirection = 1;
+  i2cDataBit = 0;
+  i2cClockBit = 1;
+  SCL_DELAY;
+  i2cDataBit = 1;
+  SCL_DELAY;
+}
