@@ -75,9 +75,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
  28 .quartus_project_dir 0000004e  00000000  00000000  00017d0b  2**0
                   CONTENTS, READONLY
- 29 .jdi          00004237  00000000  00000000  00017d59  2**0
+ 29 .jdi          000053d8  00000000  00000000  00017d59  2**0
                   CONTENTS, READONLY
- 30 .sopcinfo     00043298  00000000  00000000  0001bf90  2**0
+ 30 .sopcinfo     00043298  00000000  00000000  0001d131  2**0
                   CONTENTS, READONLY
 SYMBOL TABLE:
 00008000 l    d  .entry	00000000 .entry
@@ -4903,7 +4903,7 @@ alt_exception_cause_generated_bad_addr(alt_exception_cause cause)
     a7fc:	d9400015 	stw	r5,0(sp)
     a800:	d9800115 	stw	r6,4(sp)
     a804:	d9c00215 	stw	r7,8(sp)
-    a808:	00000000 	call	0 <__reset-0x8000>
+    a808:	00000000 	call	0 <__alt_mem_onchip_memory2_0-0x8000>
     a80c:	d9400017 	ldw	r5,0(sp)
     a810:	d9800117 	ldw	r6,4(sp)
     a814:	d9c00217 	ldw	r7,8(sp)
@@ -4989,7 +4989,7 @@ alt_exception_cause_generated_bad_addr(alt_exception_cause cause)
     a94c:	10003426 	beq	r2,zero,aa20 <__call_exitprocs+0x18c>
     a950:	9809883a 	mov	r4,r19
     a954:	a8800015 	stw	r2,0(r21)
-    a958:	00000000 	call	0 <__reset-0x8000>
+    a958:	00000000 	call	0 <__alt_mem_onchip_memory2_0-0x8000>
     a95c:	acc00017 	ldw	r19,0(r21)
     a960:	983fe41e 	bne	r19,zero,a8f4 <_gp+0xffff66e0>
     a964:	dfc00b17 	ldw	ra,44(sp)

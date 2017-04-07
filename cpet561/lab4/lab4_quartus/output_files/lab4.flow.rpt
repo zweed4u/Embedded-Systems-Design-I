@@ -1,5 +1,5 @@
 Flow report for lab4
-Thu Apr 06 21:56:43 2017
+Fri Apr 07 17:18:11 2017
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Standard Edition
 
 
@@ -41,15 +41,15 @@ agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Flow Summary                                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Flow Status                     ; Successful - Thu Apr 06 21:56:22 2017           ;
+; Flow Status                     ; Successful - Fri Apr 07 17:17:43 2017           ;
 ; Quartus Prime Version           ; 15.1.0 Build 185 10/21/2015 SJ Standard Edition ;
 ; Revision Name                   ; lab4                                            ;
 ; Top-level Entity Name           ; lab4                                            ;
 ; Family                          ; Cyclone V                                       ;
 ; Device                          ; 5CSEMA5F31C6                                    ;
 ; Timing Models                   ; Final                                           ;
-; Logic utilization (in ALMs)     ; 3,649 / 32,070 ( 11 % )                         ;
-; Total registers                 ; 10564                                           ;
+; Logic utilization (in ALMs)     ; 3,907 / 32,070 ( 12 % )                         ;
+; Total registers                 ; 10686                                           ;
 ; Total pins                      ; 189 / 457 ( 41 % )                              ;
 ; Total virtual pins              ; 0                                               ;
 ; Total block memory bits         ; 385,792 / 4,065,280 ( 9 % )                     ;
@@ -147,7 +147,12 @@ agreement for further details.
 ; Fitter                    ; 00:01:48     ; 1.2                     ; 2881 MB             ; 00:04:02                           ;
 ; Assembler                 ; 00:00:15     ; 1.0                     ; 960 MB              ; 00:00:12                           ;
 ; TimeQuest Timing Analyzer ; 00:00:17     ; 2.3                     ; 1382 MB             ; 00:00:33                           ;
-; Total                     ; 00:14:16     ; --                      ; --                  ; 00:24:15                           ;
+; Analysis & Synthesis      ; 00:01:33     ; 1.6                     ; 1217 MB             ; 00:02:29                           ;
+; Partition Merge           ; 00:00:05     ; 1.0                     ; 870 MB              ; 00:00:04                           ;
+; Fitter                    ; 00:02:45     ; 1.2                     ; 2897 MB             ; 00:05:46                           ;
+; Assembler                 ; 00:00:21     ; 1.0                     ; 984 MB              ; 00:00:15                           ;
+; TimeQuest Timing Analyzer ; 00:00:23     ; 2.3                     ; 1405 MB             ; 00:00:44                           ;
+; Total                     ; 00:19:23     ; --                      ; --                  ; 00:33:33                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -191,6 +196,11 @@ agreement for further details.
 ; Fitter                    ; ECTET-1360-04    ; Windows 7 ; 6.1        ; x86_64         ;
 ; Assembler                 ; ECTET-1360-04    ; Windows 7 ; 6.1        ; x86_64         ;
 ; TimeQuest Timing Analyzer ; ECTET-1360-04    ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; ECTET-1350-01    ; Windows 7 ; 6.1        ; x86_64         ;
+; Partition Merge           ; ECTET-1350-01    ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; ECTET-1350-01    ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; ECTET-1350-01    ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; ECTET-1350-01    ; Windows 7 ; 6.1        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 
@@ -217,6 +227,11 @@ quartus_fit --read_settings_files=off --write_settings_files=off lab4 -c lab4
 quartus_map --read_settings_files=on --write_settings_files=off lab4 -c lab4
 quartus_cdb --read_settings_files=off --write_settings_files=off lab4 -c lab4 --merge=on
 quartus_fit --read_settings_files=off --write_settings_files=off lab4 -c lab4
+quartus_map --read_settings_files=on --write_settings_files=off lab4 -c lab4
+quartus_cdb --read_settings_files=off --write_settings_files=off lab4 -c lab4 --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off lab4 -c lab4
+quartus_asm --read_settings_files=off --write_settings_files=off lab4 -c lab4
+quartus_sta lab4 -c lab4
 quartus_map --read_settings_files=on --write_settings_files=off lab4 -c lab4
 quartus_cdb --read_settings_files=off --write_settings_files=off lab4 -c lab4 --merge=on
 quartus_fit --read_settings_files=off --write_settings_files=off lab4 -c lab4
