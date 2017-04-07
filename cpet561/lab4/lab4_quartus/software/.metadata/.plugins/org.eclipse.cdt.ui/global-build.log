@@ -1,4 +1,4 @@
-19:02:45 **** Incremental Build of configuration Nios II for project nios_software ****
+21:00:49 **** Incremental Build of configuration Nios II for project nios_software ****
 make all 
 Info: Building ../nios_software_bsp/
 C:/altera/15.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_software_bsp/
@@ -12,30 +12,42 @@ lab4_main.c:40:16: warning: variable 'final_result' set but not used [-Wunused-b
 Info: Linking nios_software.elf
 nios2-elf-g++  -T'../nios_software_bsp//linker.x' -msys-crt0='../nios_software_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../nios_software_bsp/   -Wl,-Map=nios_software.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o nios_software.elf obj/default/lab4_main.o -lm -msys-lib=m
 nios2-elf-insert nios_software.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 4 --sidp 0x11820 --timestamp 1490211520 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab4/lab4_quartus" --jdi ../..//output_files/lab4.jdi --sopcinfo C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab4/lab4_quartus/software/nios_software_bsp/../../nios_system.sopcinfo
-Info: (nios_software.elf) 17 KBytes program size (code + initialized data).
-Info:                     9632 Bytes free for stack + heap.
+Info: (nios_software.elf) 16 KBytes program size (code + initialized data).
+Info:                     9764 Bytes free for stack + heap.
 Info: Creating nios_software.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source nios_software.elf >nios_software.objdump
 [nios_software build complete]
-19:03:09 **** Incremental Build of configuration Nios II for project nios_software ****
+21:01:07 **** Incremental Build of configuration Nios II for project nios_software ****
 make all 
 Info: Building ../nios_software_bsp/
 C:/altera/15.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_software_bsp/
 [BSP build complete]
 [nios_software build complete]
-19:04:49 **** Incremental Build of configuration Nios II for project nios_software ****
+21:02:30 **** Incremental Build of configuration Nios II for project nios_software ****
 make all 
 Info: Building ../nios_software_bsp/
 C:/altera/15.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_software_bsp/
 [BSP build complete]
 [nios_software build complete]
-19:05:55 **** Incremental Build of configuration Nios II for project nios_software ****
+21:18:26 **** Incremental Build of configuration Nios II for project nios_software ****
 make all 
 Info: Building ../nios_software_bsp/
 C:/altera/15.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_software_bsp/
 [BSP build complete]
 [nios_software build complete]
-19:13:04 **** Build of configuration Nios II for project nios_software ****
+21:36:23 **** Incremental Build of configuration Nios II for project nios_software ****
+make all 
+Info: Building ../nios_software_bsp/
+C:/altera/15.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_software_bsp/
+[BSP build complete]
+[nios_software build complete]
+21:44:33 **** Incremental Build of configuration Nios II for project nios_software ****
+make all 
+Info: Building ../nios_software_bsp/
+C:/altera/15.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_software_bsp/
+[BSP build complete]
+[nios_software build complete]
+22:01:19 **** Incremental Build of configuration Nios II for project nios_software ****
 make all 
 Info: Building ../nios_software_bsp/
 C:/altera/15.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_software_bsp/

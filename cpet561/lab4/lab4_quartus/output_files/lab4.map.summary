@@ -1,4 +1,4 @@
-Analysis & Synthesis Status : Successful - Sun Mar 26 22:19:25 2017
+Analysis & Synthesis Status : Successful - Thu Apr 06 21:53:54 2017
 Quartus Prime Version : 15.1.0 Build 185 10/21/2015 SJ Standard Edition
 Revision Name : lab4
 Top-level Entity Name : lab4
@@ -8,5 +8,10 @@ Total registers : N/A until Partition Merge
 Total pins : N/A until Partition Merge
 Total virtual pins : N/A until Partition Merge
 Total block memory bits : N/A until Partition Merge
+Total DSP Blocks : N/A until Partition Merge
+Total HSSI RX PCSs : N/A until Partition Merge
+Total HSSI PMA RX Deserializers : N/A until Partition Merge
+Total HSSI TX PCSs : N/A until Partition Merge
+Total HSSI PMA TX Serializers : N/A until Partition Merge
 Total PLLs : N/A until Partition Merge
 Total DLLs : N/A until Partition Merge
