@@ -5,44 +5,92 @@
 
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.std_logic_unsigned.all;
-use ieee.std_logic_arith.all;
+use ieee.numeric_std.all;
+use ieee.std_logic_signed.all;
 
 ENTITY firstStage is
   port (
     clk : in std_logic;
     i_dataReq : in std_logic;
     i_reset : in std_logic;
-    firstStageInput : in std_logic; 
-    firstStageOutput : out std_logic
+    firstStageInput : in signed(35 downto 0); 
+    firstStageOutput : out signed(35 downto 0)
   );
 end entity firstStage;
 
 architecture firstStage_arch of firstStage is
-  signal A_in : std_logic;
-  signal x_d0 : std_logic;
-  signal x_d1 : std_logic;
-  signal A_out : std_logic;
+  signal A_in : signed (35 DOWNTO 0);
+  signal x1_d0 : STD_LOGIC_VECTOR (35 DOWNTO 0);
+  signal x1_d1 : STD_LOGIC_VECTOR (35 DOWNTO 0);
+  signal A_out : signed (35 DOWNTO 0);
+  signal multOuta21 : STD_LOGIC_VECTOR (35 DOWNTO 0);
+  signal multOuta21_full : STD_LOGIC_VECTOR (71 DOWNTO 0);
   
-  constant b11_const : signed(35 downto 0) := x"0000001B7"; -- 0.0033507*(2^17) = 439
-  constant b21_const : signed(35 downto 0) := x"0000001B7"; -- 0.0033507*(2^17) = 439
-  constant b31_const : signed(35 downto 0) := x"000000000";
-  constant a21_const : signed(35 downto 0) := x"FFFFE2E14"; -- -0.91*(2^17) = 119276
-  constant a31_const : signed(35 downto 0) := x"000000000";
+  signal multOutb21 : STD_LOGIC_VECTOR (35 DOWNTO 0);
+  signal multOutb21_full : STD_LOGIC_VECTOR (71 DOWNTO 0);
+  
+  signal multOutb11 : STD_LOGIC_VECTOR (35 DOWNTO 0);
+  signal multOutb11_full : STD_LOGIC_VECTOR (71 DOWNTO 0);
+  
+  
+  constant b11_const : STD_LOGIC_VECTOR(35 downto 0) := x"0000001B7"; -- 0.0033507*(2^17) = 439
+  constant b21_const : STD_LOGIC_VECTOR(35 downto 0) := x"0000001B7"; -- 0.0033507*(2^17) = 439
+  constant b31_const : STD_LOGIC_VECTOR(35 downto 0) := x"000000000";
+  constant a21_const : STD_LOGIC_VECTOR(35 downto 0) := x"FFFFE2E14"; -- -0.91*(2^17) = 119276
+  constant a31_const : STD_LOGIC_VECTOR(35 downto 0) := x"000000000";
+  
+  
+  COMPONENT filter_mult IS
+	PORT
+	(
+		dataa		: IN STD_LOGIC_VECTOR (35 DOWNTO 0);
+		datab		: IN STD_LOGIC_VECTOR (35 DOWNTO 0);
+		result	: OUT STD_LOGIC_VECTOR (71 DOWNTO 0)
+	);
+  END COMPONENT filter_mult;
   
   begin
-  A_in <= firstStageInput;
-  x_d0 <= A_in-(a21_const*x_d1);
-  A_out <= (b11_const*x_d0)+(b21_const*x_d1);
   
-  --clk'd process
-  if (rising_edge(clk)) then
-    if (i_reset='1') then
-      x_d1 <= '0';
-    elsif (i_dataReq = '1') then
-      x_d1 <= x_d0;
-    end if;
-  end if;
+  filter_mult_a21 : filter_mult
+  port map (
+    dataa => x1_d1,
+    datab => a21_const,
+    result => multOuta21_full
+  );
+  multOuta21 <= multOuta21_full(52 downto 17);
+  
+  
+  filter_mult_b21 : filter_mult
+  port map (
+    dataa => x1_d1,
+    datab => b21_const,
+    result => multOutb21_full
+  );
+  multOutb21 <= multOutb21_full(52 downto 17);
+  
+  
+  filter_mult_b11 : filter_mult
+  port map (
+    dataa => x1_d0,
+    datab => b11_const,
+    result => multOutb11_full
+  );
+  multOutb11 <= multOutb11_full(52 downto 17);
+  
+  process (clk) begin
+	  --clk'd process
+	  if (rising_edge(clk)) then
+		 if (i_reset='1') then
+			x1_d1 <= (others => '0');
+		 elsif (i_dataReq = '1') then
+			x1_d1 <= x1_d0;
+		 end if;
+	  end if;
+  end process;
 
+  A_in <= firstStageInput;
+  x1_d0 <= A_in-(multOuta21);
+  A_out <= (multOutb11)+(multOutb21);
   firstStageOutput<=A_out;
+  
 end architecture firstStage_arch;
