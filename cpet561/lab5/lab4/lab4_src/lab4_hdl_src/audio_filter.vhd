@@ -7,7 +7,6 @@ use std.textio.all;
 
 entity audio_filter is
   port (
-    clk : in std_logic;
     i_clk_50 : in std_logic;
     i_reset : in std_logic;
     i_audioSample : in signed(31 downto 0);
@@ -78,7 +77,7 @@ filterSection_1in <= shift_right(filterInResized, 4);
 o_audioSampleFiltered <= filterOutput(15 downto 0) & filterOutput(15 downto 0);
 firstStage_inst1 : firstStage
     port map (
-      clk => clk,
+      clk => i_clk_50,
       i_dataReq => i_dataReq,
       i_reset => i_reset,
       firstStageInput => filterSection_1in,
@@ -88,7 +87,7 @@ firstStage_inst1 : firstStage
 --delay between stages
 process (clk) begin
 --clk'd process
-  if (rising_edge(clk)) then
+  if (rising_edge(i_clk_50)) then
     if (i_reset='1') then
       secondStageInput <= '0';
     elsif (i_dataReq = '1') then
@@ -99,7 +98,7 @@ end process;
 
 secondStage_inst1 : secondStage
     port map (
-      clk => clk,
+      clk => i_clk_50,
       i_dataReq => i_dataReq,
       i_reset => i_reset,
       secondStageInput => firstToSecondIntermediary,
@@ -107,9 +106,9 @@ secondStage_inst1 : secondStage
     );
 
 --delay between stages
-process (clk) begin
+process (i_clk_50) begin
 --clk'd process
-  if (rising_edge(clk)) then
+  if (rising_edge(i_clk_50)) then
     if (i_reset='1') then
       thirdStageInput <= '0';
     elsif (i_dataReq = '1') then
@@ -120,7 +119,7 @@ end process;
   
 thirdStage_inst1 : thirdStage
     port map (
-      clk => clk,
+      clk => i_clk_50,
       i_dataReq => i_dataReq,
       i_reset => i_reset,
       thirdStageInput => secondToThirdIntermediary,

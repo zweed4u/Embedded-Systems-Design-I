@@ -104,7 +104,21 @@ architecture lab4_arch of lab4 is
   signal bclkRisingEdge : std_logic;
   signal dataReq : std_logic;
   signal aud_daclrck_sig : std_logic;
-
+  
+  signal wave_data_signed : signed(31 downto 0);
+  signal wave_data_filtered : std_logic_vector(31 downto 0);
+  signal wave_data_filtered_signed : signed(31 downto 0);
+  
+  component audio_filter is
+	  port map (
+		 i_clk_50 : in std_logic;
+		 i_reset : in std_logic;
+		 i_audioSample : in signed(31 downto 0);
+		 i_dataReq : in std_logic;
+		 o_audioSampleFiltered : out signed(31 downto 0)
+	  );
+  end component audio_filter;
+  
   component codec_dac_interface is
     port (
       i_clk_50             : in std_logic;
@@ -189,8 +203,26 @@ begin
   --Added for measuring the sample rate of codec
   aud_daclrck_sig <= AUD_DACLRCK;
   GPIO_1(0) <= aud_daclrck_sig;
+  
+  
+  
+  
+  
+  -- Instantiate the audio filter
+  wave_data_signed <= signed(wave_data);
+  wave_data_filtered <= std_logic_vector(wave_data_filtered_signed);
+  audio_filter_inst : audio_filter
+  port map (
+		 i_clk_50              => CLOCK2_50,
+		 i_reset               => reset,
+		 i_audioSample         => wave_data_signed,
+		 i_dataReq             => dataReq,
+		 o_audioSampleFiltered => wave_data_filtered_signed
+  );
 
   
+  
+
   ----- Syncronize the user inputs i.e. slide switches(SW) and pushbuttons(KEYS) 
   synchronizer_inst : synchronizer
     port map (
