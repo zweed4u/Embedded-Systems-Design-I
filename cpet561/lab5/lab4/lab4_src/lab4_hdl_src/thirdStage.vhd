@@ -28,19 +28,19 @@ architecture thirdStage_arch of thirdStage is
   signal x1_d2 : signed (35 DOWNTO 0);
 
   signal multOutb13      : signed (35 DOWNTO 0);
-  signal multOutb13_full : signed (71 DOWNTO 0);
+  signal multOutb13_full : STD_LOGIC_VECTOR (71 DOWNTO 0);
   
   signal multOuta23      : signed (35 DOWNTO 0);
-  signal multOuta23_full : signed (71 DOWNTO 0);
+  signal multOuta23_full : STD_LOGIC_VECTOR (71 DOWNTO 0);
   
   signal multOutb23      : signed (35 DOWNTO 0);
-  signal multOutb23_full : signed (71 DOWNTO 0);
+  signal multOutb23_full : STD_LOGIC_VECTOR (71 DOWNTO 0);
   
   signal multOuta33      : signed (35 DOWNTO 0);
-  signal multOuta33_full : signed (71 DOWNTO 0);
+  signal multOuta33_full : STD_LOGIC_VECTOR (71 DOWNTO 0);
   
   signal multOutb33      : signed (35 DOWNTO 0);
-  signal multOutb33_full : signed (71 DOWNTO 0);
+  signal multOutb33_full : STD_LOGIC_VECTOR (71 DOWNTO 0);
   
   constant b13_const : signed(35 downto 0) := x"00000800A"; -- 0.25008*(2^17) = 32778
   constant b23_const : signed(35 downto 0) := x"000010014"; -- 0.50015*(2^17) = 65556
@@ -84,7 +84,7 @@ architecture thirdStage_arch of thirdStage is
   port map (
     dataa  => std_logic_vector(x1_d0),
     datab  => std_logic_vector(b13_const),
-    result => std_logic_vector(multOutb13_full)
+    result => (multOutb13_full)
   );
   multOutb13 <= signed(multOutb13_full(52 downto 17));
   
@@ -92,7 +92,7 @@ architecture thirdStage_arch of thirdStage is
   port map (
     dataa  => std_logic_vector(x1_d1),
     datab  => std_logic_vector(a23_const),
-    result => std_logic_vector(multOuta23_full)
+    result => (multOuta23_full)
   );
   multOuta23 <= signed(multOuta23_full(52 downto 17));
   
@@ -100,7 +100,7 @@ architecture thirdStage_arch of thirdStage is
   port map (
     dataa  => std_logic_vector(x1_d1),
     datab  => std_logic_vector(b23_const),
-    result => std_logic_vector(multOutb23_full)
+    result => (multOutb23_full)
   );
   multOutb23 <= signed(multOutb23_full(52 downto 17));
   
@@ -108,7 +108,7 @@ architecture thirdStage_arch of thirdStage is
   port map (
     dataa  => std_logic_vector(x1_d2),
     datab  => std_logic_vector(a33_const),
-    result => std_logic_vector(multOuta33_full)
+    result => (multOuta33_full)
   );
   multOuta33 <= signed(multOuta33_full(52 downto 17));
   
@@ -116,7 +116,7 @@ architecture thirdStage_arch of thirdStage is
   port map (
     dataa  => std_logic_vector(x1_d2),
     datab  => std_logic_vector(b33_const),
-    result => std_logic_vector(multOutb33_full)
+    result => (multOutb33_full)
   );
   multOutb33 <= signed(multOutb33_full(52 downto 17));
   

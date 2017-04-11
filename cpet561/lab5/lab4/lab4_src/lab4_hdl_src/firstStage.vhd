@@ -24,13 +24,13 @@ architecture firstStage_arch of firstStage is
   signal x1_d1           : signed (35 DOWNTO 0);
   signal A_out           : signed (35 DOWNTO 0);
   signal multOuta21      : signed (35 DOWNTO 0);
-  signal multOuta21_full : signed (71 DOWNTO 0);
+  signal multOuta21_full : STD_LOGIC_VECTOR (71 DOWNTO 0);
   
   signal multOutb21      : signed (35 DOWNTO 0);
-  signal multOutb21_full : signed (71 DOWNTO 0);
+  signal multOutb21_full : STD_LOGIC_VECTOR (71 DOWNTO 0);
   
   signal multOutb11      : signed (35 DOWNTO 0);
-  signal multOutb11_full : signed (71 DOWNTO 0);
+  signal multOutb11_full : STD_LOGIC_VECTOR (71 DOWNTO 0);
   
   
   constant b11_const : signed(35 downto 0) := x"0000001B7"; -- 0.0033507*(2^17) = 439
@@ -55,7 +55,7 @@ architecture firstStage_arch of firstStage is
   port map (
     dataa  => std_logic_vector(x1_d1),
     datab  => std_logic_vector(a21_const),
-    result => std_logic_vector(multOuta21_full)
+    result => (multOuta21_full)
   );
   multOuta21 <= signed(multOuta21_full(52 downto 17));
   
@@ -64,7 +64,7 @@ architecture firstStage_arch of firstStage is
   port map (
     dataa  => std_logic_vector(x1_d1),
     datab  => std_logic_vector(b21_const),
-    result => std_logic_vector(multOutb21_full)
+    result => (multOutb21_full)
   );
   multOutb21 <= signed(multOutb21_full(52 downto 17));
   
@@ -73,7 +73,7 @@ architecture firstStage_arch of firstStage is
   port map (
     dataa  => std_logic_vector(x1_d0),
     datab  => std_logic_vector(b11_const),
-    result => std_logic_vector(multOutb11_full)
+    result => (multOutb11_full)
   );
   multOutb11 <= signed(multOutb11_full(52 downto 17));
   

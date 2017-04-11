@@ -26,6 +26,9 @@ signal filterInResized    : signed(35 downto 0);
 signal filterSection_1in  : signed(35 downto 0);
 signal filterOutput       : signed(35 downto 0);
 
+signal filterSection_2in  : signed(35 downto 0);
+signal filterSection_3in  : signed(35 downto 0);
+
 component firstStage is
     port(
       clk              : in std_logic;
@@ -80,13 +83,13 @@ firstStage_inst1 : firstStage
     );
 
 --delay between stages
-process (clk) begin
+process (i_clk_50) begin
 --clk'd process
   if (rising_edge(i_clk_50)) then
     if (i_reset='1') then
-      secondStageInput <= '0';
+      filterSection_2in <= x"000000000";
     elsif (i_dataReq = '1') then
-      secondStageInput <= firstToSecondIntermediary;
+      filterSection_2in <= firstToSecondIntermediary;
     end if;
   end if;
 end process;
@@ -96,7 +99,7 @@ secondStage_inst1 : secondStage
       clk               => i_clk_50,
       i_dataReq         => i_dataReq,
       i_reset           => i_reset,
-      secondStageInput  => firstToSecondIntermediary,
+      secondStageInput  => filterSection_2in,
       secondStageOutput => secondToThirdIntermediary
     );
 
@@ -105,9 +108,9 @@ process (i_clk_50) begin
 --clk'd process
   if (rising_edge(i_clk_50)) then
     if (i_reset='1') then
-      thirdStageInput <= '0';
+      filterSection_3in <= x"000000000";
     elsif (i_dataReq = '1') then
-      thirdStageInput <= secondToThirdIntermediary;
+      filterSection_3in <= secondToThirdIntermediary;
     end if;
   end if;
 end process;
@@ -117,7 +120,7 @@ thirdStage_inst1 : thirdStage
       clk              => i_clk_50,
       i_dataReq        => i_dataReq,
       i_reset          => i_reset,
-      thirdStageInput  => secondToThirdIntermediary,
+      thirdStageInput  => filterSection_3in,
       thirdStageOutput => filterOutput
     );
 
@@ -126,7 +129,7 @@ process (i_clk_50) begin
 --clk'd process
   if (rising_edge(i_clk_50)) then
     if (i_reset='1') then
-      o_audioSampleFiltered <= '0';
+      o_audioSampleFiltered <= x"00000000";
     elsif (i_dataReq = '1') then
     -- Grab the lowest 16 bits of your filter output and place them
     -- into the output port. There is an implied multiply by 4 here

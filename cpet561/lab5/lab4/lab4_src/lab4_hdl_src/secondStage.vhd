@@ -28,19 +28,19 @@ architecture secondStage_arch of secondStage is
   signal x1_d2 : signed (35 DOWNTO 0);
   
   signal multOutb12      : signed (35 DOWNTO 0);
-  signal multOutb12_full : signed (71 DOWNTO 0);
+  signal multOutb12_full : STD_LOGIC_VECTOR (71 DOWNTO 0);
   
   signal multOuta22      : signed (35 DOWNTO 0);
-  signal multOuta22_full : signed (71 DOWNTO 0);
+  signal multOuta22_full : STD_LOGIC_VECTOR (71 DOWNTO 0);
   
   signal multOutb22      : signed (35 DOWNTO 0);
-  signal multOutb22_full : signed (71 DOWNTO 0);
+  signal multOutb22_full : STD_LOGIC_VECTOR (71 DOWNTO 0);
   
   signal multOuta32      : signed (35 DOWNTO 0);
-  signal multOuta32_full : signed (71 DOWNTO 0);
+  signal multOuta32_full : STD_LOGIC_VECTOR (71 DOWNTO 0);
   
   signal multOutb32      : signed (35 DOWNTO 0);
-  signal multOutb32_full : signed (71 DOWNTO 0);
+  signal multOutb32_full : STD_LOGIC_VECTOR (71 DOWNTO 0);
   
   constant b12_const : signed(35 downto 0) := x"00000015B"; -- 0.0026446*(2^17) = 347
   constant b22_const : signed(35 downto 0) := x"00000027F"; -- 0.0052893*(2^17) = 639
@@ -87,7 +87,7 @@ architecture secondStage_arch of secondStage is
   port map (
     dataa  => std_logic_vector(x1_d0),
     datab  => std_logic_vector(b12_const),
-    result => std_logic_vector(multOutb12_full)
+    result => (multOutb12_full)
   );
   multOutb12 <= signed(multOutb12_full(52 downto 17));
   
@@ -95,7 +95,7 @@ architecture secondStage_arch of secondStage is
   port map (
     dataa  => std_logic_vector(x1_d1),
     datab  => std_logic_vector(a22_const),
-    result => std_logic_vector(multOuta22_full)
+    result => (multOuta22_full)
   );
   multOuta22 <= signed(multOuta22_full(52 downto 17));
   
@@ -103,7 +103,7 @@ architecture secondStage_arch of secondStage is
   port map (
     dataa  => std_logic_vector(x1_d1),
     datab  => std_logic_vector(b22_const),
-    result => std_logic_vector(multOutb22_full)
+    result => (multOutb22_full)
   );
   multOutb22 <= signed(multOutb22_full(52 downto 17));
   
@@ -111,7 +111,7 @@ architecture secondStage_arch of secondStage is
   port map (
     dataa  => std_logic_vector(x1_d2),
     datab  => std_logic_vector(a32_const),
-    result => std_logic_vector(multOuta32_full)
+    result => (multOuta32_full)
   );
   multOuta32 <= signed(multOuta32_full(52 downto 17));
   
@@ -119,7 +119,7 @@ architecture secondStage_arch of secondStage is
   port map (
     dataa  => std_logic_vector(x1_d2),
     datab  => std_logic_vector(b32_const),
-    result => std_logic_vector(multOutb32_full)
+    result => (multOutb32_full)
   );
   multOutb32 <= signed(multOutb32_full(52 downto 17));
   
