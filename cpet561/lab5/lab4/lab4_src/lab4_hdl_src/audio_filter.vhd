@@ -7,10 +7,10 @@ use std.textio.all;
 
 entity audio_filter is
   port (
-    i_clk_50 : in std_logic;
-    i_reset : in std_logic;
-    i_audioSample : in signed(31 downto 0);
-    i_dataReq : in std_logic;
+    i_clk_50              : in std_logic;
+    i_reset               : in std_logic;
+    i_audioSample         : in signed(31 downto 0);
+    i_dataReq             : in std_logic;
     o_audioSampleFiltered : out signed(31 downto 0)
   );
 end entity;

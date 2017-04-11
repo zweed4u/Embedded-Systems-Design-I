@@ -111,10 +111,10 @@ architecture lab4_arch of lab4 is
   
   component audio_filter is
 	  port map (
-		 i_clk_50 : in std_logic;
-		 i_reset : in std_logic;
-		 i_audioSample : in signed(31 downto 0);
-		 i_dataReq : in std_logic;
+		 i_clk_50              : in std_logic;
+		 i_reset               : in std_logic;
+		 i_audioSample         : in signed(31 downto 0);
+		 i_dataReq             : in std_logic;
 		 o_audioSampleFiltered : out signed(31 downto 0)
 	  );
   end component audio_filter;
