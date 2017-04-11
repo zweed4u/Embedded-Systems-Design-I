@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab4
-Mon Apr 10 15:39:31 2017
+Tue Apr 11 18:27:37 2017
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Standard Edition
 
 
@@ -38,7 +38,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +-----------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Mon Apr 10 15:39:31 2017               ;
+; Analysis & Synthesis Status ; Failed - Tue Apr 11 18:27:37 2017               ;
 ; Quartus Prime Version       ; 15.1.0 Build 185 10/21/2015 SJ Standard Edition ;
 ; Revision Name               ; lab4                                            ;
 ; Top-level Entity Name       ; lab4                                            ;
@@ -163,18 +163,18 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 15.1.0 Build 185 10/21/2015 SJ Standard Edition
-    Info: Processing started: Mon Apr 10 15:39:21 2017
+    Info: Processing started: Tue Apr 11 18:27:28 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab4 -c lab4
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file /users/zdw7287/downloads/embedded-systems-design-i/cpet561/lab5/lab5_files/thirdstage.vhd
-    Info (12022): Found design unit 1: thirdStage-thirdStage_arch File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab5_files/thirdStage.vhd Line: 21
-    Info (12023): Found entity 1: thirdStage File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab5_files/thirdStage.vhd Line: 11
-Info (12021): Found 2 design units, including 1 entities, in source file /users/zdw7287/downloads/embedded-systems-design-i/cpet561/lab5/lab5_files/secondstage.vhd
-    Info (12022): Found design unit 1: secondStage-secondStage_arch File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab5_files/secondStage.vhd Line: 21
-    Info (12023): Found entity 1: secondStage File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab5_files/secondStage.vhd Line: 11
-Info (12021): Found 2 design units, including 1 entities, in source file /users/zdw7287/downloads/embedded-systems-design-i/cpet561/lab5/lab5_files/firststage.vhd
-    Info (12022): Found design unit 1: firstStage-firstStage_arch File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab5_files/firstStage.vhd Line: 21
-    Info (12023): Found entity 1: firstStage File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab5_files/firstStage.vhd Line: 11
+Info (12021): Found 2 design units, including 1 entities, in source file /users/zdw7287/downloads/embedded-systems-design-i/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/thirdstage.vhd
+    Info (12022): Found design unit 1: thirdStage-thirdStage_arch File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/thirdStage.vhd Line: 21
+    Info (12023): Found entity 1: thirdStage File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/thirdStage.vhd Line: 11
+Info (12021): Found 2 design units, including 1 entities, in source file /users/zdw7287/downloads/embedded-systems-design-i/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/secondstage.vhd
+    Info (12022): Found design unit 1: secondStage-secondStage_arch File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/secondStage.vhd Line: 21
+    Info (12023): Found entity 1: secondStage File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/secondStage.vhd Line: 11
+Info (12021): Found 2 design units, including 1 entities, in source file /users/zdw7287/downloads/embedded-systems-design-i/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/firststage.vhd
+    Info (12022): Found design unit 1: firstStage-firstStage_arch File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/firstStage.vhd Line: 21
+    Info (12023): Found entity 1: firstStage File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/firstStage.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file nios_system/synthesis/nios_system.vhd
     Info (12022): Found design unit 1: nios_system-rtl File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_quartus/nios_system/synthesis/nios_system.vhd Line: 26
     Info (12023): Found entity 1: nios_system File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_quartus/nios_system/synthesis/nios_system.vhd Line: 9
@@ -307,17 +307,17 @@ Info (12021): Found 2 design units, including 1 entities, in source file wave_ra
     Info (12022): Found design unit 1: wave_ram-SYN File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_quartus/wave_ram.vhd Line: 59
     Info (12023): Found entity 1: wave_ram File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_quartus/wave_ram.vhd Line: 43
 Info (12021): Found 2 design units, including 1 entities, in source file /users/zdw7287/downloads/embedded-systems-design-i/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/audio_filter.vhd
-    Info (12022): Found design unit 1: audio_filter-audio_filter_arch File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/audio_filter.vhd Line: 19
+    Info (12022): Found design unit 1: audio_filter-audio_filter_arch File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/audio_filter.vhd Line: 18
     Info (12023): Found entity 1: audio_filter File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/audio_filter.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file filter_mult.vhd
     Info (12022): Found design unit 1: filter_mult-SYN File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_quartus/filter_mult.vhd Line: 53
     Info (12023): Found entity 1: filter_mult File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_quartus/filter_mult.vhd Line: 43
-Error (10327): VHDL error at thirdStage.vhd(124): can't determine definition of operator ""-"" -- found 0 possible definitions File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab5_files/thirdStage.vhd Line: 124
+Error (10794): VHDL error at thirdStage.vhd(87): output designator result cannot contain an actual type-conversion File: C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/thirdStage.vhd Line: 87
 Info (144001): Generated suppressed messages file C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_quartus/output_files/lab4.map.smsg
 Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 0 warnings
     Error: Peak virtual memory: 877 megabytes
-    Error: Processing ended: Mon Apr 10 15:39:32 2017
-    Error: Elapsed time: 00:00:11
+    Error: Processing ended: Tue Apr 11 18:27:38 2017
+    Error: Elapsed time: 00:00:10
     Error: Total CPU time (on all processors): 00:00:21
 
 

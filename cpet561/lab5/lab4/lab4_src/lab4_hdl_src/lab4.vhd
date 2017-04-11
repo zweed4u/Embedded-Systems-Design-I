@@ -110,7 +110,7 @@ architecture lab4_arch of lab4 is
   signal wave_data_filtered_signed : signed(31 downto 0);
   
   component audio_filter is
-      port map (
+      port (
          i_clk_50              : in std_logic;
          i_reset               : in std_logic;
          i_audioSample         : in signed(31 downto 0);

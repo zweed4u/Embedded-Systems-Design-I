@@ -66,7 +66,7 @@ architecture firstStage_arch of firstStage is
     datab  => std_logic_vector(b21_const),
     result => std_logic_vector(multOutb21_full)
   );
-  multOutb21 <= signed(multOutb21_full(52 downto 17)));
+  multOutb21 <= signed(multOutb21_full(52 downto 17));
   
   
   filter_mult_b11 : filter_mult
