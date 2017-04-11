@@ -121,10 +121,20 @@ thirdStage_inst1 : thirdStage
       thirdStageOutput => filterOutput
     );
 
--- Grab the lowest 16 bits of your filter output and place them
--- into the output port. There is an implied multiply by 4 here
--- due to going from 15 bits to 17 bits after the decimal. This cancels
--- the previous divide by 4.
-o_audioSampleFiltered <= filterOutput(15 downto 0) & filterOutput(15 downto 0);
+--delay between stages
+process (i_clk_50) begin
+--clk'd process
+  if (rising_edge(i_clk_50)) then
+    if (i_reset='1') then
+      o_audioSampleFiltered <= '0';
+    elsif (i_dataReq = '1') then
+    -- Grab the lowest 16 bits of your filter output and place them
+    -- into the output port. There is an implied multiply by 4 here
+    -- due to going from 15 bits to 17 bits after the decimal. This cancels
+    -- the previous divide by 4.
+      o_audioSampleFiltered <= filterOutput(15 downto 0) & filterOutput(15 downto 0);
+    end if;
+  end if;
+end process; 
 
 end architecture audio_filter_arch;
