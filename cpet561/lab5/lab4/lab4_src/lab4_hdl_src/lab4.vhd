@@ -206,7 +206,8 @@ begin
   
   
   
-  
+  ----- Pushbutton KEY0 is the reset
+  reset_n <= KEYsync(0);
   
   -- Instantiate the audio filter
   wave_data_signed <= signed(wave_data);
@@ -214,7 +215,7 @@ begin
   audio_filter_inst : audio_filter
   port map (
          i_clk_50              => CLOCK2_50,
-         i_reset               => reset,
+         i_reset               => not(reset_n),
          i_audioSample         => wave_data_signed,
          i_dataReq             => dataReq,
          o_audioSampleFiltered => wave_data_filtered_signed
@@ -233,8 +234,7 @@ begin
       o_KEYsync   => KEYsync
     );
     
-  ----- Pushbutton KEY0 is the reset
-  reset_n <= KEYsync(0);
+  
   
   ----- Debounce the pushbutton which will add the switches input to the accumulator
   debounce_inst1 : debounce

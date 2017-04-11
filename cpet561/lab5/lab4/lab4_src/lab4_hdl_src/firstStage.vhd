@@ -20,24 +20,24 @@ end entity firstStage;
 
 architecture firstStage_arch of firstStage is
   signal A_in            : signed (35 DOWNTO 0);
-  signal x1_d0           : STD_LOGIC_VECTOR (35 DOWNTO 0);
-  signal x1_d1           : STD_LOGIC_VECTOR (35 DOWNTO 0);
+  signal x1_d0           : signed (35 DOWNTO 0);
+  signal x1_d1           : signed (35 DOWNTO 0);
   signal A_out           : signed (35 DOWNTO 0);
-  signal multOuta21      : STD_LOGIC_VECTOR (35 DOWNTO 0);
-  signal multOuta21_full : STD_LOGIC_VECTOR (71 DOWNTO 0);
+  signal multOuta21      : signed (35 DOWNTO 0);
+  signal multOuta21_full : signed (71 DOWNTO 0);
   
-  signal multOutb21      : STD_LOGIC_VECTOR (35 DOWNTO 0);
-  signal multOutb21_full : STD_LOGIC_VECTOR (71 DOWNTO 0);
+  signal multOutb21      : signed (35 DOWNTO 0);
+  signal multOutb21_full : signed (71 DOWNTO 0);
   
-  signal multOutb11      : STD_LOGIC_VECTOR (35 DOWNTO 0);
-  signal multOutb11_full : STD_LOGIC_VECTOR (71 DOWNTO 0);
+  signal multOutb11      : signed (35 DOWNTO 0);
+  signal multOutb11_full : signed (71 DOWNTO 0);
   
   
-  constant b11_const : STD_LOGIC_VECTOR(35 downto 0) := x"0000001B7"; -- 0.0033507*(2^17) = 439
-  constant b21_const : STD_LOGIC_VECTOR(35 downto 0) := x"0000001B7"; -- 0.0033507*(2^17) = 439
-  constant b31_const : STD_LOGIC_VECTOR(35 downto 0) := x"000000000";
-  constant a21_const : STD_LOGIC_VECTOR(35 downto 0) := x"FFFFE2E14"; -- -0.91*(2^17) = 119276
-  constant a31_const : STD_LOGIC_VECTOR(35 downto 0) := x"000000000";
+  constant b11_const : signed(35 downto 0) := x"0000001B7"; -- 0.0033507*(2^17) = 439
+  constant b21_const : signed(35 downto 0) := x"0000001B7"; -- 0.0033507*(2^17) = 439
+  constant b31_const : signed(35 downto 0) := x"000000000";
+  constant a21_const : signed(35 downto 0) := x"FFFFE2E14"; -- -0.91*(2^17) = 119276
+  constant a31_const : signed(35 downto 0) := x"000000000";
   
   
   COMPONENT filter_mult IS
@@ -53,29 +53,29 @@ architecture firstStage_arch of firstStage is
   
   filter_mult_a21 : filter_mult
   port map (
-    dataa  => x1_d1,
-    datab  => a21_const,
-    result => multOuta21_full
+    dataa  => std_logic_vector(x1_d1),
+    datab  => std_logic_vector(a21_const),
+    result => std_logic_vector(multOuta21_full)
   );
-  multOuta21 <= multOuta21_full(52 downto 17);
+  multOuta21 <= signed(multOuta21_full(52 downto 17));
   
   
   filter_mult_b21 : filter_mult
   port map (
-    dataa  => x1_d1,
-    datab  => b21_const,
-    result => multOutb21_full
+    dataa  => std_logic_vector(x1_d1),
+    datab  => std_logic_vector(b21_const),
+    result => std_logic_vector(multOutb21_full)
   );
-  multOutb21 <= multOutb21_full(52 downto 17);
+  multOutb21 <= signed(multOutb21_full(52 downto 17)));
   
   
   filter_mult_b11 : filter_mult
   port map (
-    dataa  => x1_d0,
-    datab  => b11_const,
-    result => multOutb11_full
+    dataa  => std_logic_vector(x1_d0),
+    datab  => std_logic_vector(b11_const),
+    result => std_logic_vector(multOutb11_full)
   );
-  multOutb11 <= multOutb11_full(52 downto 17);
+  multOutb11 <= signed(multOutb11_full(52 downto 17));
   
   process (clk) begin
     --clk'd process

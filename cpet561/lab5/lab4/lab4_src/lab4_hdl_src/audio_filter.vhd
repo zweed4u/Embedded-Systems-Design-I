@@ -70,17 +70,12 @@ filterInResized <= resize(filterInOneChannel, filterInResized'length);
 -- Implement the divide by 16 which is multiplier s(1)
 filterSection_1in <= shift_right(filterInResized, 4);
 
--- Grab the lowest 16 bits of your filter output and place them
--- into the output port. There is an implied multiply by 4 here
--- due to going from 15 bits to 17 bits after the decimal. This cancels
--- the previous divide by 4.
-o_audioSampleFiltered <= filterOutput(15 downto 0) & filterOutput(15 downto 0);
 firstStage_inst1 : firstStage
     port map (
-      clk => i_clk_50,
-      i_dataReq => i_dataReq,
-      i_reset => i_reset,
-      firstStageInput => filterSection_1in,
+      clk              => i_clk_50,
+      i_dataReq        => i_dataReq,
+      i_reset          => i_reset,
+      firstStageInput  => filterSection_1in,
       firstStageOutput => firstToSecondIntermediary
     );
 
@@ -98,10 +93,10 @@ end process;
 
 secondStage_inst1 : secondStage
     port map (
-      clk => i_clk_50,
-      i_dataReq => i_dataReq,
-      i_reset => i_reset,
-      secondStageInput => firstToSecondIntermediary,
+      clk               => i_clk_50,
+      i_dataReq         => i_dataReq,
+      i_reset           => i_reset,
+      secondStageInput  => firstToSecondIntermediary,
       secondStageOutput => secondToThirdIntermediary
     );
 
@@ -119,11 +114,17 @@ end process;
   
 thirdStage_inst1 : thirdStage
     port map (
-      clk => i_clk_50,
-      i_dataReq => i_dataReq,
-      i_reset => i_reset,
-      thirdStageInput => secondToThirdIntermediary,
-      thirdStageOutput => o_audioSampleFiltered
+      clk              => i_clk_50,
+      i_dataReq        => i_dataReq,
+      i_reset          => i_reset,
+      thirdStageInput  => secondToThirdIntermediary,
+      thirdStageOutput => filterOutput
     );
+
+-- Grab the lowest 16 bits of your filter output and place them
+-- into the output port. There is an implied multiply by 4 here
+-- due to going from 15 bits to 17 bits after the decimal. This cancels
+-- the previous divide by 4.
+o_audioSampleFiltered <= filterOutput(15 downto 0) & filterOutput(15 downto 0);
 
 end architecture audio_filter_arch;
