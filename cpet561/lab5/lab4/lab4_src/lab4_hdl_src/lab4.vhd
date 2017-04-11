@@ -110,13 +110,13 @@ architecture lab4_arch of lab4 is
   signal wave_data_filtered_signed : signed(31 downto 0);
   
   component audio_filter is
-	  port map (
-		 i_clk_50              : in std_logic;
-		 i_reset               : in std_logic;
-		 i_audioSample         : in signed(31 downto 0);
-		 i_dataReq             : in std_logic;
-		 o_audioSampleFiltered : out signed(31 downto 0)
-	  );
+      port map (
+         i_clk_50              : in std_logic;
+         i_reset               : in std_logic;
+         i_audioSample         : in signed(31 downto 0);
+         i_dataReq             : in std_logic;
+         o_audioSampleFiltered : out signed(31 downto 0)
+      );
   end component audio_filter;
   
   component codec_dac_interface is
@@ -167,22 +167,22 @@ architecture lab4_arch of lab4 is
     );
   end component debounce;
   
-	component nios_system is
-		port (
-			clk_clk                   : in  std_logic                     := 'X';             -- clk
-			reset_reset_n             : in  std_logic                     := 'X';             -- reset_n
-			bus_bridge_acknowledge    : in  std_logic                     := 'X';             -- acknowledge
-			bus_bridge_irq            : in  std_logic                     := 'X';             -- irq
-			bus_bridge_address        : out std_logic_vector(10 downto 0);                    -- address
-			bus_bridge_bus_enable     : out std_logic;                                        -- bus_enable
-			bus_bridge_byte_enable    : out std_logic_vector(3 downto 0);                     -- byte_enable
-			bus_bridge_rw             : out std_logic;                                        -- rw
-			bus_bridge_write_data     : out std_logic_vector(31 downto 0);                    -- write_data
-			bus_bridge_read_data      : in  std_logic_vector(31 downto 0) := (others => 'X');  -- read_data
-			iicdatabit_export         : inout std_logic                     := 'X';             -- export
-			iicclockbit_export        : out   std_logic                                         -- export
-		);
-	end component nios_system;
+    component nios_system is
+        port (
+            clk_clk                   : in  std_logic                     := 'X';             -- clk
+            reset_reset_n             : in  std_logic                     := 'X';             -- reset_n
+            bus_bridge_acknowledge    : in  std_logic                     := 'X';             -- acknowledge
+            bus_bridge_irq            : in  std_logic                     := 'X';             -- irq
+            bus_bridge_address        : out std_logic_vector(10 downto 0);                    -- address
+            bus_bridge_bus_enable     : out std_logic;                                        -- bus_enable
+            bus_bridge_byte_enable    : out std_logic_vector(3 downto 0);                     -- byte_enable
+            bus_bridge_rw             : out std_logic;                                        -- rw
+            bus_bridge_write_data     : out std_logic_vector(31 downto 0);                    -- write_data
+            bus_bridge_read_data      : in  std_logic_vector(31 downto 0) := (others => 'X');  -- read_data
+            iicdatabit_export         : inout std_logic                     := 'X';             -- export
+            iicclockbit_export        : out   std_logic                                         -- export
+        );
+    end component nios_system;
 
   component hexDisplayDriver is
     port (
@@ -213,11 +213,11 @@ begin
   wave_data_filtered <= std_logic_vector(wave_data_filtered_signed);
   audio_filter_inst : audio_filter
   port map (
-		 i_clk_50              => CLOCK2_50,
-		 i_reset               => reset,
-		 i_audioSample         => wave_data_signed,
-		 i_dataReq             => dataReq,
-		 o_audioSampleFiltered => wave_data_filtered_signed
+         i_clk_50              => CLOCK2_50,
+         i_reset               => reset,
+         i_audioSample         => wave_data_signed,
+         i_dataReq             => dataReq,
+         o_audioSampleFiltered => wave_data_filtered_signed
   );
 
   
@@ -245,21 +245,21 @@ begin
       o_keyPulse   => key1Pulse
     );
 
-	u0 : component nios_system
-		port map (
-			clk_clk                   => CLOCK2_50,                   --                clk.clk
-			reset_reset_n             => reset_n,             --              reset.reset_n
-			bus_bridge_acknowledge    => acknowledge,    --         bus_bridge.acknowledge
-			bus_bridge_irq            => '0',            --                   .irq
-			bus_bridge_address        => address,        --                   .address
-			bus_bridge_bus_enable     => bus_enable,     --                   .bus_enable
-			bus_bridge_byte_enable    => byte_enable,    --                   .byte_enable
-			bus_bridge_rw             => rw_n,             --                   .rw
-			bus_bridge_write_data     => write_data,     --                   .write_data
-			bus_bridge_read_data      => read_data,       --                   .read_data
-			iicdatabit_export         => FPGA_I2C_SDAT,         --         iicdatabit.export
-			iicclockbit_export        => FPGA_I2C_SCLK         --        iicclockbit.export
-		);
+    u0 : component nios_system
+        port map (
+            clk_clk                   => CLOCK2_50,                   --                clk.clk
+            reset_reset_n             => reset_n,             --              reset.reset_n
+            bus_bridge_acknowledge    => acknowledge,    --         bus_bridge.acknowledge
+            bus_bridge_irq            => '0',            --                   .irq
+            bus_bridge_address        => address,        --                   .address
+            bus_bridge_bus_enable     => bus_enable,     --                   .bus_enable
+            bus_bridge_byte_enable    => byte_enable,    --                   .byte_enable
+            bus_bridge_rw             => rw_n,             --                   .rw
+            bus_bridge_write_data     => write_data,     --                   .write_data
+            bus_bridge_read_data      => read_data,       --                   .read_data
+            iicdatabit_export         => FPGA_I2C_SDAT,         --         iicdatabit.export
+            iicclockbit_export        => FPGA_I2C_SCLK         --        iicclockbit.export
+        );
 
   peripheral_on_external_bus_inst : peripheral_on_external_bus
     port map (

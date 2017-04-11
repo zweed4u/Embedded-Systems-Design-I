@@ -21,56 +21,56 @@ entity peripheral_on_external_bus is
 end entity peripheral_on_external_bus;
 
 architecture peripheral_on_external_bus_arch of peripheral_on_external_bus is
-	signal wren_sig    		: std_logic;
-	signal address_a_sig  	: std_logic_vector(9 DOWNTO 0);
-	signal address_b_sig  	: std_logic_vector(9 DOWNTO 0);
-	signal bus_enable_d1		: std_logic;
-	signal bus_enable_d2		: std_logic;
-	
-	component wave_ram IS
-		PORT
-		(
-			address_a: IN STD_LOGIC_VECTOR (9 DOWNTO 0);
-			address_b: IN STD_LOGIC_VECTOR (9 DOWNTO 0);
-			clock		: IN STD_LOGIC  := '1';
-			data_a	: IN STD_LOGIC_VECTOR (31 DOWNTO 0);
-			data_b	: IN STD_LOGIC_VECTOR (31 DOWNTO 0);
-			wren_a	: IN STD_LOGIC  := '0';
-			wren_b	: IN STD_LOGIC  := '0';
-			q_a		: OUT STD_LOGIC_VECTOR (31 DOWNTO 0);
-			q_b		: OUT STD_LOGIC_VECTOR (31 DOWNTO 0)
-		);
-	end component wave_ram;
+    signal wren_sig         : std_logic;
+    signal address_a_sig    : std_logic_vector(9 DOWNTO 0);
+    signal address_b_sig    : std_logic_vector(9 DOWNTO 0);
+    signal bus_enable_d1        : std_logic;
+    signal bus_enable_d2        : std_logic;
+    
+    component wave_ram IS
+        PORT
+        (
+            address_a: IN STD_LOGIC_VECTOR (9 DOWNTO 0);
+            address_b: IN STD_LOGIC_VECTOR (9 DOWNTO 0);
+            clock       : IN STD_LOGIC  := '1';
+            data_a  : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+            data_b  : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+            wren_a  : IN STD_LOGIC  := '0';
+            wren_b  : IN STD_LOGIC  := '0';
+            q_a     : OUT STD_LOGIC_VECTOR (31 DOWNTO 0);
+            q_b     : OUT STD_LOGIC_VECTOR (31 DOWNTO 0)
+        );
+    end component wave_ram;
   
  begin
-	wren_sig <= (not i_rw_n) and i_bus_enable;
-	address_a_sig <= '0' & i_address(10 DOWNTO 2);
-	address_b_sig <= "00" & i_addressWave(7 DOWNTO 0); --or "00" & i_addressWave(7 DOWNTO 0);
-	
-	process (clk) begin
-		if (rising_edge(clk)) then
-			if (reset_n = '0') then
-				o_acknowledge <= '0';
-			else
-				bus_enable_d1 <= i_bus_enable;
-				bus_enable_d2 <= bus_enable_d1;
-				o_acknowledge <= bus_enable_d1 AND (NOT bus_enable_d2);
-			end if;
-		end if;
+    wren_sig <= (not i_rw_n) and i_bus_enable;
+    address_a_sig <= '0' & i_address(10 DOWNTO 2);
+    address_b_sig <= "00" & i_addressWave(7 DOWNTO 0); --or "00" & i_addressWave(7 DOWNTO 0);
+    
+    process (clk) begin
+        if (rising_edge(clk)) then
+            if (reset_n = '0') then
+                o_acknowledge <= '0';
+            else
+                bus_enable_d1 <= i_bus_enable;
+                bus_enable_d2 <= bus_enable_d1;
+                o_acknowledge <= bus_enable_d1 AND (NOT bus_enable_d2);
+            end if;
+        end if;
   end process;
-	
-	
-	wave_ram_inst : wave_ram PORT MAP (
-		address_a	=> address_a_sig,
-		address_b	=> address_b_sig,
-		clock	 		=> clk,
-		data_a	 	=> i_write_data,
-		data_b	 	=> x"00000000",
-		wren_a	 	=> wren_sig,
-		wren_b	 	=> wren_sig,
-		q_a	 		=> o_read_data,
-		q_b	 		=> o_wave_data
-	);
+    
+    
+    wave_ram_inst : wave_ram PORT MAP (
+        address_a   => address_a_sig,
+        address_b   => address_b_sig,
+        clock           => clk,
+        data_a      => i_write_data,
+        data_b      => x"00000000",
+        wren_a      => wren_sig,
+        wren_b      => wren_sig,
+        q_a         => o_read_data,
+        q_b         => o_wave_data
+    );
 
 
 end peripheral_on_external_bus_arch;

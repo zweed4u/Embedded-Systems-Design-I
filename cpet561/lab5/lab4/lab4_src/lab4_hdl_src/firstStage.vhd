@@ -41,12 +41,12 @@ architecture firstStage_arch of firstStage is
   
   
   COMPONENT filter_mult IS
-	PORT
-	(
-		dataa	: IN STD_LOGIC_VECTOR (35 DOWNTO 0);
-		datab	: IN STD_LOGIC_VECTOR (35 DOWNTO 0);
-		result	: OUT STD_LOGIC_VECTOR (71 DOWNTO 0)
-	);
+    PORT
+    (
+        dataa   : IN STD_LOGIC_VECTOR (35 DOWNTO 0);
+        datab   : IN STD_LOGIC_VECTOR (35 DOWNTO 0);
+        result  : OUT STD_LOGIC_VECTOR (71 DOWNTO 0)
+    );
   END COMPONENT filter_mult;
   
   begin
@@ -80,12 +80,12 @@ architecture firstStage_arch of firstStage is
   process (clk) begin
     --clk'd process
     if (rising_edge(clk)) then
-	  if (i_reset='1') then
-	    x1_d1 <= (others => '0');
-	  elsif (i_dataReq = '1') then
-		x1_d1 <= x1_d0;
+      if (i_reset='1') then
+        x1_d1 <= (others => '0');
+      elsif (i_dataReq = '1') then
+        x1_d1 <= x1_d0;
       end if;
-	end if;
+    end if;
   end process;
 
   A_in  <= firstStageInput;

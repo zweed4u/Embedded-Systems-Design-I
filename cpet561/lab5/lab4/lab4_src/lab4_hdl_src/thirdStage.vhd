@@ -49,35 +49,35 @@ architecture thirdStage_arch of thirdStage is
   constant a33_const : STD_LOGIC_VECTOR(35 downto 0) := x"00001B79C"; -- 0.85861*(2^17) = 112540
   
   COMPONENT filter_mult IS
-	PORT
-	(
-		dataa	: IN STD_LOGIC_VECTOR (35 DOWNTO 0);
-		datab	: IN STD_LOGIC_VECTOR (35 DOWNTO 0);
-		result	: OUT STD_LOGIC_VECTOR (71 DOWNTO 0)
-	);
+    PORT
+    (
+        dataa   : IN STD_LOGIC_VECTOR (35 DOWNTO 0);
+        datab   : IN STD_LOGIC_VECTOR (35 DOWNTO 0);
+        result  : OUT STD_LOGIC_VECTOR (71 DOWNTO 0)
+    );
   END COMPONENT filter_mult; 
   
   begin 
   process (clk) begin
-	--clk'd process
-	if (rising_edge(clk)) then
-	  if (i_reset='1') then
-		x1_d1 <= (others => '0');
-	  elsif (i_dataReq = '1') then
-		x1_d1 <= x1_d0;
-	  end if;
-	end if;
+    --clk'd process
+    if (rising_edge(clk)) then
+      if (i_reset='1') then
+        x1_d1 <= (others => '0');
+      elsif (i_dataReq = '1') then
+        x1_d1 <= x1_d0;
+      end if;
+    end if;
   end process;
   
   process (clk) begin
-	--clk'd process (should this be nested in above process or its own?)
-	if (rising_edge(clk)) then
-	  if (i_reset='1') then
-		x1_d2 <= (others => '0');
-	  elsif (i_dataReq = '1') then
-		x1_d2 <= x1_d1;
-	  end if;
-	end if;
+    --clk'd process (should this be nested in above process or its own?)
+    if (rising_edge(clk)) then
+      if (i_reset='1') then
+        x1_d2 <= (others => '0');
+      elsif (i_dataReq = '1') then
+        x1_d2 <= x1_d1;
+      end if;
+    end if;
   end process;
   
   filter_mult_b13 : filter_mult

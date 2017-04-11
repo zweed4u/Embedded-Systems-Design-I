@@ -37,7 +37,7 @@ component firstStage is
 end component firstStage;
 
 component secondStage is
-	port(
+    port(
       clk               : in std_logic;
       i_reset           : in std_logic;
       i_dataReq         : in std_logic;
