@@ -215,7 +215,7 @@ begin
   audio_filter_inst : audio_filter
   port map (
          i_clk_50              => CLOCK2_50,
-         i_reset               => not(reset_n),
+         i_reset               => reset_n,
          i_audioSample         => wave_data_signed,
          i_dataReq             => dataReq,
          o_audioSampleFiltered => wave_data_filtered_signed
