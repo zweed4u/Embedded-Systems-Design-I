@@ -1,0 +1,42 @@
+audio filer instantiation - signals assigned above for what?
+
+this is what I have in the top for the filter instatance. I'm unsure how to go about using the switch to activate the filter.
+Is the wave_data assignment after the instance the correct way to go about it?
+
+
+  signal wave_data_signed : signed(31 downto 0);
+  signal wave_data_filtered : std_logic_vector(31 downto 0);
+  signal wave_data_filtered_signed : signed(31 downto 0);
+  
+  
+  -- Instantiate the audio filter
+  wave_data_signed <= signed(wave_data);
+  wave_data_filtered <= std_logic_vector(wave_data_filtered_signed);
+  audio_filter_inst : audio_filter
+  port map (
+         i_clk_50              => CLOCK2_50,
+         i_reset               => reset_n,
+         i_audioSample         => wave_data_signed,
+         i_dataReq             => dataReq,
+         o_audioSampleFiltered => wave_data_filtered_signed
+  );
+  
+  wave_data <= wave_data_filtered when (SW(0) = '1') else std_logic_vector(wave_data_signed); 
+
+  
+  I believe it is causing another error as the peripheral on external bus uses the wave data as an output.
+  I get:    Error (10028): Can't resolve multiple constant drivers for net "wave_data[31]" at lab5.vhd(264)
+
+  What are the signals declared in the document used for and how do you go about selecting which sample (filtered or untfiltered) to play?
+  
+  
+  
+  In simulation, my signal never makes it into the delay. I get something looking like this:
+ (attach modelsim picture here)
+ 
+ It gets as far as into my 1st stage filter component but then when the delays and multipliers are used the signal dies. 
+ I made sure to toggle my reset signal properly in regards to polarity to kickstart the stimuli and even went as far as initalize x1_d0:
+    signal x1_d0           : signed (35 DOWNTO 0) := x"000000000";
+This isn't a testbench problem correct? I made sure to convert the csv input as well. It must be a problem in my stage VHDL implementation.
+The signals aren't making it to/out the multiplier.
+Also, I have all my multiply out signals for all instances taking bits (52 downto 17). Is this correct to neglect the top and bottom 16 bits for every multiply
