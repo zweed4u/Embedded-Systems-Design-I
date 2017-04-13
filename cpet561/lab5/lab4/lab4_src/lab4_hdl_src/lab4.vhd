@@ -220,10 +220,10 @@ begin
          i_dataReq             => dataReq,
          o_audioSampleFiltered => wave_data_filtered_signed
   );
+  
+  wave_data <= wave_data_filtered when (SW(0) = '1') else std_logic_vector(wave_data_signed);  
 
   
-  
-
   ----- Syncronize the user inputs i.e. slide switches(SW) and pushbuttons(KEYS) 
   synchronizer_inst : synchronizer
     port map (

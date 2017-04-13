@@ -14,11 +14,11 @@ END;
 ARCHITECTURE TEST_BENCH OF audio_filter_tb IS
 
   -- component ports
-  SIGNAL i_clk_50              : std_logic				:= '0';
-  SIGNAL i_reset               : std_logic				:= '0';
-  SIGNAL i_audioSample         : signed(31 downto 0)	:= (OTHERS => '1');
-  SIGNAL i_dataReq             : std_logic				:= '0';
-  SIGNAL o_audioSampleFiltered : signed(31 downto 0)	:= (OTHERS => '0');
+  SIGNAL i_clk_50              : std_logic              := '0';
+  SIGNAL i_reset               : std_logic              := '0';
+  SIGNAL i_audioSample         : signed(31 downto 0)    := (OTHERS => '0');
+  SIGNAL i_dataReq             : std_logic              := '0';
+  SIGNAL o_audioSampleFiltered : signed(31 downto 0)    := (OTHERS => '0');
   --
 
 
@@ -47,7 +47,7 @@ BEGIN
     PORT MAP (
       i_clk_50              => i_clk_50,
       i_reset               => i_reset,
-      i_audioSample         => i_audioSample ,       
+      i_audioSample         => i_audioSample,
       i_dataReq             => i_dataReq,
       o_audioSampleFiltered => o_audioSampleFiltered
       );
@@ -69,6 +69,7 @@ BEGIN
   variable writeValue : integer;
   
 begin
+  i_reset <= '0';
   wait for 100 ns;
   i_reset <= '1';
   -- Read data from file into an array
@@ -83,20 +84,20 @@ begin
   -- Apply the test data and put the result into an output file
   for i in 1 to 100 loop
     for j in 0 to 39 loop
-      WAIT UNTIL rising_edge (i_clk_50);
       -- Your code here...
-      i_audioSample <= (audioSampleArray(j) & audioSampleArray(j)); --32 bits
-	  
+      WAIT UNTIL rising_edge (i_clk_50);
+      i_audioSample <= (audioSampleArray(j) & audioSampleArray(j)); --16+16=32 bits
+      
       -- Write filter output to file
       writeValue := to_integer(o_audioSampleFiltered);
       write(lineOut, writeValue);
       writeline(results_file, lineOut);
       
-      -- Your code here...
+	  -- Your code here...
       i_dataReq <= '1';
       WAIT UNTIL rising_edge (i_clk_50);
       i_dataReq <= '0';
-      
+	  
     end loop;
   end loop;
 

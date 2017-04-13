@@ -20,8 +20,8 @@ end entity firstStage;
 
 architecture firstStage_arch of firstStage is
   signal A_in            : signed (35 DOWNTO 0);
-  signal x1_d0           : signed (35 DOWNTO 0);
-  signal x1_d1           : signed (35 DOWNTO 0);
+  signal x1_d0           : signed (35 DOWNTO 0) := x"000000000";
+  signal x1_d1           : signed (35 DOWNTO 0) := x"000000000";
   signal A_out           : signed (35 DOWNTO 0);
   signal multOuta21      : signed (35 DOWNTO 0);
   signal multOuta21_full : STD_LOGIC_VECTOR (71 DOWNTO 0);
@@ -80,7 +80,7 @@ architecture firstStage_arch of firstStage is
   process (clk) begin
     --clk'd process
     if (rising_edge(clk)) then
-      if (i_reset='0') then --active high
+      if (i_reset='0') then
         x1_d1 <= (others => '0');
       elsif (i_dataReq = '1') then
         x1_d1 <= x1_d0;
@@ -89,8 +89,8 @@ architecture firstStage_arch of firstStage is
   end process;
 
   A_in  <= firstStageInput;
-  x1_d0 <= A_in-(multOuta21);
-  A_out <= (multOutb11)+(multOutb21);
+  x1_d0 <= A_in - (multOuta21);
+  A_out <= (multOutb11) + (multOutb21);
   firstStageOutput <= A_out;
   
 end architecture firstStage_arch;

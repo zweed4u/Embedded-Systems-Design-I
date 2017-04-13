@@ -23,9 +23,9 @@ architecture secondStage_arch of secondStage is
   signal B_1   : signed (35 DOWNTO 0);
   signal B_2   : signed (35 DOWNTO 0);
   signal B_out : signed (35 DOWNTO 0);
-  signal x1_d0 : signed (35 DOWNTO 0);
-  signal x1_d1 : signed (35 DOWNTO 0);
-  signal x1_d2 : signed (35 DOWNTO 0);
+  signal x1_d0 : signed (35 DOWNTO 0):= x"000000000";
+  signal x1_d1 : signed (35 DOWNTO 0):= x"000000000";
+  signal x1_d2 : signed (35 DOWNTO 0):= x"000000000";
   
   signal multOutb12      : signed (35 DOWNTO 0);
   signal multOutb12_full : STD_LOGIC_VECTOR (71 DOWNTO 0);
@@ -124,10 +124,10 @@ architecture secondStage_arch of secondStage is
   multOutb32 <= signed(multOutb32_full(52 downto 17));
   
   B_in  <= secondStageInput;
-  B_1   <= B_in-(multOuta22);
-  x1_d0 <= B_1-(multOuta32);
-  B_2   <= (multOutb12)+(multOutb22);
-  B_out <= B_2+(multOutb32);
+  B_1   <= B_in - (multOuta22);
+  x1_d0 <= B_1 - (multOuta32);
+  B_2   <= (multOutb12) + (multOutb22);
+  B_out <= B_2 + (multOutb32);
 
   secondStageOutput <= B_out;
 end architecture secondStage_arch;
