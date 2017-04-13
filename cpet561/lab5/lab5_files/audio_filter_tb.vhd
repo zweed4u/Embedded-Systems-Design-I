@@ -71,7 +71,6 @@ BEGIN
 begin
   wait for 100 ns;
   i_reset <= '1';
-  i_reset <= '0';
   -- Read data from file into an array
   for i in 0 to 39 loop
     readline(read_file, lineIn);

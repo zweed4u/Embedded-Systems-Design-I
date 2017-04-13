@@ -80,7 +80,7 @@ architecture firstStage_arch of firstStage is
   process (clk) begin
     --clk'd process
     if (rising_edge(clk)) then
-      if (i_reset='1') then
+      if (i_reset='0') then --active high
         x1_d1 <= (others => '0');
       elsif (i_dataReq = '1') then
         x1_d1 <= x1_d0;

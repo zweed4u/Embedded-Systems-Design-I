@@ -61,7 +61,7 @@ architecture thirdStage_arch of thirdStage is
   process (clk) begin
     --clk'd process
     if (rising_edge(clk)) then
-      if (i_reset='1') then
+      if (i_reset='0') then
         x1_d1 <= (others => '0');
       elsif (i_dataReq = '1') then
         x1_d1 <= x1_d0;
@@ -72,7 +72,7 @@ architecture thirdStage_arch of thirdStage is
   process (clk) begin
     --clk'd process (should this be nested in above process or its own?)
     if (rising_edge(clk)) then
-      if (i_reset='1') then
+      if (i_reset='0') then
         x1_d2 <= (others => '0');
       elsif (i_dataReq = '1') then
         x1_d2 <= x1_d1;

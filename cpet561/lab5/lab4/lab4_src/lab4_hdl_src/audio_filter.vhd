@@ -86,7 +86,7 @@ firstStage_inst1 : firstStage
 process (i_clk_50) begin
 --clk'd process
   if (rising_edge(i_clk_50)) then
-    if (i_reset='1') then
+    if (i_reset='0') then
       filterSection_2in <= x"000000000";
     elsif (i_dataReq = '1') then
       filterSection_2in <= firstToSecondIntermediary;
@@ -107,7 +107,7 @@ secondStage_inst1 : secondStage
 process (i_clk_50) begin
 --clk'd process
   if (rising_edge(i_clk_50)) then
-    if (i_reset='1') then
+    if (i_reset='0') then
       filterSection_3in <= x"000000000";
     elsif (i_dataReq = '1') then
       filterSection_3in <= secondToThirdIntermediary;
@@ -128,7 +128,7 @@ thirdStage_inst1 : thirdStage
 process (i_clk_50) begin
 --clk'd process
   if (rising_edge(i_clk_50)) then
-    if (i_reset='1') then
+    if (i_reset='0') then
       o_audioSampleFiltered <= x"00000000";
     elsif (i_dataReq = '1') then
     -- Grab the lowest 16 bits of your filter output and place them
