@@ -23,9 +23,9 @@ architecture thirdStage_arch of thirdStage is
   signal C_1   : signed (35 DOWNTO 0);
   signal C_2   : signed (35 DOWNTO 0);
   signal C_out : signed (35 DOWNTO 0);
-  signal x1_d0 : signed (35 DOWNTO 0):= x"000000000";
-  signal x1_d1 : signed (35 DOWNTO 0):= x"000000000";
-  signal x1_d2 : signed (35 DOWNTO 0):= x"000000000";
+  signal x1_d0 : signed (35 DOWNTO 0);-- <= (others => '0');
+  signal x1_d1 : signed (35 DOWNTO 0);-- <= (others => '0');
+  signal x1_d2 : signed (35 DOWNTO 0);-- <= (others => '0');
 
   signal multOutb13      : signed (35 DOWNTO 0);
   signal multOutb13_full : STD_LOGIC_VECTOR (71 DOWNTO 0);
