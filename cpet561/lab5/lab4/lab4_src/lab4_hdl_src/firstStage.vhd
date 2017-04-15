@@ -20,8 +20,8 @@ end entity firstStage;
 
 architecture firstStage_arch of firstStage is
   signal A_in            : signed (35 DOWNTO 0);
-  signal x1_d0           : signed (35 DOWNTO 0) <= (others => '0');
-  signal x1_d1           : signed (35 DOWNTO 0) <= (others => '0');
+  signal x1_d0           : signed (35 DOWNTO 0);-- <= (others => '0');
+  signal x1_d1           : signed (35 DOWNTO 0);-- <= (others => '0');
   signal A_out           : signed (35 DOWNTO 0);
   signal multOuta21      : signed (35 DOWNTO 0);
   signal multOuta21_full : STD_LOGIC_VECTOR (71 DOWNTO 0);
