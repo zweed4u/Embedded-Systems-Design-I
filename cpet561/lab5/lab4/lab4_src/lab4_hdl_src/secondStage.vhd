@@ -43,7 +43,7 @@ architecture secondStage_arch of secondStage is
   signal multOutb32_full : STD_LOGIC_VECTOR (71 DOWNTO 0);
   
   constant b12_const : signed(35 downto 0) := x"00000015B"; -- 0.0026446*(2^17) = 347
-  constant b22_const : signed(35 downto 0) := x"0000002B5"; -- 0.0052893*(2^17) = 639
+  constant b22_const : signed(35 downto 0) := x"0000002B5"; -- 0.0052893*(2^17) = 693
   constant b32_const : signed(35 downto 0) := x"00000015B"; -- 0.0026446*(2^17) = 347
   constant a22_const : signed(35 downto 0) := x"FFFFC2155"; -- -1.9349*(2^17) = -253611
   constant a32_const : signed(35 downto 0) := x"00001E316"; -- 0.94353*(2^17) = 123670
