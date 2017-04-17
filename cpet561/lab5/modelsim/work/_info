@@ -11,259 +11,275 @@ Z0 dC:/Software/MentorGraphics/examples
 T_opt
 !s110 1492364920
 VXj6z7`G_oUO;LmRY;4WGW1
-04 15 10 work audio_filter_tb test_bench 1
+Z1 04 15 10 work audio_filter_tb test_bench 1
 =1-1866da16ebad-58f3ae77-e2-1bf4
-o-quiet -auto_acc_if_foreign -work work
-Z1 tCvgOpt 0
+Z2 o-quiet -auto_acc_if_foreign -work work
+Z3 tCvgOpt 0
 n@_opt
-OL;O;10.5b;63
+Z4 OL;O;10.5b;63
 R0
+T_opt1
+!s110 1492388841
+VFgzW8?i_bKkFR_:`98`]53
+R1
+=2-b8ca3a962be0-58f40be8-2f6-1f50
+R2
+R3
+n@_opt1
+R4
 Eaudio_filter
-Z2 w1492365804
-Z3 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
-Z4 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
-Z5 DPx4 ieee 16 std_logic_signed 0 22 C<aanc0R`<LWPSe[JYRP^3
-Z6 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
-Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z8 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
-Z9 dC:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/modelsim
-Z10 8C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/audio_filter.vhd
-Z11 FC:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/audio_filter.vhd
+Z5 w1492386966
+Z6 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
+Z7 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z8 DPx4 ieee 16 std_logic_signed 0 22 C<aanc0R`<LWPSe[JYRP^3
+Z9 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z10 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z11 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z12 dC:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/modelsim
+Z13 8C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/audio_filter.vhd
+Z14 FC:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/audio_filter.vhd
 l0
 L8
 VkT>2Jg[lGB0dbjFV4Yi>82
 !s100 CIRL6L_T^o88]FW0i6`LL3
-Z12 OL;C;10.5b;63
+Z15 OL;C;10.5b;63
 32
-Z13 !s110 1492365919
+Z16 !s110 1492387050
 !i10b 1
-Z14 !s108 1492365919.000000
-Z15 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/audio_filter.vhd|
-Z16 !s107 C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/audio_filter.vhd|
+Z17 !s108 1492387050.000000
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/audio_filter.vhd|
+Z19 !s107 C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/audio_filter.vhd|
 !i113 0
-Z17 o-work work -2002 -explicit
-Z18 tExplicit 1 CvgOpt 0
+Z20 o-work work -2002 -explicit
+Z21 tExplicit 1 CvgOpt 0
 Aaudio_filter_arch
-R3
-R4
-R5
 R6
 R7
 R8
+R9
+R10
+R11
 DEx4 work 12 audio_filter 0 22 kT>2Jg[lGB0dbjFV4Yi>82
-32
-R13
 l63
 L18
 VGlR<:NLi[T]io;nQ^?EfB2
 !s100 N?E7]:ShVM`o2YkM[o_^83
-R12
-!i10b 1
-R14
 R15
+32
 R16
-!i113 0
+!i10b 1
 R17
 R18
+R19
+!i113 0
+R20
+R21
 Eaudio_filter_tb
-Z19 w1492365805
-R3
-R4
-R5
+Z22 w1492385679
 R6
 R7
 R8
 R9
-Z20 8C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab5_files/audio_filter_tb.vhd
-Z21 FC:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab5_files/audio_filter_tb.vhd
+R10
+R11
+R12
+Z23 8C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab5_files/audio_filter_tb.vhd
+Z24 FC:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab5_files/audio_filter_tb.vhd
 l0
 L11
 V6T[=H2E1:XbiK@=BmX?F_1
 !s100 FnaIQ?G]_YX:UbOhk02cf3
-R12
+R15
 32
-Z22 !s110 1492365918
+Z25 !s110 1492387051
 !i10b 1
-Z23 !s108 1492365918.000000
-Z24 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab5_files/audio_filter_tb.vhd|
-Z25 !s107 C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab5_files/audio_filter_tb.vhd|
+Z26 !s108 1492387051.000000
+Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab5_files/audio_filter_tb.vhd|
+Z28 !s107 C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab5_files/audio_filter_tb.vhd|
 !i113 0
-R17
-R18
+R20
+R21
 Atest_bench
-R3
-R4
-R5
 R6
 R7
 R8
+R9
+R10
+R11
 DEx4 work 15 audio_filter_tb 0 22 6T[=H2E1:XbiK@=BmX?F_1
-32
-R22
 l41
 L14
 V@l=:OeQL_MSdZWL=El`>Q2
 !s100 Y816=;T_0^CiJSmKnKO6V0
-R12
-!i10b 1
-R23
-R24
+R15
+32
 R25
+!i10b 1
+R26
+R27
+R28
 !i113 0
-R17
-R18
+R20
+R21
 vfilter_mult
-VDg1SIo80bB@j0V0VzS_@n1
-r1
-!s85 0
-31
+R25
 !i10b 1
 !s100 ;1gIJAcae;R6hR`=eO@G:2
 Izj7n@gAFoICdhE2_M<]mK1
-R9
-R19
+VDg1SIo80bB@j0V0VzS_@n1
+R12
+R22
 8C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab5_files/filter_mult.v
 FC:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab5_files/filter_mult.v
 L0 3
 OL;L;10.5b;63
-!s108 1492365920.000000
+r1
+!s85 0
+31
+R26
 !s107 C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab5_files/filter_mult.v|
-!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab5_files/filter_mult.v|
+!s90 -reportprogress|300|-work|work|-L|mtiAvm|-L|mtiRnm|-L|mtiOvm|-L|mtiUvm|-L|mtiUPF|-L|infact|C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab5_files/filter_mult.v|
 !i113 0
 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R1
+R3
 Efirststage
-R19
-R4
-R5
+Z29 w1492388831
 R6
 R7
 R8
 R9
-Z26 8C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/firstStage.vhd
-Z27 FC:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/firstStage.vhd
-l0
-L11
-VAOSfTo]mX7`ggWemBl_?Z0
-!s100 0o[oCXj]aBhkE>iID1R3T1
+R10
+R11
 R12
+Z30 8C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/firstStage.vhd
+Z31 FC:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/firstStage.vhd
+l0
+L14
+V9CNAjQ7Dz9AF:AN@^STZ=3
+!s100 _ClV02`XoQ0_TCZ7>^jGE3
+R15
 32
-R13
+Z32 !s110 1492388835
 !i10b 1
-R14
-Z28 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/firstStage.vhd|
-Z29 !s107 C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/firstStage.vhd|
+Z33 !s108 1492388835.000000
+Z34 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/firstStage.vhd|
+Z35 !s107 C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/firstStage.vhd|
 !i113 0
-R17
-R18
+R20
+R21
 Afirststage_arch
-R4
-R5
-R6
-R7
-R8
-DEx4 work 10 firststage 0 22 AOSfTo]mX7`ggWemBl_?Z0
-32
-R13
-l52
-L21
-VLcdO^:V3N`NeNi7l<@dCn0
-!s100 ^QLz`AKInHIFIP;5472mM0
-R12
-!i10b 1
-R14
-R28
-R29
-!i113 0
-R17
-R18
-Esecondstage
-R19
-R4
-R5
 R6
 R7
 R8
 R9
-Z30 8C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/secondStage.vhd
-Z31 FC:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/secondStage.vhd
-l0
-L11
-VJAlj_gcQ`LaTaaJWWg=d[0
-!s100 cBYR5jhj@ePa[5G7E@kb]2
-R12
+R10
+R11
+DEx4 work 10 firststage 0 22 9CNAjQ7Dz9AF:AN@^STZ=3
+l55
+L24
+V;M3j<HY<23bDSzWWbUMz00
+!s100 g0[4T[I:bKcOXm1MF=Ik91
+R15
 32
-R13
-!i10b 1
-R14
-Z32 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/secondStage.vhd|
-Z33 !s107 C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/secondStage.vhd|
-!i113 0
-R17
-R18
-Asecondstage_arch
-R4
-R5
-R6
-R7
-R8
-DEx4 work 11 secondstage 0 22 JAlj_gcQ`LaTaaJWWg=d[0
-32
-R13
-l61
-L21
-Vc`TP4jocH>i3K3h[Qc7HG2
-!s100 ZJQn;m9L1UZhWa0lo`VWB1
-R12
-!i10b 1
-R14
 R32
+!i10b 1
 R33
+R34
+R35
 !i113 0
-R17
-R18
-Ethirdstage
-R19
-R4
-R5
+R20
+R21
+Esecondstage
+Z36 w1492388825
 R6
 R7
 R8
 R9
-Z34 8C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/thirdStage.vhd
-Z35 FC:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/thirdStage.vhd
-l0
-L11
-VUCEJ>dUc9HBne1R>X@Iil0
-!s100 G6RkEHW3FDza]a3]Bl60U1
+R10
+R11
 R12
+Z37 8C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/secondStage.vhd
+Z38 FC:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/secondStage.vhd
+l0
+L14
+V1Z6=^elcgXel=AMLV^>R93
+!s100 NIiComj@zHFJ>^W9dE2<A3
+R15
 32
-R22
+R32
 !i10b 1
-R23
-Z36 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/thirdStage.vhd|
-Z37 !s107 C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/thirdStage.vhd|
+R33
+Z39 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/secondStage.vhd|
+Z40 !s107 C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/secondStage.vhd|
 !i113 0
-R17
-R18
-Athirdstage_arch
-R4
-R5
+R20
+R21
+Asecondstage_arch
 R6
 R7
 R8
-DEx4 work 10 thirdstage 0 22 UCEJ>dUc9HBne1R>X@Iil0
+R9
+R10
+R11
+DEx4 work 11 secondstage 0 22 1Z6=^elcgXel=AMLV^>R93
+l64
+L24
+V_2I3na`HAaO5OMhzzB5_=1
+!s100 C@Z5:E2VV0NiY[R01mQE72
+R15
 32
-R22
-l60
-L21
-VOL^S7@]c=W`UN2d5>MGY41
-!s100 efzF_CcPLn^]Ph7kFEl>a3
-R12
+R32
 !i10b 1
-R23
-R36
-R37
+R33
+R39
+R40
 !i113 0
-R17
-R18
+R20
+R21
+Ethirdstage
+Z41 w1492388820
+R6
+R7
+R8
+R9
+R10
+R11
+R12
+Z42 8C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/thirdStage.vhd
+Z43 FC:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/thirdStage.vhd
+l0
+L14
+VN;fFcLz713lf;bU_ETgTP1
+!s100 6KfhR80F3oe8<780DM[e63
+R15
+32
+R32
+!i10b 1
+R33
+Z44 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/thirdStage.vhd|
+Z45 !s107 C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/thirdStage.vhd|
+!i113 0
+R20
+R21
+Athirdstage_arch
+R6
+R7
+R8
+R9
+R10
+R11
+DEx4 work 10 thirdstage 0 22 N;fFcLz713lf;bU_ETgTP1
+l63
+L24
+Vb3mQ4]hLG=8BeFK4JjX990
+!s100 Ghi>jah@X4>IojNX3<04R0
+R15
+32
+R32
+!i10b 1
+R33
+R44
+R45
+!i113 0
+R20
+R21
