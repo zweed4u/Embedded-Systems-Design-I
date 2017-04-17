@@ -220,7 +220,7 @@ begin
          i_dataReq             => dataReq,
          o_audioSampleFiltered => wave_data_filtered_signed
   );
-  
+  --if sw is pressed use output of filter else use the original input signal
   wave_data <= wave_data_filtered when (SW(0) = '1') else std_logic_vector(wave_data_signed);  
 
   
