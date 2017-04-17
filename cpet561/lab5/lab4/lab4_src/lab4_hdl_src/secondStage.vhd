@@ -19,7 +19,6 @@ ENTITY secondStage is
 end entity secondStage;
 
 architecture secondStage_arch of secondStage is
-  signal B_in  : signed (35 DOWNTO 0);
   signal B_1   : signed (35 DOWNTO 0);
   signal B_2   : signed (35 DOWNTO 0);
   signal B_out : signed (35 DOWNTO 0);
@@ -28,19 +27,19 @@ architecture secondStage_arch of secondStage is
   signal x1_d2 : signed (35 DOWNTO 0);-- <= (others => '0');
   
   signal multOutb12      : signed (35 DOWNTO 0);
-  signal multOutb12_full : STD_LOGIC_VECTOR (71 DOWNTO 0);
+  signal multOutb12_full : signed (71 DOWNTO 0);
   
   signal multOuta22      : signed (35 DOWNTO 0);
-  signal multOuta22_full : STD_LOGIC_VECTOR (71 DOWNTO 0);
+  signal multOuta22_full : signed (71 DOWNTO 0);
   
   signal multOutb22      : signed (35 DOWNTO 0);
-  signal multOutb22_full : STD_LOGIC_VECTOR (71 DOWNTO 0);
+  signal multOutb22_full : signed (71 DOWNTO 0);
   
   signal multOuta32      : signed (35 DOWNTO 0);
-  signal multOuta32_full : STD_LOGIC_VECTOR (71 DOWNTO 0);
+  signal multOuta32_full : signed (71 DOWNTO 0);
   
   signal multOutb32      : signed (35 DOWNTO 0);
-  signal multOutb32_full : STD_LOGIC_VECTOR (71 DOWNTO 0);
+  signal multOutb32_full : signed (71 DOWNTO 0);
   
   constant b12_const : signed(35 downto 0) := x"00000015B"; -- 0.0026446*(2^17) = 347
   constant b22_const : signed(35 downto 0) := x"0000002B5"; -- 0.0052893*(2^17) = 693
@@ -52,9 +51,9 @@ architecture secondStage_arch of secondStage is
   COMPONENT filter_mult IS
     PORT
     (
-        dataa   : IN STD_LOGIC_VECTOR (35 DOWNTO 0);
-        datab   : IN STD_LOGIC_VECTOR (35 DOWNTO 0);
-        result  : OUT STD_LOGIC_VECTOR (71 DOWNTO 0)
+        dataa   : IN signed (35 DOWNTO 0);
+        datab   : IN signed (35 DOWNTO 0);
+        result  : OUT signed (71 DOWNTO 0)
     );
   END COMPONENT filter_mult;  
   
@@ -85,46 +84,45 @@ architecture secondStage_arch of secondStage is
   
   filter_mult_b12 : filter_mult
   port map (
-    dataa  => std_logic_vector(x1_d0),
-    datab  => std_logic_vector(b12_const),
+    dataa  => (x1_d0),
+    datab  => (b12_const),
     result => (multOutb12_full)
   );
-  multOutb12 <= signed(multOutb12_full(52 downto 17));
+  multOutb12 <= (multOutb12_full(52 downto 17));
   
   filter_mult_a22 : filter_mult
   port map (
-    dataa  => std_logic_vector(x1_d1),
-    datab  => std_logic_vector(a22_const),
+    dataa  => (x1_d1),
+    datab  => (a22_const),
     result => (multOuta22_full)
   );
-  multOuta22 <= signed(multOuta22_full(52 downto 17));
+  multOuta22 <= (multOuta22_full(52 downto 17));
   
   filter_mult_b22 : filter_mult
   port map (
-    dataa  => std_logic_vector(x1_d1),
-    datab  => std_logic_vector(b22_const),
+    dataa  => (x1_d1),
+    datab  => (b22_const),
     result => (multOutb22_full)
   );
-  multOutb22 <= signed(multOutb22_full(52 downto 17));
+  multOutb22 <= (multOutb22_full(52 downto 17));
   
   filter_mult_a32 : filter_mult
   port map (
-    dataa  => std_logic_vector(x1_d2),
-    datab  => std_logic_vector(a32_const),
+    dataa  => (x1_d2),
+    datab  => (a32_const),
     result => (multOuta32_full)
   );
-  multOuta32 <= signed(multOuta32_full(52 downto 17));
+  multOuta32 <= (multOuta32_full(52 downto 17));
   
   filter_mult_b32 : filter_mult
   port map (
-    dataa  => std_logic_vector(x1_d2),
-    datab  => std_logic_vector(b32_const),
+    dataa  => (x1_d2),
+    datab  => (b32_const),
     result => (multOutb32_full)
   );
-  multOutb32 <= signed(multOutb32_full(52 downto 17));
+  multOutb32 <= (multOutb32_full(52 downto 17));
   
-  B_in  <= secondStageInput;
-  B_1   <= B_in - (multOuta22);
+  B_1   <= secondStageInput - (multOuta22);
   x1_d0 <= B_1 - (multOuta32);
   B_2   <= (multOutb12) + (multOutb22);
   B_out <= B_2 + (multOutb32);

@@ -1,11 +1,11 @@
-C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab5_files/filter_mult.v {1 {vlog -work work -vopt -stats=none C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab5_files/filter_mult.v
+C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab5_files/filter_mult.v {1 {vlog -work work -vopt -stats=none {C:\Users\zdw7287\Downloads\Embedded-Systems-Design-I\cpet561\lab5\lab5_files\filter_mult.v}
 Model Technology ModelSim SE-64 vlog 10.5b Compiler 2016.05 May 21 2016
 -- Compiling module filter_mult
 
 Top level modules:
 	filter_mult
 
-} {} {}} C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab5_files/audio_filter_tb.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab5_files/audio_filter_tb.vhd
+} {} {}} C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab5_files/audio_filter_tb.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none {C:\Users\zdw7287\Downloads\Embedded-Systems-Design-I\cpet561\lab5\lab5_files\audio_filter_tb.vhd}
 Model Technology ModelSim SE-64 vcom 10.5b Compiler 2016.05 May 21 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -17,7 +17,18 @@ Model Technology ModelSim SE-64 vcom 10.5b Compiler 2016.05 May 21 2016
 -- Compiling entity audio_filter_tb
 -- Compiling architecture TEST_BENCH of audio_filter_tb
 
-} {} {}} C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/audio_filter.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/audio_filter.vhd
+} {} {}} C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/thirdStage.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none {C:\Users\zdw7287\Downloads\Embedded-Systems-Design-I\cpet561\lab5\lab4\lab4_src\lab4_hdl_src\thirdStage.vhd}
+Model Technology ModelSim SE-64 vcom 10.5b Compiler 2016.05 May 21 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_SIGNED
+-- Compiling entity thirdStage
+-- Compiling architecture thirdStage_arch of thirdStage
+
+} {} {}} C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/audio_filter.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none {C:\Users\zdw7287\Downloads\Embedded-Systems-Design-I\cpet561\lab5\lab4\lab4_src\lab4_hdl_src\audio_filter.vhd}
 Model Technology ModelSim SE-64 vcom 10.5b Compiler 2016.05 May 21 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -29,18 +40,7 @@ Model Technology ModelSim SE-64 vcom 10.5b Compiler 2016.05 May 21 2016
 -- Compiling entity audio_filter
 -- Compiling architecture audio_filter_arch of audio_filter
 
-} {} {}} C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/thirdStage.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/thirdStage.vhd
-Model Technology ModelSim SE-64 vcom 10.5b Compiler 2016.05 May 21 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Loading package std_logic_arith
--- Loading package STD_LOGIC_SIGNED
--- Compiling entity thirdStage
--- Compiling architecture thirdStage_arch of thirdStage
-
-} {} {}} C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/secondStage.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/secondStage.vhd
+} {} {}} C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/secondStage.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none {C:\Users\zdw7287\Downloads\Embedded-Systems-Design-I\cpet561\lab5\lab4\lab4_src\lab4_hdl_src\secondStage.vhd}
 Model Technology ModelSim SE-64 vcom 10.5b Compiler 2016.05 May 21 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -51,7 +51,7 @@ Model Technology ModelSim SE-64 vcom 10.5b Compiler 2016.05 May 21 2016
 -- Compiling entity secondStage
 -- Compiling architecture secondStage_arch of secondStage
 
-} {} {}} C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/firstStage.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/firstStage.vhd
+} {} {}} C:/Users/zdw7287/Downloads/Embedded-Systems-Design-I/cpet561/lab5/lab4/lab4_src/lab4_hdl_src/firstStage.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none {C:\Users\zdw7287\Downloads\Embedded-Systems-Design-I\cpet561\lab5\lab4\lab4_src\lab4_hdl_src\firstStage.vhd}
 Model Technology ModelSim SE-64 vcom 10.5b Compiler 2016.05 May 21 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO

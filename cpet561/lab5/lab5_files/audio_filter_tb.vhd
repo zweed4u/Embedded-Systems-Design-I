@@ -85,15 +85,20 @@ begin
   for i in 1 to 100 loop
     for j in 0 to 39 loop
       -- Your code here...
-      WAIT UNTIL rising_edge (i_clk_50);
+      for k in 1 to 1100 loop
+          WAIT UNTIL rising_edge (i_clk_50);
+      end loop;
       i_audioSample <= (audioSampleArray(j) & audioSampleArray(j)); --16+16=32 bits
       
       -- Write filter output to file
-      writeValue := to_integer(o_audioSampleFiltered);
+      writeValue := to_integer(o_audioSampleFiltered(15 downto 0));
       write(lineOut, writeValue);
       writeline(results_file, lineOut);
       
 	  -- Your code here...
+      for l in 1 to 2 loop
+          WAIT UNTIL rising_edge (i_clk_50);
+      end loop;
       i_dataReq <= '1';
       WAIT UNTIL rising_edge (i_clk_50);
       i_dataReq <= '0';
