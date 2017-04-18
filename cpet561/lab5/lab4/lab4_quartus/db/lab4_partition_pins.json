@@ -40,6 +40,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "SW[0]",
+					"strict" : false
+				},
+				{
 					"name" : "CLOCK2_50",
 					"strict" : false
 				},

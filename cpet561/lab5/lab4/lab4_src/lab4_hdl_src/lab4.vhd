@@ -82,6 +82,7 @@ architecture lab4_arch of lab4 is
   signal acknowledge : std_logic;
   signal read_data   : std_logic_vector (31 downto 0);
   signal temp_sig    : std_logic;
+  signal wave_data_0 : std_logic_vector (31 downto 0);
   signal wave_data   : std_logic_vector (31 downto 0);
   signal AUD_BCLK_d1 : std_logic;
   signal AUD_BCLK_d2 : std_logic;
@@ -210,18 +211,19 @@ begin
   reset_n <= KEYsync(0);
   
   -- Instantiate the audio filter
-  wave_data_signed <= signed(wave_data);
+  wave_data_signed <= signed(wave_data_0);
   wave_data_filtered <= std_logic_vector(wave_data_filtered_signed);
   audio_filter_inst : audio_filter
   port map (
          i_clk_50              => CLOCK2_50,
-         i_reset               => reset_n,
+         i_reset               => reset_n, --active low reset
          i_audioSample         => wave_data_signed,
          i_dataReq             => dataReq,
          o_audioSampleFiltered => wave_data_filtered_signed
   );
+  
   --if sw is pressed use output of filter else use the original input signal
-  wave_data <= wave_data_filtered when (SW(0) = '1') else std_logic_vector(wave_data_signed);  
+  wave_data <= std_logic_vector(wave_data_filtered_signed) when (SW(0) = '1') else std_logic_vector(wave_data_signed);  
 
   
   ----- Syncronize the user inputs i.e. slide switches(SW) and pushbuttons(KEYS) 
@@ -273,7 +275,7 @@ begin
       i_write_data  => write_data,
       o_acknowledge => acknowledge,
       o_read_data   => read_data,
-      o_wave_data   => wave_data
+      o_wave_data   => wave_data_0
     );
     
   -- audio_wvfrm audio_wvfrm_inst (

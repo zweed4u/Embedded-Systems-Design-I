@@ -39,13 +39,13 @@ int main(void) {
   final_result = FALSE;
   final_result = codecInit();
 
-  while (i < (256)){
+  /*while (i < (256)){
 	  randNum = rand(); // 0000 - FFFF
 	  randNum = (randNum % 65535); //16 random not 32 because the full contents are left 16 AND right 16
 	  dataToWrite = randNum | (randNum<<16); // writes to top and bottom 16 with or'ing bitshift
 	  *(busBridgePtr + i) = dataToWrite;
 	  i += 1;
-  }
+  }*/
   while(1){
 	  //
   }
