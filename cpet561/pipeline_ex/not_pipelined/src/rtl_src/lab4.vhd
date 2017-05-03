@@ -107,7 +107,10 @@ architecture lab4_arch of lab4 is
   signal adclrckRisingEdge : std_logic;
   signal bclkRisingEdge : std_logic;
   signal dataReq : std_logic;
-
+  --pipeline signals
+  signal plSignalMuxOut : signed(31 DOWNTO 0);
+  signal pl_wave_data_cos : std_logic_vector(31 downto 0);
+		
   component codec_dac_interface is
     port (
       i_clk_50             : in std_logic;
@@ -259,24 +262,31 @@ begin
       clock	 => CLOCK2_50,
       q	 => wave_data_cos
     );
-    
-  modulate : process (CLOCK2_50) is 
-    variable dataOutSigned     : signed(31 DOWNTO 0);
-    variable signalMuxOut : signed(31 DOWNTO 0);
-  begin
-    if (rising_edge(CLOCK2_50)) then
+   
+  
+  
+	
+	
+	modulate : process (CLOCK2_50) is
+	   variable dataOutSigned     : signed(31 DOWNTO 0); --local to process
+      variable signalMuxOut : signed(31 DOWNTO 0);
+	begin 
+	if (rising_edge(CLOCK2_50)) then
       if (reset_n = '0') then
         wave_data_codec   <= (others => '0');
       else
         if (KEYsync(2) = '0') then
-          signalMuxOut := signed(wave_data);
-        else 
+          signalMuxOut := signed(wave_data); --:= used for variables SEQUENTIAL - NOT CONCURRENT - HAPPENS IN SINGLE CLOCK  - change vars to signals and move out of process and defines to be CONCURRENT function as latch - pipeline
+        elsif (rising_edge(CLOCK2_50)) then
+		    pl_wave_data_cos<=wave_data_cos;
+			 plSignalMuxOut<=signalMuxOut;
+		  else  -- still need synchromize c flipflop
           signalMuxOut := x"40004000";
         end if;
-        dataOutSigned := signed(signalMuxOut(15 downto 0)) * signed(wave_data_cos(15 downto 0));
+		  dataOutSigned := signed(plSignalMuxOut(15 downto 0)) * signed(pl_wave_data_cos(15 downto 0));
         dataOutSigned(15 downto 0) := dataOutSigned(31 downto 16);
-        wave_data_codec <= std_logic_vector(dataOutSigned);
-      end if;
+        wave_data_codec <= std_logic_vector(dataOutSigned);	
+	   end if;
     end if;
   end process;
 
