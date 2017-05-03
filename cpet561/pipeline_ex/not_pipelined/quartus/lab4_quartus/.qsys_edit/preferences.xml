@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable filter="All Interfaces">
+  <columns>
+   <connections preferredWidth="143" />
+   <irq preferredWidth="34" />
+   <name preferredWidth="224" />
+  </columns>
+ </systemtable>
+ <library
+   expandedCategories="Library,Library/University Program/Bridges,Library/University Program,Project" />
+ <window width="1938" height="1050" x="-9" y="-9" />
+ <generation synthesis="VHDL" />
+</preferences>

@@ -1,0 +1,29 @@
+// Written by Gregg Guarino Ph.D.
+
+#include "system.h"
+#include "alt_types.h"
+
+#define leds (*ledsBasePtr)
+
+alt_u32 *ledsBasePtr = (alt_u32 *) PIO_1_BASE;
+alt_u32 *busBridgePtr = (alt_u32 *) 0;
+alt_u32 first;
+alt_u32 second;
+alt_u32 third;
+alt_u32 dataToWrite;
+
+int main(void) {
+	while (1) {
+    dataToWrite = 0x12345678;
+		leds = 0xabcd;
+    *busBridgePtr = dataToWrite;
+    dataToWrite += 0x01010101;
+    *(busBridgePtr + 1) = dataToWrite;
+    dataToWrite += 0x01010101;
+    *(busBridgePtr + 2) = dataToWrite;
+    
+    first  = *busBridgePtr;
+    second = *(busBridgePtr + 1);
+    third  = *(busBridgePtr + 2);
+	}
+}

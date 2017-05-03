@@ -1,0 +1,14 @@
+// Written by Gregg Guarino Ph.D.
+
+#include "system.h"
+#include "alt_types.h"
+
+#define leds (*ledsBasePtr)
+
+alt_u32 *ledsBasePtr = (alt_u32 *) PIO_1_BASE;
+
+int main(void) {
+	while (1) {
+		leds = 0xabcd;
+	}
+}
